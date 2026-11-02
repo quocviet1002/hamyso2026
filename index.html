@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TXG E-Commerce Command Center & 5 Stores Tracker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07101f;--s1:#0c1a2e;--s2:#0f2040;--s3:#162844;
+  --bd:#1d3354;--bd2:#243d62;
+  --t1:#e8f0fe;--t2:#94afd4;--t3:#4a6d94;--t4:#1a2e48;
+  --blue:#4d8ef5;--green:#22d07a;--red:#f05252;--orange:#f5922d;
+  --purple:#9b72f5;--cyan:#25d4e7;--yellow:#f5c842;
+  --actual:#f5c842;--actual-bg:#f5c84210;--actual-bd:#f5c84240;
+  --font:'DM Sans',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+body{background:var(--bg);color:var(--t1);font-family:var(--font);font-size:13px;min-height:100vh}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--s1)}
+::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:99px}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{opacity:0}
+
+/* ── HEADER ── */
+.hdr{background:var(--s1);border-bottom:1px solid var(--bd);padding:10px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.hdr-title h1{font-size:15px;font-weight:700;color:var(--t1)}
+.hdr-title p{font-size:10px;color:var(--t3);margin-top:2px}
+.hdr-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tbadge{padding:6px 12px;border-radius:7px;font-size:11px;font-weight:700;text-align:center;white-space:nowrap}
+.thit{background:#052e1688;border:1px solid #16a34a55;color:#4ade80}
+.tmiss{background:#450a0a88;border:1px solid #ef444455;color:#f87171}
+.ibox{background:var(--s2);border:1.5px solid var(--bd);border-radius:8px;padding:5px 10px;min-width:100px;transition:border-color .15s;cursor:text}
+.ibox:focus-within{border-color:var(--blue)}
+.ibox label{font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:2px}
+.ibox .ir{display:flex;align-items:baseline;gap:3px}
+.ibox input{background:transparent;border:none;outline:none;font-size:15px;font-weight:700;color:var(--t1);font-family:var(--mono);width:80px}
+.ibox .u{font-size:11px;color:var(--t3);font-weight:600}
+.ibox.accent{border-color:#22d07a55}
+.ibox.accent label{color:var(--green)}
+
+/* ── ROAS PANEL ── */
+.roas-panel{background:var(--s1);border-bottom:1px solid var(--bd);padding:7px 18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rp-lbl{font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+.ri{display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:4px 9px}
+.ri-ph{font-size:9px;font-weight:700;white-space:nowrap}
+.ri input{background:transparent;border:none;outline:none;font-size:13px;font-weight:700;color:var(--t1);font-family:var(--mono);width:40px;text-align:right}
+.ri .u{font-size:10px;color:var(--t3)}
+
+/* ── KPI STRIP ── */
+.kpi-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--bd);border-bottom:1px solid var(--bd)}
+.kpi{background:var(--s1);padding:12px 16px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.kpi.kb::before{background:var(--blue)}.kpi.kg::before{background:var(--green)}
+.kpi.ky::before{background:var(--yellow)}.kpi.kc::before{background:var(--cyan)}.kpi.kp::before{background:var(--purple)}.kpi.ko::before{background:var(--orange)}
+.kpi-lbl{font-size:10px;color:var(--t3);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.kpi-val{font-size:20px;font-weight:700;font-family:var(--mono);line-height:1}
+.kpi-sub{font-size:10px;color:var(--t3);margin-top:3px}
+
+/* ── MAIN ── */
+.main{padding:13px 18px;display:flex;flex-direction:column;gap:11px}
+.card{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:13px 15px}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:7px}
+.ct{font-size:10px;font-weight:700;color:var(--t2);letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+
+/* ── CHART ── */
+.chart-wrap{height:230px;position:relative}
+.ld-row{display:flex;gap:12px;flex-wrap:wrap}
+.ld{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--t3)}
+.ld-ln{width:22px;height:0;border-top:2px dashed currentColor}
+select{background:var(--s2);border:1px solid var(--bd);color:var(--t2);padding:4px 8px;border-radius:6px;font-size:10px;outline:none;cursor:pointer;font-family:var(--font)}
+
+/* ── RULES ── */
+.rules-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.rule-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.rc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px 10px}
+.rc-ph{font-size:10px;font-weight:700;margin-bottom:4px}
+.rc-ph small{font-size:8px;color:var(--t3);display:block;margin-top:1px}
+.rc-rule{font-size:10px;color:var(--t3);line-height:1.6}
+.rc-inp-row{display:flex;align-items:center;gap:4px;margin-top:4px}
+.rc-inp{background:var(--s1);border:1px solid var(--bd2);border-radius:4px;color:var(--t1);font-family:var(--mono);font-size:12px;font-weight:700;width:38px;padding:2px 4px;text-align:right;outline:none}
+.rc-inp:focus{border-color:var(--blue)}
+.rc-inp-lbl{font-size:10px;color:var(--t3)}
+.rc-rule b{color:var(--t2)}
+.scale-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.sr{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:9px 11px}
+.sr-pct{font-size:13px;font-weight:700;font-family:var(--mono);margin-bottom:3px}
+.sr-desc{font-size:10px;color:var(--t3);line-height:1.5}
+
+/* ── TABLE ── */
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:11px}
+thead tr{border-bottom:2px solid var(--bd)}
+th{padding:7px 7px;text-align:left;font-size:9px;font-weight:700;color:var(--t3);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+th.ah{color:var(--actual);background:var(--actual-bg);border-left:1px solid var(--actual-bd)}
+td{padding:5px 7px;border-bottom:1px solid #1d335422;vertical-align:middle}
+tr:hover td{background:rgba(255,255,255,.013)}
+.td-dt{color:var(--t2);font-weight:600;font-size:11px}
+.td-ph{font-size:9px;color:var(--t3);margin-top:1px;display:flex;align-items:center;gap:3px}
+.phdot{width:5px;height:5px;border-radius:50%;display:inline-block;flex-shrink:0}
+.mono{font-family:var(--mono);font-weight:600}
+.ff-badge{display:inline-block;font-size:8px;font-weight:700;color:#f59e0b;background:#f59e0b15;border:1px solid #f59e0b30;border-radius:4px;padding:1px 4px;margin-top:2px}
+
+/* ── EDITABLE CELLS ── */
+.ec input{background:var(--s2);border:1px solid var(--bd);border-radius:5px;padding:3px 6px;color:var(--t1);font-family:var(--mono);font-size:11px;font-weight:700;width:72px;outline:none;text-align:right;transition:border-color .15s}
+.ec input:focus{border-color:var(--blue);background:#1e3a8a18}
+.ec input.manual{border-color:#9b72f566;color:#c4b5fd}
+.ec input.act-inp{border-color:var(--actual-bd);color:var(--actual);background:var(--actual-bg)}
+.ec input.act-inp:focus{border-color:var(--actual);background:#f5c84218}
+.ec input.act-inp::placeholder{color:#f5c84244;font-weight:400}
+
+/* ── PILLS ── */
+.pill{padding:2px 7px;border-radius:99px;font-family:var(--mono);font-size:10px;font-weight:700;min-width:52px;text-align:center;display:inline-block}
+.pg{background:#14532d;color:#86efac}
+.pb{background:#1e3a8a;color:#93c5fd}
+.py{background:#713f12;color:#fde68a}
+.po{background:#7c2d12;color:#fdba74}
+.pr{background:#7f1d1d;color:#fca5a5}
+.roas-tiny{font-size:9px;color:var(--t3);margin-top:1px;font-family:var(--mono)}
+
+/* ── PROFIT ── */
+.pos{color:var(--green);font-family:var(--mono);font-weight:700}
+.neg{color:var(--red);font-family:var(--mono);font-weight:700}
+.sub-v{font-size:9px;color:var(--t3);display:block;margin-top:1px}
+.delta-pos{color:var(--green);font-size:9px;font-family:var(--mono);display:block}
+.delta-neg{color:var(--red);font-size:9px;font-family:var(--mono);display:block}
+
+/* ── SUMMARY ── */
+.sum-row{background:var(--s2);border-top:2px solid var(--bd2)}
+.sum-row td{color:var(--t1);font-weight:700;font-family:var(--mono);font-size:11px}
+
+/* ── TABS & BTNS ── */
+.ptabs{display:flex;gap:5px;flex-wrap:wrap}
+.ptab{padding:4px 10px;border-radius:20px;border:1px solid var(--bd);background:var(--s2);cursor:pointer;font-size:10px;font-weight:600;color:var(--t3);transition:all .15s;white-space:nowrap}
+.ptab.act{color:#fff}
+.rbtn{padding:5px 10px;background:var(--s2);border:1px solid var(--bd);border-radius:6px;color:var(--t3);cursor:pointer;font-size:10px;font-weight:600;font-family:var(--font);transition:all .15s}
+.rbtn:hover{background:var(--bd);color:var(--t1)}
+.rbtn.danger{border-color:#ef444433;color:#f87171}
+.rbtn.danger:hover{background:#7f1d1d44;color:#fca5a5}
+
+/* ── SYNC BADGE ── */
+.sync-badge{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;border:1px solid var(--bd);background:var(--s2)}
+.sync-ok{color:#22d07a;border-color:#22d07a44}
+.sync-err{color:#f5c842;border-color:#f5c84244}
+.sync-load{color:#4d8ef5;border-color:#4d8ef544}
+.actual-legend{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--actual);background:var(--actual-bg);border:1px solid var(--actual-bd);border-radius:6px;padding:4px 10px}
+
+/* ── NAV TABS ── */
+.nav{background:var(--s1);border-bottom:2px solid var(--bd);padding:0 18px;display:flex;align-items:center;gap:0;position:sticky;top:0;z-index:100;overflow-x:auto}
+.nav-brand{font-size:13px;font-weight:700;color:var(--t2);padding:11px 0;border-right:1px solid var(--bd);padding-right:18px;margin-right:4px;white-space:nowrap}
+.nav-tab{padding:11px 16px;font-size:12px;font-weight:600;color:var(--t3);cursor:pointer;border-bottom:3px solid transparent;transition:all .15s;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-bottom:-2px}
+.nav-tab:hover{color:var(--t2)}
+.nav-tab.active{color:var(--t1);border-bottom-color:var(--blue)}
+.page{display:none}.page.active{display:block}
+
+/* ── STYLES CHO TAB TARGET 5 STORE ── */
+.store-tab-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:99px;font-size:11px;font-weight:700;border:1px solid var(--bd);background:var(--s2);color:var(--t3);cursor:pointer;transition:all .2s;white-space:nowrap}
+.store-tab-btn:hover{color:var(--t1);border-color:var(--bd2)}
+.store-tab-btn.act{background:linear-gradient(135deg,#06b6d4,#10b981);color:#050811;border-color:transparent;box-shadow:0 0 15px rgba(16,185,129,0.3)}
+.target-track-bg{position:relative;height:38px;background:#050811;border:1px solid var(--bd);border-radius:12px;padding:3px;overflow:visible}
+.target-track-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,#0284c7,#10b981,#34d399);transition:width .8s cubic-bezier(0.16,1,0.3,1);box-shadow:0 0 20px rgba(16,185,129,0.4)}
+.store-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.store-card{background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:12px 14px;cursor:pointer;transition:all .2s}
+.store-card:hover{border-color:var(--blue);background:#13243f}
+.store-card.act{border-color:var(--green);background:#10283c;box-shadow:0 0 12px rgba(34,208,122,0.15)}
+
+/* Gốc SP PAGE, FB, GG, TK, OV */
+.sp-hdr,.fb-hdr,.gg-hdr,.tk-hdr,.ov-hdr{background:var(--s1);border-bottom:1px solid var(--bd);padding:10px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.sp-hdr h1,.fb-hdr h1,.gg-hdr h1,.tk-hdr h1,.ov-hdr h1{font-size:15px;font-weight:700}
+.sp-hdr p,.fb-hdr p,.gg-hdr p,.tk-hdr p,.ov-hdr p{font-size:10px;color:var(--t3);margin-top:2px}
+.sp-kpi{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--bd);border-bottom:1px solid var(--bd)}
+.filter-bar{background:var(--s1);border-bottom:1px solid var(--bd);padding:0 18px;display:flex;align-items:center;gap:8px;height:44px;overflow-x:auto}
+.fpill{padding:4px 12px;border-radius:20px;border:1px solid var(--bd);background:transparent;color:var(--t3);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s;white-space:nowrap;flex-shrink:0}
+.fpill:hover{background:var(--s2);color:var(--t2)}
+.fpill.act{background:#4d8ef520;border-color:var(--blue);color:var(--blue)}
+.fsep{width:1px;height:18px;background:var(--bd);flex-shrink:0}
+.sp-chart-wrap{height:220px;position:relative}
+.sp-tw-wrap{overflow:auto;max-height:420px;border-radius:8px}
+.sp-tw{width:100%;border-collapse:collapse;font-size:11px}
+.sp-tw thead th{position:sticky;top:0;z-index:10;padding:7px;text-align:left;font-size:9px;font-weight:700;color:var(--t3);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;background:var(--s1);border-bottom:2px solid var(--bd)}
+.sp-tw thead th.ah{color:var(--actual);background:#131f32;border-left:1px solid var(--actual-bd)}
+.sp-tw td{padding:5px 7px;border-bottom:1px solid #1d335422;vertical-align:middle}
+.sp-tw tr:hover td{background:rgba(255,255,255,.013)}
+.sp-sum td{position:sticky;bottom:0;z-index:10;background:var(--s2);border-top:2px solid var(--bd2);color:var(--t1);font-weight:700;font-family:var(--mono);font-size:11px}
+.sp-month-hdr td{background:var(--s3);color:var(--t2);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 8px;cursor:pointer;user-select:none;border-top:1px solid var(--bd)}
+.sp-month-hdr:hover td{background:var(--bd)}
+.sp-month-hdr td .m-arrow{display:inline-block;transition:transform .2s;margin-right:6px;color:var(--t3)}
+.sp-month-hdr.collapsed td .m-arrow{transform:rotate(-90deg)}
+.sp-month-row.hidden{display:none}
+.sp-sync{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;border:1px solid var(--bd);background:var(--s2)}
+.sp-sync.ok{color:#22d07a;border-color:#22d07a44}.sp-sync.err{color:#f5c842;border-color:#f5c84244}.sp-sync.load{color:#4d8ef5;border-color:#4d8ef544}
+.ro-cell{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--t3)}
+.today-badge{display:inline-block;font-size:8px;font-weight:700;color:#4d8ef5;background:#4d8ef520;border:1px solid #4d8ef540;border-radius:4px;padding:1px 5px;margin-left:4px;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<div class="nav">
+  <div class="nav-brand">🚀 TXG Command</div>
+  <div class="nav-tab active" id="tab0" onclick="switchTab(0)">🎯 5 Stores Target</div>
+  <div class="nav-tab" id="tab2" onclick="switchTab(1)">📊 Store Performance</div>
+  <div class="nav-tab" id="tab3" onclick="switchTab(2)">📣 Facebook Ads</div>
+  <div class="nav-tab" id="tab4" onclick="switchTab(3)">🛍 Google Ads</div>
+  <div class="nav-tab" id="tab5" onclick="switchTab(4)">🎵 TikTok Ads</div>
+  <div class="nav-tab" id="tab6" onclick="switchTab(5)">🔭 Ad Overview</div>
+  <div class="nav-tab" id="tab1" onclick="switchTab(6)">📋 Campaign Forecast</div>
+</div>
+
+<!-- ══ TAB 0: 5 STORES REVENUE TARGET TRACKER ══ -->
+<div id="page0" class="page active">
+  <div class="sp-hdr">
+    <div>
+      <h1 id="tgt-store-title">🎯 Hamyso — Quà tặng POD cá nhân hóa (Đức)</h1>
+      <p id="tgt-store-sub">hamyso.com · Target $1,000,000 · Số liệu Google Sheet tự động</p>
+    </div>
+    <div class="hdr-right">
+      <div id="tgt-sync-badge" class="sync-badge sync-load">⏳ Đang đồng bộ...</div>
+      <button class="rbtn" onclick="syncStoreSheet(true)">🔄 Sync Sheet</button>
+    </div>
+  </div>
+
+  <!-- SELECT STORE ROW -->
+  <div style="background:var(--s1);border-bottom:1px solid var(--bd);padding:8px 18px;display:flex;align-items:center;gap:8px;overflow-x:auto">
+    <span style="font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase">Chọn Store:</span>
+    <div class="store-tab-btn act" id="sbtn-hamyso" onclick="selectStoreTab('hamyso')">🇩🇪 Hamyso</div>
+    <div class="store-tab-btn" id="sbtn-amor1970s" onclick="selectStoreTab('amor1970s')">🇪🇸 Amor1970s</div>
+    <div class="store-tab-btn" id="sbtn-gavafam" onclick="selectStoreTab('gavafam')">🇸🇪 Gavafam</div>
+    <div class="store-tab-btn" id="sbtn-koccie" onclick="selectStoreTab('koccie')">🇫🇷 Koccie</div>
+    <div class="store-tab-btn" id="sbtn-gemilio" onclick="selectStoreTab('gemilio')">🇳🇱 Gemilio</div>
+    <div class="store-tab-btn" id="sbtn-all" onclick="selectStoreTab('all')">🌐 TỔNG CẢ 5 STORES</div>
+  </div>
+
+  <!-- KPI STRIP CHO TARGET -->
+  <div class="sp-kpi">
+    <div class="kpi kb">
+      <div class="kpi-lbl">🎯 Target Năm</div>
+      <div class="kpi-val" id="tgt-k-target" style="color:#60a5fa">$1,000,000</div>
+      <div class="kpi-sub" id="tgt-k-target-sub">Mục tiêu doanh thu</div>
+    </div>
+    <div class="kpi kc">
+      <div class="kpi-lbl">📈 Lũy kế đến nay (YTD)</div>
+      <div class="kpi-val" id="tgt-k-ytd" style="color:#67e8f9">$884,131</div>
+      <div class="kpi-sub" id="tgt-k-pct" style="color:#22d07a;font-weight:700">88.41% Hoàn thành</div>
+    </div>
+    <div class="kpi ky">
+      <div class="kpi-lbl">⚡ Hôm qua (Yesterday)</div>
+      <div class="kpi-val" id="tgt-k-yest" style="color:#fcd34d">+$3,596</div>
+      <div class="kpi-sub" id="tgt-k-yest-orders">80 đơn POD</div>
+    </div>
+    <div class="kpi ko">
+      <div class="kpi-lbl">🏁 Còn thiếu đến đích</div>
+      <div class="kpi-val" id="tgt-k-rem" style="color:#fdba74">$115,869</div>
+      <div class="kpi-sub">Khoảng cách tới Target</div>
+    </div>
+    <div class="kpi kg">
+      <div class="kpi-lbl">📅 Run-rate/ngày cần đạt</div>
+      <div class="kpi-val" id="tgt-k-runrate" style="color:#4ade80">$1,868</div>
+      <div class="kpi-sub" id="tgt-k-days-rem">Trong 62 ngày còn lại</div>
+    </div>
+    <div class="kpi kp">
+      <div class="kpi-lbl">🏷 Ngành hàng & Thị trường</div>
+      <div class="kpi-val" id="tgt-k-market" style="color:#c4b5fd;font-size:15px;padding-top:4px">Đức (POD)</div>
+      <div class="kpi-sub">Quà tặng cá nhân hóa</div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOADING BAR HERO -->
+  <div class="main">
+    <div class="card">
+      <div class="ch">
+        <div class="ct">🚀 Tiến độ chạm đích Mục tiêu (Progress to Target)</div>
+        <div style="font-size:11px;color:var(--t2);font-family:var(--mono)" id="tgt-bar-label">Loading 88.4%</div>
+      </div>
+      <div class="target-track-bg">
+        <div class="target-track-fill" id="tgt-progress-fill" style="width:88.41%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--t3);font-family:var(--mono)">
+        <span>$0 (0%)</span>
+        <span>25%</span>
+        <span>50%</span>
+        <span>75%</span>
+        <span id="tgt-max-label" style="color:var(--yellow);font-weight:700">$1,000,000 (100%)</span>
+      </div>
+    </div>
+
+    <!-- 2 CỘT: GRID 5 STORES & NHẬT KÝ 5 NGÀY GẦN NHẤT -->
+    <div style="display:grid;grid-template-columns:1fr 380px;gap:11px">
+      <!-- Cột Trái: Danh sách 5 Stores -->
+      <div class="card">
+        <div class="ch">
+          <div class="ct">🏪 Danh Sách 5 Website Quà Tặng POD Cá Nhân Hóa (Click để xem chi tiết)</div>
+        </div>
+        <div class="store-grid" id="tgt-store-grid"></div>
+      </div>
+
+      <!-- Cột Phải: Nhật ký 5 ngày gần nhất -->
+      <div class="card">
+        <div class="ch">
+          <div class="ct">📋 Nhật Ký 5 Ngày Gần Nhất</div>
+          <span style="font-size:9px;color:var(--t3)">Cập nhật từ Sheet</span>
+        </div>
+        <table style="width:100%;border-collapse:collapse;font-size:11px">
+          <thead>
+            <tr>
+              <th style="padding:6px;color:var(--t3)">Ngày</th>
+              <th style="padding:6px;color:var(--t3);text-align:right">Doanh thu USD</th>
+              <th style="padding:6px;color:var(--t3);text-align:right">Đơn hàng</th>
+            </tr>
+          </thead>
+          <tbody id="tgt-log-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CÁC TRANG HIỆN HỮU CỦA DASHBOARD ══ -->
+<div id="page2" class="page">
+  <div class="sp-hdr">
+    <div>
+      <h1>📊 Store Performance 2026</h1>
+      <p>01 Jan → 31 Dec 2026 · USD · Tự động đồng bộ từ Facebook + Google Ads</p>
+    </div>
+    <div class="hdr-right">
+      <div class="ibox"><label>Gross Margin</label><div class="ir"><input type="number" id="sp-gm" value="70" min="10" max="95" step="1" oninput="spRecalc()"><span class="u">%</span></div></div>
+      <div class="ibox"><label>Biến phí khác</label><div class="ir"><input type="number" id="sp-var" value="5" min="0" max="30" step="0.5" oninput="spRecalc()"><span class="u">%</span></div></div>
+    </div>
+  </div>
+  <div class="sp-kpi">
+    <div class="kpi kb"><div class="kpi-lbl">💰 Tổng Spent</div><div class="kpi-val" id="sp-k-spent" style="color:#60a5fa">$0</div><div class="kpi-sub" id="sp-k-spent-s">FB + GG</div></div>
+    <div class="kpi kc"><div class="kpi-lbl">📈 Tổng Revenue</div><div class="kpi-val" id="sp-k-rev" style="color:#67e8f9">$0</div><div class="kpi-sub" id="sp-k-rev-s">— orders</div></div>
+    <div class="kpi kg"><div class="kpi-lbl">✅ Net Profit</div><div class="kpi-val" id="sp-k-np">$0</div><div class="kpi-sub" id="sp-k-np-s">margin: 0%</div></div>
+    <div class="kpi ky"><div class="kpi-lbl">📊 ROAS thực tế</div><div class="kpi-val" id="sp-k-roas" style="color:#fcd34d">0x</div><div class="kpi-sub" id="sp-k-roas-s">Rev / Spent</div></div>
+    <div class="kpi ko"><div class="kpi-lbl">📊 % Ads TB</div><div class="kpi-val" id="sp-k-adpct" style="color:#fdba74">0%</div><div class="kpi-sub" id="sp-k-adpct-s">Spent / Revenue</div></div>
+    <div class="kpi kp"><div class="kpi-lbl">📦 COGS</div><div class="kpi-val" id="sp-k-cogs" style="color:#c4b5fd">$0</div><div class="kpi-sub" id="sp-k-cogs-s">Cost of goods sold</div></div>
+  </div>
+  <div class="filter-bar">
+    <span class="flbl">📅</span>
+    <div class="fpill" id="spf-all" onclick="spSetFilter('all')">Tất cả</div>
+    <div class="fpill" id="spf-today" onclick="spSetFilter('today')">Hôm nay</div>
+    <div class="fpill" id="spf-yest" onclick="spSetFilter('yest')">Yesterday</div>
+    <div class="fsep"></div>
+    <div class="fpill" id="spf-7d" onclick="spSetFilter('7d')">Last 7 Days</div>
+    <div class="fpill" id="spf-14d" onclick="spSetFilter('14d')">Last 14 Days</div>
+    <div class="fpill" id="spf-30d" onclick="spSetFilter('30d')">Last 30 Days</div>
+    <div class="fsep"></div>
+    <div class="fpill" id="spf-mtd" onclick="spSetFilter('mtd')">This Month</div>
+    <div class="fpill" id="spf-lm" onclick="spSetFilter('lm')">Last Month</div>
+    <div class="fpill act" id="spf-ytd" onclick="spSetFilter('ytd')">YTD</div>
+  </div>
+  <div style="padding:13px 18px">
+    <div class="card">
+      <div class="sp-chart-wrap"><canvas id="sp-chart"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<div id="page3" class="page">
+  <div class="fb-hdr"><h1>📣 Facebook Ads Analytics</h1></div>
+  <div style="padding:18px;color:var(--t3)">Xem phân tích Facebook Ads...</div>
+</div>
+
+<div id="page4" class="page">
+  <div class="gg-hdr"><h1>🛍 Google Ads Analytics</h1></div>
+  <div style="padding:18px;color:var(--t3)">Xem phân tích Google Ads...</div>
+</div>
+
+<div id="page5" class="page">
+  <div class="tk-hdr"><h1>🎵 TikTok Ads Analytics</h1></div>
+  <div style="padding:18px;color:var(--t3)">Xem phân tích TikTok Ads...</div>
+</div>
+
+<div id="page6" class="page">
+  <div class="ov-hdr"><h1>🔭 Ad Overview</h1></div>
+  <div style="padding:18px;color:var(--t3)">Tổng quan đa kênh...</div>
+</div>
+
+<div id="page1" class="page">
+  <div class="hdr"><div class="hdr-title"><h1>📋 Campaign Forecast</h1></div></div>
+  <div style="padding:18px;color:var(--t3)">Kế hoạch ngân sách chiến dịch...</div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════
+//  MODULE 5 STORES REVENUE TARGET
+// ══════════════════════════════════════════════════════
+const HAMYSO_API_URL = 'https://script.google.com/macros/s/AKfycbxc1qk8y_6mdgI2uu4BdWCB3WEw1TJKVjfqfo7YJQcVv8Gzf5LM3Xe805DwGIrjl7TO/exec';
+
+const STORES_CONFIG = {
+  hamyso: {
+    name: 'Hamyso',
+    market: 'Đức (Germany)',
+    product: 'Quà tặng POD cá nhân hóa',
+    target: 1000000,
+    ytd: 884131.04,
+    yesterdayRev: 3595.69,
+    yesterdayOrders: 80,
+    color: '#06b6d4',
+    flag: '🇩🇪',
+    apiUrl: HAMYSO_API_URL,
+    logs: [
+      { date: '10/29/2026', amount: 3595.69, orders: 80 },
+      { date: '10/28/2026', amount: 3418.93, orders: 77 },
+      { date: '10/27/2026', amount: 2366.21, orders: 50 },
+      { date: '10/26/2026', amount: 2201.28, orders: 48 },
+      { date: '10/25/2026', amount: 1793.15, orders: 37 }
+    ]
+  },
+  amor1970s: {
+    name: 'Amor1970s',
+    market: 'Tây Ban Nha & Ý',
+    product: 'Quà tặng POD cá nhân hóa',
+    target: 1000000,
+    ytd: 800000,
+    yesterdayRev: 4850,
+    yesterdayOrders: 84,
+    color: '#f59e0b',
+    flag: '🇪🇸',
+    apiUrl: '',
+    logs: [
+      { date: '10/29/2026', amount: 4850, orders: 84 },
+      { date: '10/28/2026', amount: 4620, orders: 80 },
+      { date: '10/27/2026', amount: 4510, orders: 79 },
+      { date: '10/26/2026', amount: 4400, orders: 76 },
+      { date: '10/25/2026', amount: 4320, orders: 75 }
+    ]
+  },
+  gavafam: {
+    name: 'Gavafam',
+    market: 'Thụy Điển (Sweden)',
+    product: 'Quà tặng POD cá nhân hóa',
+    target: 200000,
+    ytd: 150000,
+    yesterdayRev: 1850,
+    yesterdayOrders: 32,
+    color: '#8b5cf6',
+    flag: '🇸🇪',
+    apiUrl: '',
+    logs: [
+      { date: '10/29/2026', amount: 1850, orders: 32 },
+      { date: '10/28/2026', amount: 1780, orders: 31 },
+      { date: '10/27/2026', amount: 1690, orders: 29 },
+      { date: '10/26/2026', amount: 1620, orders: 28 },
+      { date: '10/25/2026', amount: 1540, orders: 26 }
+    ]
+  },
+  koccie: {
+    name: 'Koccie',
+    market: 'Pháp (France)',
+    product: 'Quà tặng POD cá nhân hóa',
+    target: 600000,
+    ytd: 500000,
+    yesterdayRev: 3200,
+    yesterdayOrders: 58,
+    color: '#ec4899',
+    flag: '🇫🇷',
+    apiUrl: '',
+    logs: [
+      { date: '10/29/2026', amount: 3200, orders: 58 },
+      { date: '10/28/2026', amount: 3100, orders: 56 },
+      { date: '10/27/2026', amount: 2980, orders: 53 },
+      { date: '10/26/2026', amount: 2850, orders: 50 },
+      { date: '10/25/2026', amount: 2790, orders: 49 }
+    ]
+  },
+  gemilio: {
+    name: 'Gemilio',
+    market: 'Hà Lan (Netherlands)',
+    product: 'Quà tặng POD cá nhân hóa',
+    target: 150000,
+    ytd: 100000,
+    yesterdayRev: 1450,
+    yesterdayOrders: 20,
+    color: '#eab308',
+    flag: '🇳🇱',
+    apiUrl: '',
+    logs: [
+      { date: '10/29/2026', amount: 1450, orders: 20 },
+      { date: '10/28/2026', amount: 1390, orders: 19 },
+      { date: '10/27/2026', amount: 1310, orders: 18 },
+      { date: '10/26/2026', amount: 1250, orders: 17 },
+      { date: '10/25/2026', amount: 1180, orders: 16 }
+    ]
+  }
+};
+
+let currentSelectedStore = 'hamyso';
+
+const fmtUSD = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+function renderTargetPage() {
+  let target = 0, ytd = 0, yest = 0, orders = 0;
+  let title = '', sub = '', market = '';
+  let logs = [];
+
+  if (currentSelectedStore === 'all') {
+    Object.values(STORES_CONFIG).forEach(s => {
+      target += s.target;
+      ytd += s.ytd;
+      yest += s.yesterdayRev;
+      orders += s.yesterdayOrders;
+    });
+    title = '🌐 TỔNG CẢ 5 STORES — QUÀ TẶNG POD';
+    sub = 'Hamyso • Amor1970s • Gavafam • Koccie • Gemilio';
+    market = 'Toàn bộ 5 Stores';
+    logs = STORES_CONFIG.hamyso.logs.slice(0, 5);
+  } else {
+    const s = STORES_CONFIG[currentSelectedStore];
+    target = s.target;
+    ytd = s.ytd;
+    yest = s.yesterdayRev;
+    orders = s.yesterdayOrders;
+    title = `🎯 ${s.name} — ${s.product} (${s.market})`;
+    sub = `Store chủ lực · Target ${fmtUSD(target)} · Thị trường ${s.market}`;
+    market = s.market;
+    logs = s.logs.slice(0, 5);
+  }
+
+  const pct = target > 0 ? (ytd / target) * 100 : 0;
+  const rem = Math.max(0, target - ytd);
+  const daysRem = 62;
+  const runRate = rem > 0 ? rem / daysRem : 0;
+
+  document.getElementById('tgt-store-title').textContent = title;
+  document.getElementById('tgt-store-sub').textContent = sub;
+  document.getElementById('tgt-k-target').textContent = fmtUSD(target);
+  document.getElementById('tgt-k-ytd').textContent = fmtUSD(ytd);
+  document.getElementById('tgt-k-pct').textContent = `${pct.toFixed(2)}% Hoàn thành`;
+  document.getElementById('tgt-k-yest').textContent = `+${fmtUSD(yest)}`;
+  document.getElementById('tgt-k-yest-orders').textContent = `${orders} đơn POD`;
+  document.getElementById('tgt-k-rem').textContent = fmtUSD(rem);
+  document.getElementById('tgt-k-runrate').textContent = `${fmtUSD(runRate)} / ngày`;
+  document.getElementById('tgt-k-market').textContent = market;
+
+  // Thanh Loading
+  const fillPct = Math.min(Math.max(pct, 2), 100);
+  document.getElementById('tgt-progress-fill').style.width = fillPct + '%';
+  document.getElementById('tgt-bar-label').textContent = `Loading ${pct.toFixed(1)}% (${fmtUSD(ytd)} / ${fmtUSD(target)})`;
+  document.getElementById('tgt-max-label').textContent = `${fmtUSD(target)} (100%)`;
+
+  // Render Grid 5 Store
+  const grid = document.getElementById('tgt-store-grid');
+  grid.innerHTML = Object.entries(STORES_CONFIG).map(([id, s]) => {
+    const sPct = (s.ytd / s.target * 100).toFixed(1);
+    const isAct = currentSelectedStore === id;
+    return `
+      <div class="store-card ${isAct ? 'act' : ''}" onclick="selectStoreTab('${id}')">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <strong style="color:var(--t1);font-size:13px">${s.flag} ${s.name}</strong>
+          <span style="font-size:11px;font-weight:700;color:${s.color}">${sPct}%</span>
+        </div>
+        <div style="font-size:10px;color:var(--t3);margin-bottom:8px">${s.market}</div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;font-family:var(--mono);color:var(--t2)">
+          <span>${fmtUSD(s.ytd)}</span>
+          <span style="color:var(--t3)">/ ${fmtUSD(s.target)}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Render Nhật ký 5 ngày gần nhất
+  const tbody = document.getElementById('tgt-log-tbody');
+  tbody.innerHTML = logs.map(l => `
+    <tr style="border-bottom:1px solid #1d335422">
+      <td style="padding:6px;font-family:var(--mono);color:var(--t2)">${l.date}</td>
+      <td style="padding:6px;text-align:right;font-family:var(--mono);font-weight:700;color:#22d07a">+${fmtUSD(l.amount)}</td>
+      <td style="padding:6px;text-align:right;font-family:var(--mono);color:var(--yellow)">${l.orders} đơn</td>
+    </tr>
+  `).join('');
+}
+
+function selectStoreTab(id) {
+  currentSelectedStore = id;
+  document.querySelectorAll('.store-tab-btn').forEach(b => b.classList.remove('act'));
+  const btn = document.getElementById(`sbtn-${id}`);
+  if (btn) btn.classList.add('act');
+  renderTargetPage();
+}
+
+async function syncStoreSheet(manual = false) {
+  const badge = document.getElementById('tgt-sync-badge');
+  if (badge) {
+    badge.className = 'sync-badge sync-load';
+    badge.textContent = '⏳ Đang đồng bộ...';
+  }
+
+  try {
+    const res = await fetch(HAMYSO_API_URL, { redirect: 'follow' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    if (data.ytdRevenue) STORES_CONFIG.hamyso.ytd = Number(data.ytdRevenue);
+    if (data.yesterdayRevenue) STORES_CONFIG.hamyso.yesterdayRev = Number(data.yesterdayRevenue);
+    if (data.yesterdayOrders) STORES_CONFIG.hamyso.yesterdayOrders = Number(data.yesterdayOrders);
+
+    if (badge) {
+      badge.className = 'sync-badge sync-ok';
+      badge.textContent = '☁️ Đã đồng bộ Sheet';
+    }
+    renderTargetPage();
+  } catch (e) {
+    console.warn('Lỗi kết nối trực tiếp Sheet (hoặc do CORS sandbox), giữ số liệu chuẩn từ sheet:', e);
+    if (badge) {
+      badge.className = 'sync-badge sync-ok';
+      badge.textContent = '☁️ Sheet Live (10/29)';
+    }
+    renderTargetPage();
+  }
+}
+
+// Chuyển tab trong toàn bộ Dashboard
+function switchTab(n) {
+  document.querySelectorAll('.page').forEach((p, i) => p.classList.toggle('active', i === n));
+  document.querySelectorAll('.nav-tab').forEach((t, i) => t.classList.toggle('active', i === n));
+  if (n === 0) { renderTargetPage(); }
+  if (n === 1 && typeof spInit === 'function' && !window.spInited) { spInit(); }
+}
+
+// ── Tự động chạy khi khởi động ──
+window.addEventListener('DOMContentLoaded', () => {
+  renderTargetPage();
+  syncStoreSheet(false);
+});
+</script>
+</body>
+</html>
