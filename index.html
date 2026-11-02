@@ -1063,6 +1063,7 @@ async function syncHamysoSheet(manual = false) {
     const data = await res.json();
 
     parseGoogleSheetResponse(data);
+    saveHamysoCache();
 
     if (badge) {
       badge.className = 'sync-badge sync-ok';
@@ -1100,10 +1101,38 @@ function switchTab(n) {
   if (n === 6 && typeof fcInit === 'function') { fcInit(); }
 }
 
-// Khởi chạy khi load trang
+// ── CƠ CHẾ CACHE-FIRST & BACKGROUND SYNC (MỞ LÊN LÀ CÓ DATA NGAY) ──
+const HAMYSO_CACHE_KEY = 'hamyso_target_v1_cache';
+
+function loadHamysoCache() {
+  try {
+    const cached = localStorage.getItem(HAMYSO_CACHE_KEY);
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (parsed && parsed.ytd) {
+        hamysoData = { ...hamysoData, ...parsed };
+      }
+    }
+  } catch (e) {
+    console.warn('Lỗi đọc cache local:', e);
+  }
+}
+
+function saveHamysoCache() {
+  try {
+    localStorage.setItem(HAMYSO_CACHE_KEY, JSON.stringify(hamysoData));
+  } catch (e) {
+    console.warn('Lỗi ghi cache local:', e);
+  }
+}
+
+// Khởi chạy tức thì từ Cache trước, sau đó đồng bộ ngầm
 window.addEventListener('DOMContentLoaded', () => {
-  renderHamysoTarget();
-  syncHamysoSheet(false);
+  loadHamysoCache();     // 1. Nạp tức thì trong 0.01s từ bộ nhớ máy
+  renderHamysoTarget();  // 2. Render ngay lập tức, không để màn hình trống
+  setTimeout(() => {
+    syncHamysoSheet(false); // 3. Đồng bộ ngầm phía sau sau 300ms để không nghẽn mạng
+  }, 300);
 });
 </script>
 </body>
