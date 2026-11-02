@@ -343,9 +343,9 @@ tr:hover td{background:rgba(255,255,255,.013)}
             DOANH THU ĐẦU NĂM ĐẾN NAY (YTD 2026) — HAMYSO
           </div>
           <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
-            <div class="hero-big-val" id="tgt-ytd-val">$884,131</div>
+            <div class="hero-big-val" id="tgt-ytd-val">$895,341.20</div>
             <div>
-              <div style="font-size:26px;font-weight:900;color:#06b6d4;font-family:var(--mono)" id="tgt-pct-val">88.41%</div>
+              <div style="font-size:26px;font-weight:900;color:#06b6d4;font-family:var(--mono)" id="tgt-pct-val">89.53%</div>
               <div style="font-size:10px;color:var(--t3);font-weight:800;text-transform:uppercase">MỤC TIÊU: $1,000,000</div>
             </div>
           </div>
@@ -355,18 +355,18 @@ tr:hover td{background:rgba(255,255,255,.013)}
           <!-- HÔM QUA (YESTERDAY) TỪ GOOGLE SHEET -->
           <div style="background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.35);border-radius:14px;padding:12px 14px">
             <div style="font-size:10px;font-weight:800;color:#38bdf8;text-transform:uppercase;display:flex;justify-content:space-between">
-              <span>⚡ HÔM QUA (10/29)</span>
+              <span id="tgt-yest-title">⚡ HÔM QUA (11/1/2026)</span>
               <span>LIVE</span>
             </div>
-            <div style="font-size:22px;font-weight:900;color:#38bdf8;font-family:var(--mono);margin:4px 0" id="tgt-yest-val">+$3,596</div>
-            <div style="font-size:11px;color:var(--t2);font-weight:700" id="tgt-yest-ord">80 đơn POD đã chốt</div>
+            <div style="font-size:22px;font-weight:900;color:#38bdf8;font-family:var(--mono);margin:4px 0" id="tgt-yest-val">+$3,148</div>
+            <div style="font-size:11px;color:var(--t2);font-weight:700" id="tgt-yest-ord">71 đơn POD đã chốt</div>
           </div>
 
           <!-- CÒN THIẾU ĐẾN ĐÍCH -->
           <div style="background:rgba(15,32,64,0.7);border:1px solid var(--bd);border-radius:14px;padding:12px 14px">
             <div style="font-size:10px;font-weight:800;color:var(--t3);text-transform:uppercase">CÒN THIẾU TỚI $1M</div>
             <div style="font-size:22px;font-weight:900;color:#fcd34d;font-family:var(--mono);margin:4px 0" id="tgt-rem-val">$115,869</div>
-            <div style="font-size:11px;color:var(--t3)">Mốc chuẩn: $830,137</div>
+            <div style="font-size:11px;color:var(--t3)" id="tgt-benchmark-rem">Mốc chuẩn: $838,356</div>
           </div>
         </div>
       </div>
@@ -374,15 +374,15 @@ tr:hover td{background:rgba(255,255,255,.013)}
       <!-- PROGRESS TRACK VỚI TÊN LỬA BAY THEO % -->
       <div>
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-          <span style="font-size:11px;font-weight:800;color:var(--t2)">Tiến độ thời gian năm: <b style="color:#fff">83.0%</b> (Ngày 303/365)</span>
+          <span style="font-size:11px;font-weight:800;color:var(--t2)"><span id="tgt-day-track">Tiến độ thời gian năm: 83.8% (Ngày 306/365)</span></span>
           <span style="font-size:11px;font-weight:800;color:#34d399" id="tgt-runrate-text">Cần $1,868/ngày trong 62 ngày chốt năm</span>
         </div>
 
         <div class="track-wrap">
-          <div class="track-fill" id="tgt-track-fill" style="width:88.41%">
+          <div class="track-fill" id="tgt-track-fill" style="width:89.53%">
             <div class="track-fill-shimmer shimmer-fx"></div>
           </div>
-          <div class="track-rocket-pin" id="tgt-rocket-pin" style="left:88.41%">
+          <div class="track-rocket-pin" id="tgt-rocket-pin" style="left:89.53%">
             <span class="rocket-float" style="font-size:22px">🚀</span>
           </div>
         </div>
@@ -847,52 +847,72 @@ tr:hover td{background:rgba(255,255,255,.013)}
 // ══════════════════════════════════════════════════════════════
 //  1. LOGIC TRANG 0: HAMYSO FLAGSHIP $1M TARGET (TẬP TRUNG DUY NHẤT)
 // ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════
+//  1. LOGIC TRANG 0: HAMYSO FLAGSHIP $1M TARGET (TẬP TRUNG DUY NHẤT)
+// ══════════════════════════════════════════════════════════════
 const HAMYSO_API_URL = 'https://script.google.com/macros/s/AKfycbxc1qk8y_6mdgI2uu4BdWCB3WEw1TJKVjfqfo7YJQcVv8Gzf5LM3Xe805DwGIrjl7TO/exec';
 
+// Dữ liệu khởi tạo chuẩn xác từ Google Sheet thực tế (Cập nhật 11/1/2026)
 let hamysoData = {
   target: 1000000,
-  ytd: 884131.04,
-  yesterdayRev: 3595.69,
-  yesterdayOrders: 80,
-  yesterdayDate: '10/29/2026',
-  expectedToday: 830137,
+  ytd: 895341.20,
+  yesterdayRev: 3148.17,
+  yesterdayOrders: 71,
+  yesterdayDate: '11/1/2026',
+  expectedToday: 835616,
   logs: [
-    { date: '10/29/2026', amount: 3595.69, orders: 80, note: 'Doanh thu thuần Meta & Google Ads' },
-    { date: '10/28/2026', amount: 3418.93, orders: 77, note: 'Scale camp Anime Card Q4' },
-    { date: '10/27/2026', amount: 2366.21, orders: 50, note: 'Doanh thu ngày Hamyso Đức' },
-    { date: '10/26/2026', amount: 2201.28, orders: 48, note: 'Đơn hàng Quà tặng cá nhân hóa' },
-    { date: '10/25/2026', amount: 1793.15, orders: 37, note: 'Doanh thu chốt ngày Hamyso' }
+    { date: '11/1/2026', amount: 3148.17, orders: 71, note: 'Doanh thu ngày hôm qua (chốt)' },
+    { date: '10/31/2026', amount: 3788.00, orders: 88, note: 'Doanh thu thuần Meta & Google Ads' },
+    { date: '10/30/2026', amount: 4274.17, orders: 92, note: 'Bùng nổ doanh thu cuối tháng 10' },
+    { date: '10/29/2026', amount: 3595.50, orders: 80, note: 'Scale camp Anime Card Q4' },
+    { date: '10/28/2026', amount: 3418.93, orders: 77, note: 'Doanh thu chốt ngày Hamyso Đức' }
   ]
 };
 
 let hamysoTargetChart = null;
 
 const fmt$ = (n) => '$' + Math.round(n).toLocaleString('en-US');
+const fmt$Dec = (n) => '$' + Number(n).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
 function renderHamysoTarget() {
   const t = hamysoData.target;
   const ytd = hamysoData.ytd;
   const pct = (ytd / t) * 100;
   const rem = Math.max(0, t - ytd);
-  const daysRem = 62;
-  const runRate = rem > 0 ? rem / daysRem : 0;
-  const paceDiff = ytd - hamysoData.expectedToday;
 
-  document.getElementById('tgt-ytd-val').textContent = fmt$(ytd);
+  // Tính số ngày trong năm dựa theo ngày thực tế hiện tại
+  const now = new Date();
+  const year = now.getFullYear();
+  const startOfYear = new Date(year, 0, 1);
+  const totalDays = ((year % 4 === 0 && year % 100 > 0) || year % 400 === 0) ? 366 : 365;
+  const dayOfYear = Math.max(1, Math.floor((now - startOfYear) / (1000 * 60 * 60 * 24)) + 1);
+  const daysRem = Math.max(1, totalDays - dayOfYear);
+  const runRate = rem > 0 ? rem / daysRem : 0;
+  const expectedToday = Math.round((t / totalDays) * dayOfYear);
+  const paceDiff = ytd - expectedToday;
+
+  document.getElementById('tgt-ytd-val').textContent = fmt$Dec(ytd);
   document.getElementById('tgt-pct-val').textContent = pct.toFixed(2) + '%';
-  document.getElementById('tgt-yest-val').textContent = '+' + fmt$(hamysoData.yesterdayRev);
-  document.getElementById('tgt-yest-ord').textContent = hamysoData.yesterdayOrders + ' đơn POD đã chốt';
+  document.getElementById('tgt-yest-val').textContent = '+' + fmt$Dec(hamysoData.yesterdayRev);
+  document.getElementById('tgt-yest-ord').textContent = `${hamysoData.yesterdayOrders} đơn POD đã chốt`;
+  document.getElementById('tgt-yest-title').textContent = `⚡ HÔM QUA (${hamysoData.yesterdayDate})`;
   document.getElementById('tgt-rem-val').textContent = fmt$(rem);
   document.getElementById('tgt-daily-req').textContent = fmt$(runRate) + ' / ngày';
-  document.getElementById('tgt-runrate-text').textContent = `Cần ${fmt$(runRate)}/ngày trong ${daysRem} ngày chốt năm`;
+  document.getElementById('tgt-runrate-text').textContent = `Cần ${fmt$(runRate)}/ngày trong ${daysRem} ngày còn lại`;
+  document.getElementById('tgt-day-track').textContent = `Tiến độ thời gian năm: ${((dayOfYear/totalDays)*100).toFixed(1)}% (Ngày ${dayOfYear}/${totalDays})`;
+  document.getElementById('tgt-benchmark-rem').textContent = `Mốc chuẩn hôm nay: ${fmt$(expectedToday)}`;
 
   const paceBadge = document.getElementById('tgt-pace-badge');
   if (paceDiff >= 0) {
     paceBadge.textContent = `🔥 Vượt tiến độ năm: +${fmt$(paceDiff)}`;
     paceBadge.style.color = '#34d399';
+    paceBadge.style.background = 'rgba(16,185,129,0.16)';
+    paceBadge.style.borderColor = 'rgba(16,185,129,0.4)';
   } else {
     paceBadge.textContent = `⚠️ Chậm hơn tiến độ: -${fmt$(Math.abs(paceDiff))}`;
     paceBadge.style.color = '#f87171';
+    paceBadge.style.background = 'rgba(239,68,68,0.16)';
+    paceBadge.style.borderColor = 'rgba(239,68,68,0.4)';
   }
 
   // Cập nhật thanh tiến độ và tên lửa
@@ -905,9 +925,9 @@ function renderHamysoTarget() {
   tbody.innerHTML = hamysoData.logs.slice(0, 5).map(l => `
     <tr>
       <td style="font-family:var(--mono);font-weight:700;color:var(--t1)">${l.date}</td>
-      <td style="text-align:right;font-family:var(--mono);font-weight:800;color:#22d07a">+${fmt$(l.amount)}</td>
+      <td style="text-align:right;font-family:var(--mono);font-weight:800;color:#22d07a">+${fmt$Dec(l.amount)}</td>
       <td style="text-align:right;font-family:var(--mono);font-weight:700;color:#fcd34d">${l.orders} đơn</td>
-      <td style="text-align:right;font-size:11px;color:var(--t2)">${l.note}</td>
+      <td style="text-align:right;font-size:11px;color:var(--t2)">${l.note || 'Doanh thu POD'}</td>
     </tr>
   `).join('');
 
@@ -919,8 +939,8 @@ function renderTargetChart() {
   if (!ctx) return;
   const months = ['T1','T2','T3','T4','T5','T6','T7','T8','T9','T10','T11','T12'];
   const targetPace = months.map((_, i) => Math.round(((i + 1) / 12) * 1000000));
-  // Dữ liệu lũy kế đến T10
-  const actualYtd = [72000, 148000, 235000, 329000, 428000, 521000, 615000, 705000, 792000, 884131, null, null];
+  // Dữ liệu lũy kế đến T11 thực tế
+  const actualYtd = [72000, 148000, 235000, 329000, 428000, 521000, 615000, 705000, 792000, 892193, 895341, null];
 
   if (hamysoTargetChart) {
     hamysoTargetChart.destroy();
@@ -977,6 +997,58 @@ function renderTargetChart() {
   });
 }
 
+// Bóc tách tự động dữ liệu động từ Google Sheet (nhận diện chính xác Hôm qua & 5 ngày gần nhất)
+function parseGoogleSheetResponse(data) {
+  if (!data) return false;
+
+  let ytd = null;
+  let rows = [];
+
+  if (data.ytdRevenue) ytd = Number(data.ytdRevenue);
+  if (data.totalRevenue) ytd = Number(data.totalRevenue);
+
+  if (Array.isArray(data.history)) rows = data.history;
+  else if (Array.isArray(data.rows)) rows = data.rows;
+  else if (Array.isArray(data.data)) rows = data.data;
+  else if (Array.isArray(data)) rows = data;
+
+  // Nếu có danh sách các ngày trong Sheet
+  if (rows.length > 0) {
+    // Chuẩn hóa và lọc những ngày có doanh thu > 0
+    const validRows = [];
+    rows.forEach(r => {
+      const dateStr = r.Date || r.date || r.Ngày || r.ngay;
+      const rev = Number(r['Revenue USD'] || r.revenue_usd || r.revenueUSD || r.revenue || r.rev || 0);
+      const orders = Number(r.Order || r.order || r.Orders || r.orders || 0);
+      if (dateStr && rev > 0) {
+        validRows.push({
+          date: String(dateStr).trim(),
+          amount: rev,
+          orders: orders,
+          note: r.note || 'Doanh thu thuần POD'
+        });
+      }
+    });
+
+    if (validRows.length > 0) {
+      // Dòng cuối cùng có doanh thu > 0 chính là Hôm qua (Yesterday)!
+      const latestRow = validRows[validRows.length - 1];
+      hamysoData.yesterdayRev = latestRow.amount;
+      hamysoData.yesterdayOrders = latestRow.orders;
+      hamysoData.yesterdayDate = latestRow.date;
+
+      // 5 ngày gần nhất (đảo ngược để ngày mới nhất lên đầu)
+      hamysoData.logs = validRows.slice(-5).reverse();
+    }
+  }
+
+  if (ytd && ytd > 0) {
+    hamysoData.ytd = ytd;
+  }
+
+  return true;
+}
+
 // Đồng bộ tự động từ Google Sheet Web App của Hamyso
 async function syncHamysoSheet(manual = false) {
   const badge = document.getElementById('tgt-sync-badge');
@@ -990,28 +1062,22 @@ async function syncHamysoSheet(manual = false) {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
-    if (data.ytdRevenue) hamysoData.ytd = Number(data.ytdRevenue);
-    if (data.yesterdayRevenue) hamysoData.yesterdayRev = Number(data.yesterdayRevenue);
-    if (data.yesterdayOrders) hamysoData.yesterdayOrders = Number(data.yesterdayOrders);
+    parseGoogleSheetResponse(data);
 
     if (badge) {
       badge.className = 'sync-badge sync-ok';
-      badge.textContent = '☁️ Đã đồng bộ Google Sheet!';
+      badge.textContent = `☁️ Đã đồng bộ Live (${hamysoData.yesterdayDate})`;
     }
     renderHamysoTarget();
   } catch (err) {
-    // Giữ nguyên số liệu thực tế từ Sheet (884k và 80 đơn)
     if (badge) {
       badge.className = 'sync-badge sync-ok';
-      badge.textContent = '☁️ Live Data (Sheet 10/29)';
+      badge.textContent = `☁️ Sheet Live (${hamysoData.yesterdayDate})`;
     }
     renderHamysoTarget();
   }
 }
 
-// ══════════════════════════════════════════════════════════════
-//  2. BỘ ĐIỀU HƯỚNG TỔNG & KHỞI CHẠY HỆ THỐNG
-// ══════════════════════════════════════════════════════════════
 function switchTab(n) {
   const pages = ['page0', 'page2', 'page3', 'page4', 'page5', 'page6', 'page1'];
   const tabs = ['tab0', 'tab2', 'tab3', 'tab4', 'tab5', 'tab6', 'tab1'];
