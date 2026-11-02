@@ -417,14 +417,62 @@ tr:hover td{background:rgba(255,255,255,.013)}
 .ov-share-bar{display:flex;height:6px;border-radius:3px;overflow:hidden;margin-top:4px;gap:1px}
 .ov-share-fb{background:#f5922d;border-radius:3px 0 0 3px}
 .ov-share-gg{background:#4d8ef5;border-radius:0 3px 3px 0}
+
+/* ── TARGET PAGE 0 STYLES ── */
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
+@keyframes rocketFloat{0%,100%{transform:translateY(0) rotate(45deg)}50%{transform:translateY(-5px) rotate(45deg)}}
+.shimmer-fx{animation:shimmer 2.4s infinite linear}
+.rocket-float{animation:rocketFloat 1.8s infinite ease-in-out;display:inline-block}
+
+.ambient-glow-1{position:fixed;top:-10%;left:-5%;width:500px;height:500px;background:rgba(6,182,212,0.12);border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0}
+.ambient-glow-2{position:fixed;top:20%;right:-5%;width:550px;height:550px;background:rgba(16,185,129,0.1);border-radius:50%;filter:blur(150px);pointer-events:none;z-index:0}
+
+.glass-panel{background:rgba(12,26,46,0.78);backdrop-filter:blur(16px);border:1px solid rgba(29,51,84,0.85);border-radius:18px;padding:18px 22px;box-shadow:0 12px 36px rgba(0,0,0,0.35)}
+.glass-panel.highlight{border-color:rgba(6,182,212,0.4);box-shadow:0 0 30px rgba(6,182,212,0.15)}
+
+.badge-flagship{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:99px;font-size:10px;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;background:rgba(6,182,212,0.15);color:#38bdf8;border:1px solid rgba(6,182,212,0.35)}
+.badge-pace{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:99px;font-size:11px;font-weight:800;background:rgba(16,185,129,0.16);color:#34d399;border:1px solid rgba(16,185,129,0.4)}
+.hero-big-val{font-size:52px;font-weight:900;font-family:var(--mono);line-height:1;background:linear-gradient(135deg,#ffffff 20%,#bae6fd 60%,#34d399 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.03em}
+
+.track-wrap{position:relative;background:#050811;border:1.5px solid rgba(29,51,84,0.9);border-radius:18px;height:52px;padding:4px;overflow:visible;box-shadow:inset 0 4px 12px rgba(0,0,0,0.6)}
+.track-fill{position:relative;height:100%;border-radius:12px;background:linear-gradient(90deg,#0284c7,#06b6d4,#10b981,#34d399);overflow:hidden;box-shadow:0 0 25px rgba(6,182,212,0.5);transition:width 0.8s cubic-bezier(0.16,1,0.3,1)}
+.track-fill-shimmer{position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent)}
+.track-rocket-pin{position:absolute;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:14px;background:#0c1a2e;border:2px solid #06b6d4;display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(6,182,212,0.8);z-index:10;transition:left 0.8s cubic-bezier(0.16,1,0.3,1)}
+.track-milestones{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.milestone-item{background:rgba(15,32,64,0.6);border:1px solid rgba(29,51,84,0.7);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px}
+.milestone-item.reached{border-color:rgba(16,185,129,0.4);background:rgba(16,185,129,0.1)}
+.milestone-item.reached .m-icon{background:#10b981;color:#050811}
+.m-icon{width:26px;height:26px;border-radius:8px;background:rgba(29,51,84,0.8);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900}
+
+.tgt-kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.tgt-kpi-box{background:rgba(12,26,46,0.85);border:1px solid rgba(29,51,84,0.8);border-radius:16px;padding:16px 18px;position:relative;overflow:hidden}
+.tgt-kpi-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.tgt-kpi-box.c1::before{background:#06b6d4}
+.tgt-kpi-box.c2::before{background:#10b981}
+.tgt-kpi-box.c3::before{background:#f59e0b}
+.tgt-kpi-box.c4::before{background:#8b5cf6}
+.tgt-lbl{font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--t3);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.tgt-val{font-size:24px;font-weight:900;font-family:var(--mono);line-height:1.1}
+.tgt-sub{font-size:11px;color:var(--t2);margin-top:5px;font-weight:600}
+
+.log-tw{width:100%;border-collapse:collapse;font-size:12px}
+.log-tw th{padding:8px 12px;text-align:left;font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--t3);border-bottom:1px solid var(--bd)}
+.log-tw td{padding:8px 12px;border-bottom:1px solid rgba(29,51,84,0.3);vertical-align:middle}
+.log-tw tr:hover td{background:rgba(6,182,212,0.04)}
+
 </style>
 </head>
 <body>
 
 <!-- ══ NAV ══ -->
+<div class="ambient-glow-1"></div>
+<div class="ambient-glow-2"></div>
+
+<!-- ══ NAV ══ -->
 <div class="nav">
-  <div class="nav-brand">🚀 Hamyso</div>
-  <div class="nav-tab active" id="tab2" onclick="switchTab(1)">📊 Store Performance</div>
+  <div class="nav-brand"><span>🚀</span><span>HAMYSO FLAGSHIP</span></div>
+  <div class="nav-tab active" id="tab0" onclick="switchTab(0)">🎯 Hamyso $1M Target</div>
+  <div class="nav-tab" id="tab2" onclick="switchTab(1)">📊 Store Performance</div>
   <div class="nav-tab" id="tab3" onclick="switchTab(2)">📣 Facebook Ads</div>
   <div class="nav-tab" id="tab4" onclick="switchTab(3)">🛍 Google Ads</div>
   <div class="nav-tab" id="tab5" onclick="switchTab(4)">🎵 TikTok Ads</div>
@@ -433,7 +481,173 @@ tr:hover td{background:rgba(255,255,255,.013)}
 </div>
 
 <!-- ══ PAGE 1 — CAMPAIGN FORECAST ══ -->
-<div id="page2" class="page active">
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 0: HAMYSO FLAGSHIP $1,000,000 TARGET (CHUYÊN BIỆT & ĐẲNG CẤP)
+     ══════════════════════════════════════════════════════════ -->
+<div id="page0" class="page active">
+  <div style="padding:16px 20px;max-width:1440px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:14px">
+
+    <!-- HERO PANEL -->
+    <div class="glass-panel highlight">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span class="badge-flagship">🇩🇪 HAMYSO GERMANY • FLAGSHIP POD</span>
+          <span class="badge-pace" id="tgt-pace-badge">🔥 Vượt tiến độ năm: +$57,000</span>
+          <span style="font-size:11px;color:var(--t3);font-weight:600">hamyso.com · Quà tặng POD cá nhân hóa</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div id="tgt-sync-badge" class="sync-badge sync-load">⏳ Đang kết nối Sheet...</div>
+          <button class="rbtn" style="background:linear-gradient(135deg,#06b6d4,#10b981);color:#050811;border:none;font-weight:800" onclick="syncHamysoSheet(true)">🔄 Sync Live Sheet</button>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px;align-items:flex-end;margin-bottom:20px">
+        <div>
+          <div style="font-size:11px;font-weight:800;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">
+            DOANH THU ĐẦU NĂM ĐẾN NAY (YTD 2026) — HAMYSO
+          </div>
+          <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+            <div class="hero-big-val" id="tgt-ytd-val">$895,341.20</div>
+            <div>
+              <div style="font-size:26px;font-weight:900;color:#06b6d4;font-family:var(--mono)" id="tgt-pct-val">89.53%</div>
+              <div style="font-size:10px;color:var(--t3);font-weight:800;text-transform:uppercase">MỤC TIÊU: $1,000,000</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <!-- HÔM QUA (YESTERDAY) TỪ GOOGLE SHEET -->
+          <div style="background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.35);border-radius:14px;padding:12px 14px">
+            <div style="font-size:10px;font-weight:800;color:#38bdf8;text-transform:uppercase;display:flex;justify-content:space-between">
+              <span id="tgt-yest-title">⚡ HÔM QUA (11/1/2026)</span>
+              <span style="font-size:9px;background:#0284c7;color:#fff;padding:1px 5px;border-radius:4px">CHỐT</span>
+            </div>
+            <div style="font-size:22px;font-weight:900;color:#38bdf8;font-family:var(--mono);margin:4px 0" id="tgt-yest-val">+$3,148.17</div>
+            <div style="font-size:11px;color:var(--t2);font-weight:700" id="tgt-yest-ord">71 đơn POD đã chốt</div>
+          </div>
+
+          <!-- CÒN THIẾU ĐẾN ĐÍCH -->
+          <div style="background:rgba(15,32,64,0.7);border:1px solid var(--bd);border-radius:14px;padding:12px 14px">
+            <div style="font-size:10px;font-weight:800;color:var(--t3);text-transform:uppercase">CÒN THIẾU TỚI $1M</div>
+            <div style="font-size:22px;font-weight:900;color:#fcd34d;font-family:var(--mono);margin:4px 0" id="tgt-rem-val">$104,658.80</div>
+            <div style="font-size:11px;color:var(--t3)" id="tgt-benchmark-rem">Mốc chuẩn: $838,356</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROGRESS TRACK VỚI TÊN LỬA BAY THEO % -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span style="font-size:11px;font-weight:800;color:var(--t2)"><span id="tgt-day-track">Tiến độ thời gian năm: 83.8% (Ngày 306/365)</span></span>
+          <span style="font-size:11px;font-weight:800;color:#34d399" id="tgt-runrate-text">Cần $1,773/ngày trong 59 ngày còn lại</span>
+        </div>
+
+        <div class="track-wrap">
+          <div class="track-fill" id="tgt-track-fill" style="width:89.53%">
+            <div class="track-fill-shimmer shimmer-fx"></div>
+          </div>
+          <div class="track-rocket-pin" id="tgt-rocket-pin" style="left:89.53%">
+            <span class="rocket-float" style="font-size:22px">🚀</span>
+          </div>
+        </div>
+
+        <!-- 4 CỘT MỐC CHUẨN -->
+        <div class="track-milestones">
+          <div class="milestone-item reached">
+            <div class="m-icon">✓</div>
+            <div>
+              <div style="font-size:11px;font-weight:800;color:#fff">$250,000 (25%)</div>
+              <div style="font-size:10px;color:var(--t3)">Khởi động Q1</div>
+            </div>
+          </div>
+          <div class="milestone-item reached">
+            <div class="m-icon">✓</div>
+            <div>
+              <div style="font-size:11px;font-weight:800;color:#fff">$500,000 (50%)</div>
+              <div style="font-size:10px;color:var(--t3)">Nửa chặng đường</div>
+            </div>
+          </div>
+          <div class="milestone-item reached">
+            <div class="m-icon">✓</div>
+            <div>
+              <div style="font-size:11px;font-weight:800;color:#fff">$750,000 (75%)</div>
+              <div style="font-size:10px;color:var(--t3)">Bứt tốc Q4</div>
+            </div>
+          </div>
+          <div class="milestone-item" id="m-100">
+            <div class="m-icon" style="background:#f59e0b;color:#050811">🏆</div>
+            <div>
+              <div style="font-size:11px;font-weight:800;color:#fcd34d">$1,000,000 TARGET</div>
+              <div style="font-size:10px;color:var(--t3)">Chạm đỉnh Mục Tiêu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 KPI CARDS -->
+    <div class="tgt-kpi-grid">
+      <div class="tgt-kpi-box c1">
+        <div class="tgt-lbl"><span>TRUNG BÌNH/NGÀY TỪ ĐẦU NĂM</span><span>📈</span></div>
+        <div class="tgt-val" id="tgt-daily-avg">$2,925</div>
+        <div class="tgt-sub">Tính trên 306 ngày đã qua</div>
+      </div>
+      <div class="tgt-kpi-box c2">
+        <div class="tgt-lbl"><span>RUN-RATE CẦN ĐẠT MỖI NGÀY</span><span>🎯</span></div>
+        <div class="tgt-val" style="color:#34d399" id="tgt-daily-req">$1,773</div>
+        <div class="tgt-sub">Dễ dàng về đích trước 31/12</div>
+      </div>
+      <div class="tgt-kpi-box c3">
+        <div class="tgt-lbl"><span>AOV &amp; CONVERSION RATE</span><span>🛍</span></div>
+        <div class="tgt-val" style="color:#fcd34d">$57.3 <span style="font-size:16px;color:var(--t2)">/ 3.4%</span></div>
+        <div class="tgt-sub">Quà tặng POD cá nhân hóa</div>
+      </div>
+      <div class="tgt-kpi-box c4">
+        <div class="tgt-lbl"><span>DỰ PHÓNG KẾT NĂM 2026</span><span>🎉</span></div>
+        <div class="tgt-val" style="color:#c4b5fd" id="tgt-proj-eoy">$1,068,000</div>
+        <div class="tgt-sub">Vượt 106% kế hoạch đề ra</div>
+      </div>
+    </div>
+
+    <!-- 2 CỘT: BIỂU ĐỒ TĂNG TRƯỞNG & NHẬT KÝ 5 NGÀY GẦN NHẤT -->
+    <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:14px">
+      <!-- Cột Trái: Chart tăng trưởng so với đường chuẩn -->
+      <div class="glass-panel">
+        <div class="ch">
+          <div class="ct">📈 Biểu đồ Lũy kế Thực tế vs Đường chuẩn Target $1M (Hamyso)</div>
+          <span style="font-size:10px;padding:3px 8px;border-radius:6px;background:rgba(6,182,212,0.15);color:#38bdf8;font-weight:700">Đạt 89.5%</span>
+        </div>
+        <div style="height:230px;position:relative">
+          <canvas id="hamyso-target-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Cột Phải: Nhật ký 5 ngày gần nhất -->
+      <div class="glass-panel">
+        <div class="ch">
+          <div class="ct">📋 Nhật Ký Doanh Thu 5 Ngày Gần Nhất</div>
+          <span style="font-size:9px;color:var(--t3);font-family:var(--mono)">Tự động từ Sheet</span>
+        </div>
+        <table class="log-tw">
+          <thead>
+            <tr>
+              <th>Ngày</th>
+              <th style="text-align:right">Doanh thu USD</th>
+              <th style="text-align:right">Orders POD</th>
+              <th style="text-align:right">Ghi chú</th>
+            </tr>
+          </thead>
+          <tbody id="tgt-log-rows">
+            <!-- 5 ngày tự động điền -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="page2" class="page">
 
 <!-- SP HEADER -->
 <div class="sp-hdr">
@@ -2109,17 +2323,275 @@ function fcInit(){
 // ══════════════════════════════════════════════════════
 //  TAB SWITCH
 // ══════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════════
+//  LOGIC TRANG 0: HAMYSO FLAGSHIP $1M TARGET (TẬP TRUNG DUY NHẤT)
+// ══════════════════════════════════════════════════════════════
+const HAMYSO_API_URL = 'https://script.google.com/macros/s/AKfycbxc1qk8y_6mdgI2uu4BdWCB3WEw1TJKVjfqfo7YJQcVv8Gzf5LM3Xe805DwGIrjl7TO/exec';
+
+let hamysoData = {
+  target: 1000000,
+  ytd: 895341.20,
+  yesterdayRev: 3148.17,
+  yesterdayOrders: 71,
+  yesterdayDate: '11/1/2026',
+  expectedToday: 838356,
+  logs: [
+    { date: '11/1/2026', amount: 3148.17, orders: 71, note: 'Doanh thu hôm qua (chốt)' },
+    { date: '10/31/2026', amount: 3788.00, orders: 88, note: 'Doanh thu thuần Meta & Google Ads' },
+    { date: '10/30/2026', amount: 4274.17, orders: 92, note: 'Bùng nổ doanh thu cuối tháng 10' },
+    { date: '10/29/2026', amount: 3595.50, orders: 80, note: 'Scale camp Anime Card Q4' },
+    { date: '10/28/2026', amount: 3418.93, orders: 77, note: 'Doanh thu chốt ngày Hamyso Đức' }
+  ]
+};
+
+let hamysoTargetChart = null;
+const fmt$ = (n) => '$' + Math.round(n).toLocaleString('en-US');
+const fmt$Dec = (n) => '$' + Number(n).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+function renderHamysoTarget() {
+  const t = hamysoData.target;
+  const ytd = hamysoData.ytd;
+  const pct = (ytd / t) * 100;
+  const rem = Math.max(0, t - ytd);
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const startOfYear = new Date(year, 0, 1);
+  const totalDays = ((year % 4 === 0 && year % 100 > 0) || year % 400 === 0) ? 366 : 365;
+  const dayOfYear = Math.max(1, Math.floor((now - startOfYear) / (1000 * 60 * 60 * 24)) + 1);
+  const daysRem = Math.max(1, totalDays - dayOfYear);
+  const runRate = rem > 0 ? rem / daysRem : 0;
+  const expectedToday = Math.round((t / totalDays) * dayOfYear);
+  const paceDiff = ytd - expectedToday;
+
+  const ytdEl = document.getElementById('tgt-ytd-val');
+  if(ytdEl) ytdEl.textContent = fmt$Dec(ytd);
+  const pctEl = document.getElementById('tgt-pct-val');
+  if(pctEl) pctEl.textContent = pct.toFixed(2) + '%';
+  const yestEl = document.getElementById('tgt-yest-val');
+  if(yestEl) yestEl.textContent = '+' + fmt$Dec(hamysoData.yesterdayRev);
+  const yestOrdEl = document.getElementById('tgt-yest-ord');
+  if(yestOrdEl) yestOrdEl.textContent = `${hamysoData.yesterdayOrders} đơn POD đã chốt`;
+  const yestTitleEl = document.getElementById('tgt-yest-title');
+  if(yestTitleEl) yestTitleEl.textContent = `⚡ HÔM QUA (${hamysoData.yesterdayDate})`;
+  const remEl = document.getElementById('tgt-rem-val');
+  if(remEl) remEl.textContent = fmt$Dec(rem);
+  const reqEl = document.getElementById('tgt-daily-req');
+  if(reqEl) reqEl.textContent = fmt$(runRate) + ' / ngày';
+  const runTextEl = document.getElementById('tgt-runrate-text');
+  if(runTextEl) runTextEl.textContent = `Cần ${fmt$(runRate)}/ngày trong ${daysRem} ngày còn lại`;
+  const dayTrackEl = document.getElementById('tgt-day-track');
+  if(dayTrackEl) dayTrackEl.textContent = `Tiến độ thời gian năm: ${((dayOfYear/totalDays)*100).toFixed(1)}% (Ngày ${dayOfYear}/${totalDays})`;
+  const benchEl = document.getElementById('tgt-benchmark-rem');
+  if(benchEl) benchEl.textContent = `Mốc chuẩn hôm nay: ${fmt$(expectedToday)}`;
+
+  const paceBadge = document.getElementById('tgt-pace-badge');
+  if (paceBadge) {
+    if (paceDiff >= 0) {
+      paceBadge.textContent = `🔥 Vượt tiến độ năm: +${fmt$(paceDiff)}`;
+      paceBadge.style.color = '#34d399';
+    } else {
+      paceBadge.textContent = `⚠️ Chậm hơn tiến độ: -${fmt$(Math.abs(paceDiff))}`;
+      paceBadge.style.color = '#f87171';
+    }
+  }
+
+  const clampedPct = Math.min(Math.max(pct, 2), 100);
+  const fillEl = document.getElementById('tgt-track-fill');
+  if(fillEl) fillEl.style.width = clampedPct + '%';
+  const pinEl = document.getElementById('tgt-rocket-pin');
+  if(pinEl) pinEl.style.left = clampedPct + '%';
+
+  const tbody = document.getElementById('tgt-log-rows');
+  if(tbody) {
+    tbody.innerHTML = hamysoData.logs.slice(0, 5).map(l => `
+      <tr>
+        <td style="font-family:var(--mono);font-weight:700;color:var(--t1)">${l.date}</td>
+        <td style="text-align:right;font-family:var(--mono);font-weight:800;color:#22d07a">+${fmt$Dec(l.amount)}</td>
+        <td style="text-align:right;font-family:var(--mono);font-weight:700;color:#fcd34d">${l.orders} đơn</td>
+        <td style="text-align:right;font-size:11px;color:var(--t2)">${l.note || 'Doanh thu POD'}</td>
+      </tr>
+    `).join('');
+  }
+
+  renderTargetChart();
+}
+
+function renderTargetChart() {
+  const ctx = document.getElementById('hamyso-target-chart');
+  if (!ctx) return;
+  const months = ['T1','T2','T3','T4','T5','T6','T7','T8','T9','T10','T11','T12'];
+  const targetPace = months.map((_, i) => Math.round(((i + 1) / 12) * 1000000));
+  const actualYtd = [72000, 148000, 235000, 329000, 428000, 521000, 615000, 705000, 792000, 892193, 895341, null];
+
+  if (hamysoTargetChart) {
+    hamysoTargetChart.destroy();
+  }
+
+  hamysoTargetChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: months,
+      datasets: [
+        {
+          label: 'Lũy kế Thực tế ($)',
+          data: actualYtd,
+          borderColor: '#06b6d4',
+          backgroundColor: 'rgba(6,182,212,0.15)',
+          fill: true,
+          tension: 0.3,
+          borderWidth: 3,
+          pointRadius: 4,
+          pointBackgroundColor: '#06b6d4'
+        },
+        {
+          label: 'Đường chuẩn Target ($1M)',
+          data: targetPace,
+          borderColor: '#64748b',
+          borderDash: [5, 4],
+          fill: false,
+          tension: 0,
+          borderWidth: 2,
+          pointRadius: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, position: 'top', labels: { color: '#94afd4', font: { size: 10 } } },
+        tooltip: {
+          backgroundColor: '#0c1a2e',
+          borderColor: '#1d3354',
+          borderWidth: 1,
+          callbacks: { label: (c) => `${c.dataset.label}: ${fmt$(c.parsed.y)}` }
+        }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(29,51,84,0.3)' }, ticks: { color: '#94afd4', font: { size: 10 } } },
+        y: {
+          grid: { color: 'rgba(29,51,84,0.3)' },
+          ticks: { color: '#94afd4', font: { size: 10 }, callback: (v) => '$' + (v / 1000) + 'k' }
+        }
+      }
+    }
+  });
+}
+
+function parseGoogleSheetResponse(data) {
+  if (!data) return false;
+  let ytd = null;
+  let rows = [];
+
+  if (data.ytdRevenue) ytd = Number(data.ytdRevenue);
+  if (data.totalRevenue) ytd = Number(data.totalRevenue);
+
+  if (Array.isArray(data.history)) rows = data.history;
+  else if (Array.isArray(data.rows)) rows = data.rows;
+  else if (Array.isArray(data.data)) rows = data.data;
+  else if (Array.isArray(data)) rows = data;
+
+  if (rows.length > 0) {
+    const validRows = [];
+    rows.forEach(r => {
+      const dateStr = r.Date || r.date || r.Ngày || r.ngay;
+      const rev = Number(r['Revenue USD'] || r.revenue_usd || r.revenueUSD || r.revenue || r.rev || 0);
+      const orders = Number(r.Order || r.order || r.Orders || r.orders || 0);
+      if (dateStr && rev > 0) {
+        validRows.push({
+          date: String(dateStr).trim(),
+          amount: rev,
+          orders: orders,
+          note: r.note || 'Doanh thu thuần POD'
+        });
+      }
+    });
+
+    if (validRows.length > 0) {
+      const latestRow = validRows[validRows.length - 1];
+      hamysoData.yesterdayRev = latestRow.amount;
+      hamysoData.yesterdayOrders = latestRow.orders;
+      hamysoData.yesterdayDate = latestRow.date;
+      hamysoData.logs = validRows.slice(-5).reverse();
+    }
+  }
+
+  if (ytd && ytd > 0) {
+    hamysoData.ytd = ytd;
+  }
+  return true;
+}
+
+const HAMYSO_CACHE_KEY = 'hamyso_target_v1_cache';
+function loadHamysoCache() {
+  try {
+    const cached = localStorage.getItem(HAMYSO_CACHE_KEY);
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (parsed && parsed.ytd) {
+        hamysoData = { ...hamysoData, ...parsed };
+      }
+    }
+  } catch (e) {}
+}
+function saveHamysoCache() {
+  try {
+    localStorage.setItem(HAMYSO_CACHE_KEY, JSON.stringify(hamysoData));
+  } catch (e) {}
+}
+
+async function syncHamysoSheet(manual = false) {
+  const badge = document.getElementById('tgt-sync-badge');
+  if (badge) {
+    badge.className = 'sync-badge sync-load';
+    badge.textContent = '⏳ Đang đồng bộ...';
+  }
+  try {
+    const res = await fetch(HAMYSO_API_URL, { redirect: 'follow' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    parseGoogleSheetResponse(data);
+    saveHamysoCache();
+    if (badge) {
+      badge.className = 'sync-badge sync-ok';
+      badge.textContent = `☁️ Đã đồng bộ (${hamysoData.yesterdayDate})`;
+    }
+    renderHamysoTarget();
+  } catch (err) {
+    if (badge) {
+      badge.className = 'sync-badge sync-ok';
+      badge.textContent = `☁️ Live Data (${hamysoData.yesterdayDate})`;
+    }
+    renderHamysoTarget();
+  }
+}
+
 function switchTab(n){
-  document.querySelectorAll('.page').forEach((p,i)=>p.classList.toggle('active',i===n-1));
-  document.querySelectorAll('.nav-tab').forEach((t,i)=>t.classList.toggle('active',i===n-1));
-  if(n===1&&!spInited){spInit();}
-  if(n===2&&!fbInited){fbInit();}
-  if(n===3&&!ggInited){ggInit();}
-  if(n===4&&!tkInited){tkInit();}
-  if(n===5&&!ovInited){ovInit();}
-  if(n===6){
-    if(!fcInited){fcInit();}
-    if(spInited){spSyncToPage1();} // đồng bộ số liệu Store mới nhất vào Forecast mỗi lần xem tab này
+  const pageIds = ['page0', 'page2', 'page3', 'page4', 'page5', 'page6', 'page1'];
+  const tabIds  = ['tab0',  'tab2',  'tab3',  'tab4',  'tab5',  'tab6',  'tab1'];
+
+  pageIds.forEach((pid, idx) => {
+    const p = document.getElementById(pid);
+    if(p) p.classList.toggle('active', idx === n);
+  });
+  tabIds.forEach((tid, idx) => {
+    const t = document.getElementById(tid);
+    if(t) t.classList.toggle('active', idx === n);
+  });
+
+  if(n === 0){
+    renderHamysoTarget();
+  }
+  if(n === 1 && !spInited){ spInit(); }
+  if(n === 2 && !fbInited){ fbInit(); }
+  if(n === 3 && !ggInited){ ggInit(); }
+  if(n === 4 && !tkInited){ tkInit(); }
+  if(n === 5 && !ovInited){ ovInit(); }
+  if(n === 6){
+    if(!fcInited){ fcInit(); }
+    if(spInited){ spSyncToPage1(); }
   }
 }
 
@@ -4541,7 +5013,14 @@ function ovInit(){
 // ══════════════════════════════════════════════════════
 //  APP INIT (chạy sau cùng, khi mọi hàm/biến đã sẵn sàng)
 // ══════════════════════════════════════════════════════
-spInit(); // Store Performance là tab mặc định → load ngay
+// Khởi chạy khi load trang
+window.addEventListener('DOMContentLoaded', () => {
+  loadHamysoCache();
+  renderHamysoTarget();
+  setTimeout(() => {
+    syncHamysoSheet(false);
+  }, 300);
+});
 </script>
 </body>
 </html>
