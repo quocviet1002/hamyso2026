@@ -152,9 +152,10 @@ tr:hover td{background:rgba(255,255,255,.013)}
 /* ── NAV TABS ── */
 .nav{background:var(--s1);border-bottom:2px solid var(--bd);padding:0 18px;display:flex;align-items:center;gap:0;position:sticky;top:0;z-index:100}
 .nav-brand{font-size:13px;font-weight:700;color:var(--t2);padding:11px 0;border-right:1px solid var(--bd);padding-right:18px;margin-right:4px}
-.nav-tab{padding:11px 18px;font-size:12px;font-weight:600;color:var(--t3);cursor:pointer;border-bottom:3px solid transparent;transition:all .15s;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-bottom:-2px}
+.nav-tab{padding:11px 18px;font:600 12px var(--font);background:transparent;border:0;border-bottom:3px solid transparent;color:var(--t3);cursor:pointer;transition:all .15s;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-bottom:-2px}
 .nav-tab:hover{color:var(--t2)}
 .nav-tab.active{color:var(--t1);border-bottom-color:var(--blue)}
+.nav-tab:focus-visible,.fpill:focus-visible,.rbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:-2px}
 /* ── PAGE SWITCH ── */
 .page{display:none}.page.active{display:block}
 /* ── SP PAGE ── */
@@ -460,6 +461,64 @@ tr:hover td{background:rgba(255,255,255,.013)}
 .log-tw td{padding:8px 12px;border-bottom:1px solid rgba(29,51,84,0.3);vertical-align:middle}
 .log-tw tr:hover td{background:rgba(6,182,212,0.04)}
 
+/* Small screens: keep the page width fixed and scroll dense data inside its card. */
+.log-scroll{overflow-x:auto;max-width:100%}
+.nav{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.nav-brand,.nav-tab{flex:0 0 auto}
+.page,.card,.glass-panel,.ov-plat-card,.gg-acct-card{min-width:0}
+.tw,.sp-tw-wrap,.fb-tw,.gg-tw,.ov-tw,.log-scroll{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.log-tw{min-width:480px}
+
+@media(max-width:1100px){
+  .kpi-strip,.sp-kpi,.fb-kpi,.gg-kpi,.tk-kpi,.ov-kpi-strip{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .rules-row,.fb-charts,.gg-charts,.tk-charts,.ov-platform-row,.ov-charts-row,.gg-acct-grid{grid-template-columns:minmax(0,1fr)}
+  .rule-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .store-content-grid,.target-hero-grid,.target-detail-grid{grid-template-columns:minmax(0,1fr)!important}
+  .track-milestones,.tgt-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:640px){
+  body{font-size:13px;overflow-x:hidden}
+  .nav{padding:0 8px;gap:2px}
+  .nav-brand{padding:12px 10px 12px 4px;margin-right:0;font-size:11px}
+  .nav-tab{padding:12px 10px;min-height:44px;font-size:11px}
+  .hdr,.sp-hdr,.fb-hdr,.gg-hdr,.tk-hdr,.ov-hdr,.fb-ctrl,.gg-ctrl,.tk-ctrl,.roas-panel{padding:10px 12px}
+  .main,.sp-main,.fb-main,.gg-main,.tk-main,.ov-main{padding:12px;gap:10px}
+  .store-content-grid{padding:12px!important}
+  #page0>div{padding:12px!important}
+  .card,.glass-panel,.ov-plat-card,.gg-acct-card{padding:12px;border-radius:10px}
+  .hero-big-val{font-size:clamp(30px,9vw,44px);overflow-wrap:anywhere}
+  .tgt-val{font-size:clamp(18px,5vw,24px);overflow-wrap:anywhere}
+  .kpi-strip,.sp-kpi,.fb-kpi,.gg-kpi,.tk-kpi,.ov-kpi-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi,.ov-kpi{padding:11px 12px}
+  .kpi-val{font-size:clamp(15px,5vw,20px);overflow-wrap:anywhere}
+  .ov-kpi-val{font-size:clamp(14px,4.5vw,18px);overflow-wrap:anywhere}
+  .track-milestones,.tgt-kpi-grid,.ov-plat-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .target-hero-grid>div:last-child{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .track-wrap{margin:6px 14px 0;height:42px}
+  .track-rocket-pin{width:38px;height:38px}
+  .track-milestones{gap:6px}
+  .milestone-item{padding:8px;gap:6px}
+  .rule-grid,.scale-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .filter-bar{padding:0 12px;scrollbar-width:thin}
+  .ov-filter{padding:8px 12px}
+  .ov-filter-row{gap:5px}
+  .ov-date-input{max-width:145px}
+  .ch{align-items:flex-start}
+  .ct{line-height:1.4}
+  .chart-wrap,.sp-chart-wrap,.fb-chart-wrap,.gg-chart-wrap,.tk-chart-wrap,.ov-chart-wrap{height:200px}
+  .tw table,.sp-tw,.fb-tw table,.gg-tw table,.ov-tw table{min-width:680px}
+  .ec input{font-size:16px;min-height:34px}
+  .ibox input,.ri input,.fb-sel,.gg-sel,.tk-sel,.ov-date-input{font-size:16px}
+  .rbtn,.fpill,.ptab,.fb-view-tab,.gg-view-tab,.tk-view-tab,.ov-fpill{min-height:34px}
+}
+
+@media(max-width:390px){
+  .tgt-kpi-grid,.track-milestones{grid-template-columns:minmax(0,1fr)}
+  .hero-big-val{font-size:30px}
+  .target-hero-grid>div:last-child{grid-template-columns:minmax(0,1fr)!important}
+}
+
 </style>
 </head>
 <body>
@@ -471,13 +530,13 @@ tr:hover td{background:rgba(255,255,255,.013)}
 <!-- ══ NAV ══ -->
 <div class="nav">
   <div class="nav-brand"><span>🚀</span><span>HAMYSO FLAGSHIP</span></div>
-  <div class="nav-tab active" id="tab0" onclick="switchTab(0)">🎯 Hamyso $1M Target</div>
-  <div class="nav-tab" id="tab2" onclick="switchTab(1)">📊 Store Performance</div>
-  <div class="nav-tab" id="tab3" onclick="switchTab(2)">📣 Facebook Ads</div>
-  <div class="nav-tab" id="tab4" onclick="switchTab(3)">🛍 Google Ads</div>
-  <div class="nav-tab" id="tab5" onclick="switchTab(4)">🎵 TikTok Ads</div>
-  <div class="nav-tab" id="tab6" onclick="switchTab(5)">🔭 Ad Overview</div>
-  <div class="nav-tab" id="tab1" onclick="switchTab(6)">📋 Campaign Forecast</div>
+  <button class="nav-tab active" id="tab0" type="button" onclick="switchTab(0)">🎯 Hamyso $1M Target</button>
+  <button class="nav-tab" id="tab2" type="button" onclick="switchTab(1)">📊 Store Performance</button>
+  <button class="nav-tab" id="tab3" type="button" onclick="switchTab(2)">📣 Facebook Ads</button>
+  <button class="nav-tab" id="tab4" type="button" onclick="switchTab(3)">🛍 Google Ads</button>
+  <button class="nav-tab" id="tab5" type="button" onclick="switchTab(4)">🎵 TikTok Ads</button>
+  <button class="nav-tab" id="tab6" type="button" onclick="switchTab(5)">🔭 Ad Overview</button>
+  <button class="nav-tab" id="tab1" type="button" onclick="switchTab(6)">📋 Campaign Forecast</button>
 </div>
 
 <!-- ══ PAGE 1 — CAMPAIGN FORECAST ══ -->
@@ -501,7 +560,7 @@ tr:hover td{background:rgba(255,255,255,.013)}
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px;align-items:flex-end;margin-bottom:20px">
+      <div class="target-hero-grid" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px;align-items:flex-end;margin-bottom:20px">
         <div>
           <div style="font-size:11px;font-weight:800;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">
             DOANH THU ĐẦU NĂM ĐẾN NAY (YTD 2026) — HAMYSO
@@ -590,12 +649,12 @@ tr:hover td{background:rgba(255,255,255,.013)}
       <div class="tgt-kpi-box c1">
         <div class="tgt-lbl"><span>TRUNG BÌNH/NGÀY TỪ ĐẦU NĂM</span><span>📈</span></div>
         <div class="tgt-val" id="tgt-daily-avg">$2,925</div>
-        <div class="tgt-sub">Tính trên 306 ngày đã qua</div>
+        <div class="tgt-sub" id="tgt-daily-avg-sub">Tính từ đầu năm</div>
       </div>
       <div class="tgt-kpi-box c2">
         <div class="tgt-lbl"><span>RUN-RATE CẦN ĐẠT MỖI NGÀY</span><span>🎯</span></div>
         <div class="tgt-val" style="color:#34d399" id="tgt-daily-req">$1,773</div>
-        <div class="tgt-sub">Dễ dàng về đích trước 31/12</div>
+        <div class="tgt-sub" id="tgt-daily-req-sub">Để đạt mục tiêu trước 31/12</div>
       </div>
       <div class="tgt-kpi-box c3">
         <div class="tgt-lbl"><span>AOV &amp; CONVERSION RATE</span><span>🛍</span></div>
@@ -605,17 +664,17 @@ tr:hover td{background:rgba(255,255,255,.013)}
       <div class="tgt-kpi-box c4">
         <div class="tgt-lbl"><span>DỰ PHÓNG KẾT NĂM 2026</span><span>🎉</span></div>
         <div class="tgt-val" style="color:#c4b5fd" id="tgt-proj-eoy">$1,068,000</div>
-        <div class="tgt-sub">Vượt 106% kế hoạch đề ra</div>
+        <div class="tgt-sub" id="tgt-proj-eoy-sub">Theo tốc độ doanh thu hiện tại</div>
       </div>
     </div>
 
     <!-- 2 CỘT: BIỂU ĐỒ TĂNG TRƯỞNG & NHẬT KÝ 5 NGÀY GẦN NHẤT -->
-    <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:14px">
+    <div class="target-detail-grid" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:14px">
       <!-- Cột Trái: Chart tăng trưởng so với đường chuẩn -->
       <div class="glass-panel">
         <div class="ch">
           <div class="ct">📈 Biểu đồ Lũy kế Thực tế vs Đường chuẩn Target $1M (Hamyso)</div>
-          <span style="font-size:10px;padding:3px 8px;border-radius:6px;background:rgba(6,182,212,0.15);color:#38bdf8;font-weight:700">Đạt 89.5%</span>
+          <span id="tgt-chart-pct" style="font-size:10px;padding:3px 8px;border-radius:6px;background:rgba(6,182,212,0.15);color:#38bdf8;font-weight:700">Đang tải</span>
         </div>
         <div style="height:230px;position:relative">
           <canvas id="hamyso-target-chart"></canvas>
@@ -628,7 +687,7 @@ tr:hover td{background:rgba(255,255,255,.013)}
           <div class="ct">📋 Nhật Ký Doanh Thu 5 Ngày Gần Nhất</div>
           <span style="font-size:9px;color:var(--t3);font-family:var(--mono)">Tự động từ Sheet</span>
         </div>
-        <table class="log-tw">
+        <div class="log-scroll"><table class="log-tw">
           <thead>
             <tr>
               <th>Ngày</th>
@@ -640,7 +699,7 @@ tr:hover td{background:rgba(255,255,255,.013)}
           <tbody id="tgt-log-rows">
             <!-- 5 ngày tự động điền -->
           </tbody>
-        </table>
+        </table></div>
       </div>
     </div>
 
@@ -694,7 +753,7 @@ tr:hover td{background:rgba(255,255,255,.013)}
 </div>
 
 <!-- SP MAIN — 2 cột -->
-<div style="display:grid;grid-template-columns:1fr 340px;gap:11px;padding:13px 18px">
+<div class="store-content-grid" style="display:grid;grid-template-columns:1fr 340px;gap:11px;padding:13px 18px">
 
   <!-- CỘT TRÁI: Chart + Daily Table -->
   <div style="display:flex;flex-direction:column;gap:11px;min-width:0">
@@ -729,7 +788,7 @@ tr:hover td{background:rgba(255,255,255,.013)}
         </div>
         <div style="display:flex;gap:6px;align-items:center">
           <div id="sp-sync-badge" class="sp-sync load">⏳ Đang tải...</div>
-          <button class="rbtn" onclick="spLoadFromSheets()">🔄 Refresh</button>
+          <button class="rbtn" onclick="spLoadFromSheets();psLoad()">🔄 Refresh</button>
         </div>
       </div>
       <div class="sp-tw-wrap">
@@ -786,10 +845,12 @@ tr:hover td{background:rgba(255,255,255,.013)}
         <div style="display:flex;flex-direction:column;gap:3px">
           <div class="ct">🛍 Top Products</div>
           <div style="font-size:9px;color:var(--t3)" id="ps-range-lbl"></div>
+          <div style="font-size:9px;color:var(--yellow);line-height:1.4" id="ps-stale-note" role="status"></div>
         </div>
         <div style="display:flex;align-items:center;gap:6px">
           <span style="font-size:10px;color:var(--t3)" id="ps-count">—</span>
           <div id="ps-sync-badge" class="sp-sync load">⏳</div>
+          <button class="rbtn" type="button" onclick="psLoad()" aria-label="Đồng bộ lại sản phẩm">↻</button>
         </div>
       </div>
       <div style="overflow-y:auto;max-height:calc(100vh - 280px)">
@@ -2331,18 +2392,12 @@ const HAMYSO_API_URL = 'https://script.google.com/macros/s/AKfycbxc1qk8y_6mdgI2u
 
 let hamysoData = {
   target: 1000000,
-  ytd: 895341.20,
-  yesterdayRev: 3148.17,
-  yesterdayOrders: 71,
-  yesterdayDate: '11/1/2026',
-  expectedToday: 838356,
-  logs: [
-    { date: '11/1/2026', amount: 3148.17, orders: 71, note: 'Doanh thu hôm qua (chốt)' },
-    { date: '10/31/2026', amount: 3788.00, orders: 88, note: 'Doanh thu thuần Meta & Google Ads' },
-    { date: '10/30/2026', amount: 4274.17, orders: 92, note: 'Bùng nổ doanh thu cuối tháng 10' },
-    { date: '10/29/2026', amount: 3595.50, orders: 80, note: 'Scale camp Anime Card Q4' },
-    { date: '10/28/2026', amount: 3418.93, orders: 77, note: 'Doanh thu chốt ngày Hamyso Đức' }
-  ]
+  ytd: 0,
+  yesterdayRev: 0,
+  yesterdayOrders: 0,
+  yesterdayDate: '—',
+  logs: [],
+  history: []
 };
 
 let hamysoTargetChart = null;
@@ -2379,6 +2434,19 @@ function renderHamysoTarget() {
   if(remEl) remEl.textContent = fmt$Dec(rem);
   const reqEl = document.getElementById('tgt-daily-req');
   if(reqEl) reqEl.textContent = fmt$(runRate) + ' / ngày';
+  const avgEl = document.getElementById('tgt-daily-avg');
+  if(avgEl) avgEl.textContent = fmt$(ytd / dayOfYear);
+  const avgSubEl = document.getElementById('tgt-daily-avg-sub');
+  if(avgSubEl) avgSubEl.textContent = `Tính trên ${dayOfYear} ngày đã qua`;
+  const reqSubEl = document.getElementById('tgt-daily-req-sub');
+  if(reqSubEl) reqSubEl.textContent = 'Để đạt mục tiêu trước 31/12';
+  const projected = ytd / dayOfYear * totalDays;
+  const projEl = document.getElementById('tgt-proj-eoy');
+  if(projEl) projEl.textContent = fmt$(projected);
+  const projSubEl = document.getElementById('tgt-proj-eoy-sub');
+  if(projSubEl) projSubEl.textContent = `Theo tốc độ hiện tại · ${(projected/t*100).toFixed(1)}% mục tiêu`;
+  const chartPctEl = document.getElementById('tgt-chart-pct');
+  if(chartPctEl) chartPctEl.textContent = ytd > 0 ? `Đạt ${pct.toFixed(1)}%` : 'Chưa có dữ liệu';
   const runTextEl = document.getElementById('tgt-runrate-text');
   if(runTextEl) runTextEl.textContent = `Cần ${fmt$(runRate)}/ngày trong ${daysRem} ngày còn lại`;
   const dayTrackEl = document.getElementById('tgt-day-track');
@@ -2420,10 +2488,35 @@ function renderHamysoTarget() {
 
 function renderTargetChart() {
   const ctx = document.getElementById('hamyso-target-chart');
-  if (!ctx) return;
+  if (!ctx || typeof Chart === 'undefined') return;
   const months = ['T1','T2','T3','T4','T5','T6','T7','T8','T9','T10','T11','T12'];
-  const targetPace = months.map((_, i) => Math.round(((i + 1) / 12) * 1000000));
-  const actualYtd = [72000, 148000, 235000, 329000, 428000, 521000, 615000, 705000, 792000, 892193, 895341, null];
+  const today = new Date();
+  const year = 2026;
+  const todayIso = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+  const daysInYear = 365;
+  const monthTotals = new Array(12).fill(0);
+  let latestMonth = -1;
+  (hamysoData.history || []).forEach(row => {
+    const iso = row.date;
+    const amount = Number(row.amount);
+    if(!/^2026-\d{2}-\d{2}$/.test(iso) || iso > todayIso || !Number.isFinite(amount)) return;
+    const month = Number(iso.slice(5,7))-1;
+    if(month < 0 || month > 11) return;
+    monthTotals[month] += amount;
+    latestMonth = Math.max(latestMonth, month);
+  });
+  let runningTotal = 0;
+  const actualYtd = monthTotals.map((amount, month) => {
+    if(month > latestMonth) return null;
+    runningTotal += amount;
+    return Math.round(runningTotal * 100) / 100;
+  });
+  const targetPace = months.map((_, month) => {
+    const monthEnd = new Date(year, month + 1, 0);
+    const point = today.getFullYear() === year && month === today.getMonth() && today < monthEnd ? today : monthEnd;
+    const elapsed = Math.floor((point - new Date(year, 0, 1)) / 86400000) + 1;
+    return Math.round(hamysoData.target * elapsed / daysInYear);
+  });
 
   if (hamysoTargetChart) {
     hamysoTargetChart.destroy();
@@ -2485,8 +2578,8 @@ function parseGoogleSheetResponse(data) {
   let ytd = null;
   let rows = [];
 
-  if (data.ytdRevenue) ytd = Number(data.ytdRevenue);
-  if (data.totalRevenue) ytd = Number(data.totalRevenue);
+  if (data.ytdRevenue != null) ytd = Number(data.ytdRevenue);
+  if (data.totalRevenue != null) ytd = Number(data.totalRevenue);
 
   if (Array.isArray(data.history)) rows = data.history;
   else if (Array.isArray(data.rows)) rows = data.rows;
@@ -2497,9 +2590,9 @@ function parseGoogleSheetResponse(data) {
     const validRows = [];
     rows.forEach(r => {
       const dateStr = r.Date || r.date || r.Ngày || r.ngay;
-      const rev = Number(r['Revenue USD'] || r.revenue_usd || r.revenueUSD || r.revenue || r.rev || 0);
+      const rev = Number(r['Revenue USD'] ?? r.revenue_usd ?? r.revenueUSD ?? r.revenue ?? r.rev ?? 0);
       const orders = Number(r.Order || r.order || r.Orders || r.orders || 0);
-      if (dateStr && rev > 0) {
+      if (dateStr && Number.isFinite(rev) && rev >= 0) {
         validRows.push({
           date: String(dateStr).trim(),
           amount: rev,
@@ -2509,16 +2602,21 @@ function parseGoogleSheetResponse(data) {
       }
     });
 
-    if (validRows.length > 0) {
-      const latestRow = validRows[validRows.length - 1];
+    validRows.sort((a,b)=>a.date.localeCompare(b.date));
+    const today = new Date();
+    const todayIso = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+    hamysoData.history = validRows.filter(r=>/^2026-\d{2}-\d{2}$/.test(r.date) && r.date<=todayIso);
+    const revenueRows = hamysoData.history.filter(r=>r.amount>0);
+    if (revenueRows.length > 0) {
+      const latestRow = revenueRows[revenueRows.length - 1];
       hamysoData.yesterdayRev = latestRow.amount;
       hamysoData.yesterdayOrders = latestRow.orders;
       hamysoData.yesterdayDate = latestRow.date;
-      hamysoData.logs = validRows.slice(-5).reverse();
+      hamysoData.logs = revenueRows.slice(-5).reverse();
     }
   }
 
-  if (ytd && ytd > 0) {
+  if (Number.isFinite(ytd) && ytd >= 0) {
     hamysoData.ytd = ytd;
   }
   return true;
@@ -2530,7 +2628,7 @@ function loadHamysoCache() {
     const cached = localStorage.getItem(HAMYSO_CACHE_KEY);
     if (cached) {
       const parsed = JSON.parse(cached);
-      if (parsed && parsed.ytd) {
+      if (parsed && Number.isFinite(parsed.ytd)) {
         hamysoData = { ...hamysoData, ...parsed };
       }
     }
@@ -2561,8 +2659,8 @@ async function syncHamysoSheet(manual = false) {
     renderHamysoTarget();
   } catch (err) {
     if (badge) {
-      badge.className = 'sync-badge sync-ok';
-      badge.textContent = `☁️ Live Data (${hamysoData.yesterdayDate})`;
+      badge.className = 'sync-badge sync-err';
+      badge.textContent = hamysoData.history.length ? `⚠️ Dùng cache (${hamysoData.yesterdayDate})` : '⚠️ Không thể đồng bộ Sheet';
     }
     renderHamysoTarget();
   }
@@ -2773,7 +2871,19 @@ function psSortBy(col){
 
 function psRender(){
   const [from,to]=spGetRange();
-  const filtered=psRawData.filter(r=>r.date>=from&&r.date<=to);
+  let filtered=psRawData.filter(r=>r.date>=from&&r.date<=to);
+  const latest=psRawData.reduce((max,r)=>/^\d{4}-\d{2}-\d{2}$/.test(r.date) && r.date>max ? r.date : max,'');
+  const today=spTodayISO();
+  let displayFrom=from, displayTo=to, fallback=false;
+  if(!filtered.length && latest && from>latest){
+    const days=Math.min(30,Math.max(1,Math.round((new Date(to+'T00:00:00')-new Date(from+'T00:00:00'))/86400000)+1));
+    const start=new Date(latest+'T00:00:00');
+    start.setDate(start.getDate()-days+1);
+    displayFrom=start.getFullYear()+'-'+String(start.getMonth()+1).padStart(2,'0')+'-'+String(start.getDate()).padStart(2,'0');
+    displayTo=latest;
+    filtered=psRawData.filter(r=>r.date>=displayFrom&&r.date<=displayTo);
+    fallback=true;
+  }
 
   // Aggregate by product title
   const map={};
@@ -2794,11 +2904,15 @@ function psRender(){
 
   // Range label
   const lbl=document.getElementById('ps-range-lbl');
-  if(lbl) lbl.textContent=from+' → '+to+' · '+rows.length+' sản phẩm';
+  if(lbl) lbl.textContent=displayFrom+' → '+displayTo+' · '+rows.length+' sản phẩm';
+  const note=document.getElementById('ps-stale-note');
+  if(note) note.textContent=fallback
+    ?`Chưa có dữ liệu ${from} → ${to}. Đang hiện kỳ gần nhất; nguồn Product Sales chốt ${latest}.`
+    :latest && latest<today ? `Nguồn Product Sales mới nhất: ${latest}.` : '';
   const cnt=document.getElementById('ps-count');
   if(cnt) cnt.textContent=rows.length+' products';
 
-  const maxVal=rows.length?rows[0].qty:1;
+  const maxVal=Math.max(1,...rows.map(r=>r.qty));
 
   const tbody=document.getElementById('ps-tbody');
   if(!tbody)return;
