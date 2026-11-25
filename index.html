@@ -18,7 +18,7 @@
   --actual:#f5c842;--actual-bg:#f5c84210;--actual-bd:#f5c84240;
   --font:'DM Sans',sans-serif;--mono:'JetBrains Mono',monospace;
 }
-body{background:var(--bg);color:var(--t1);font-family:var(--font);font-size:13px;min-height:100vh}
+body{background:var(--bg);color:var(--t1);font-family:var(--font);font-size:13px;height:100vh;height:100dvh;overflow:hidden;display:flex;flex-direction:column}
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--s1)}
 ::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:99px}
@@ -151,15 +151,29 @@ tr:hover td{background:rgba(255,255,255,.013)}
 
 
 /* ── NAV TABS ── */
-.nav{background:var(--s1);border-bottom:2px solid var(--bd);padding:0 18px;display:flex;align-items:center;gap:0;position:sticky;top:0;z-index:100}
+.nav{background:var(--s1);border-bottom:2px solid var(--bd);padding:0 58px 0 18px;display:flex;align-items:center;gap:0;flex:none;z-index:100}
 .nav-brand{font-size:13px;font-weight:700;color:var(--t2);padding:11px 0;border-right:1px solid var(--bd);padding-right:18px;margin-right:4px}
 .nav-tab{padding:11px 18px;font:600 12px var(--font);background:transparent;border:0;border-bottom:3px solid transparent;color:var(--t3);cursor:pointer;transition:all .15s;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-bottom:-2px}
 .nav-tab:hover{color:var(--t2)}
 .nav-tab.active{color:var(--t1);border-bottom-color:var(--blue)}
 .nav-tab:focus-visible,.fpill:focus-visible,.rbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:-2px}
 /* ── PAGE SWITCH ── */
-.page{display:none}.page.active{display:block}
-.calendar-frame{display:block;width:100%;height:calc(100vh - 58px);min-height:650px;border:0;background:#f8fafc}
+.page{display:none;min-height:0}.page.active{display:block;flex:1;overflow-y:auto;scrollbar-width:none}.page.active::-webkit-scrollbar{display:none}
+.calendar-frame{display:block;width:100%;height:100%;border:0;background:#f8fafc}
+.dashboard-theme-toggle{position:fixed;top:5px;right:10px;z-index:120;width:34px;height:34px;border:1px solid var(--bd2);border-radius:9px;background:var(--s2);color:var(--t1);font-size:18px;line-height:1;display:grid;place-items:center}
+.dashboard-theme-toggle:hover{border-color:var(--blue)}
+.dashboard-theme-toggle:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+body.theme-light{--bg:#f3f6fb;--s1:#fff;--s2:#eaf0f9;--s3:#dfe8f5;--bd:#d5e0ed;--bd2:#bfd0e3;--t1:#17263c;--t2:#435b78;--t3:#607b9c;--t4:#9aabc0;--blue:#2563a9;--green:#087b49;--red:#c83434;--orange:#ba5a00;--purple:#7350b7;--cyan:#007da3;--yellow:#a66a00;--actual:#996100;--actual-bg:#fff8dd;--actual-bd:#e5c35180}
+body.theme-light .glass-panel{background:rgba(255,255,255,.94);border-color:var(--bd);box-shadow:0 8px 24px #20395812}
+body.theme-light .tgt-kpi-box{background:#fff;border-color:var(--bd)}
+body.theme-light .milestone-item{background:#fff;border-color:var(--bd)}
+body.theme-light .hero-big-val{background:linear-gradient(135deg,#153d75,#087b8c,#087b49);-webkit-background-clip:text;background-clip:text}
+body.theme-light .ov-date-input{color-scheme:light}
+body.theme-light .sp-tw thead th.ah,body.theme-light .ov-tw thead th.tot-col{background:#fff8e5}
+body.theme-light .ov-tw thead th.fb-col,body.theme-light .ov-tw thead th.gg-col{background:#fff}
+body.theme-light .fb-drill td{background:#edf3fa!important}
+body.theme-light .nav-tab.active{color:#153d75}
+body.theme-light .calendar-frame{background:#fff}
 /* ── SP PAGE ── */
 .sp-hdr{background:var(--s1);border-bottom:1px solid var(--bd);padding:10px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .sp-hdr h1{font-size:15px;font-weight:700}
@@ -542,6 +556,7 @@ tr:hover td{background:rgba(255,255,255,.013)}
 </div>
 
 <!-- ══ PAGE 1 — EUROPEAN POD GIFTING CALENDAR ══ -->
+<button id="dashboard-theme-toggle" class="dashboard-theme-toggle" type="button" aria-label="Chuyển giao diện sáng" title="Chuyển giao diện sáng">☀</button>
 <!-- ══════════════════════════════════════════════════════════
      PAGE 0: HAMYSO FLAGSHIP $1,000,000 TARGET (CHUYÊN BIỆT & ĐẲNG CẤP)
      ══════════════════════════════════════════════════════════ -->
@@ -715,10 +730,6 @@ tr:hover td{background:rgba(255,255,255,.013)}
   <div>
     <h1>📊 Store Performance 2026</h1>
     <p>01 Jan → 31 Dec 2026 · USD · Tự động đồng bộ từ Facebook + Google Ads</p>
-  </div>
-  <div class="hdr-right">
-    <div class="ibox"><label>Gross Margin</label><div class="ir"><input type="number" id="sp-gm" value="70" min="10" max="95" step="1" oninput="spRecalc()"><span class="u">%</span></div></div>
-    <div class="ibox"><label>Biến phí khác</label><div class="ir"><input type="number" id="sp-var" value="5" min="0" max="30" step="0.5" oninput="spRecalc()"><span class="u">%</span></div></div>
   </div>
 </div>
 
@@ -1636,6 +1647,8 @@ tr:hover td{background:rgba(255,255,255,.013)}
   &lt;/script&gt;
 
   &lt;style&gt;
+    html { scrollbar-width: none; }
+    html::-webkit-scrollbar { display: none; }
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -3346,9 +3359,9 @@ tr:hover td{background:rgba(255,255,255,.013)}
 
     // Theme Handling
     function initTheme() {
-      const savedTheme = localStorage.getItem('eu_dashboard_theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (savedTheme === 'dark' || (!savedTheme &amp;&amp; prefersDark)) {
+      let savedTheme = 'dark';
+      try { savedTheme = localStorage.getItem('hamyso_dashboard_theme') || 'dark'; } catch (e) {}
+      if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark');
         document.getElementById('themeIcon').className = 'fa-solid fa-sun text-amber-400';
       }
@@ -3357,12 +3370,21 @@ tr:hover td{background:rgba(255,255,255,.013)}
     function toggleTheme() {
       const htmlEl = document.documentElement;
       const isDark = htmlEl.classList.toggle('dark');
-      localStorage.setItem('eu_dashboard_theme', isDark ? 'dark' : 'light');
+      try { localStorage.setItem('hamyso_dashboard_theme', isDark ? 'dark' : 'light'); } catch (e) {}
       document.getElementById('themeIcon').className = isDark
         ? 'fa-solid fa-sun text-amber-400'
         : 'fa-solid fa-moon';
       updateChartTheme();
+      if (window.parent !== window) window.parent.postMessage({ type: 'hamyso-theme', theme: isDark ? 'dark' : 'light' }, '*');
     }
+
+    window.addEventListener('message', event =&gt; {
+      if (event.source !== window.parent || event.data?.type !== 'hamyso-theme') return;
+      const isDark = event.data.theme === 'dark';
+      document.documentElement.classList.toggle('dark', isDark);
+      document.getElementById('themeIcon').className = isDark ? 'fa-solid fa-sun text-amber-400' : 'fa-solid fa-moon';
+      updateChartTheme();
+    });
 
     // Render Top Country Selector Cards
     function renderCountryTabs() {
@@ -3953,7 +3975,8 @@ tr:hover td{background:rgba(255,255,255,.013)}
     window.addEventListener('DOMContentLoaded', init);
   &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;"></iframe>
+&lt;/html&gt;
+"></iframe>
 </div><!-- /page1 -->
 
 
@@ -4564,8 +4587,8 @@ function spSetFilter(mode){
 
 // ── Calc per day ────────────────────────────────────────
 function spCalcDay(i){
-  const gm  = +document.getElementById('sp-gm').value/100  || 0.75;
-  const varC= +document.getElementById('sp-var').value/100 || 0.05;
+  const gm = 0.70;
+  const varC = 0.05;
   const rev=spRevA[i], fb=spFbA[i]||0, gg=spGgA[i]||0, tk=spTkA[i]||0;
   // Ưu tiên total spent từ Sheets; nếu không có thì cộng fb+gg+tk
   const spent = spSpentA[i]!=null ? spSpentA[i] : (fb+gg+tk>0 ? fb+gg+tk : null);
@@ -6676,8 +6699,36 @@ function ovInit(){
 // ══════════════════════════════════════════════════════
 //  APP INIT (chạy sau cùng, khi mọi hàm/biến đã sẵn sàng)
 // ══════════════════════════════════════════════════════
+const DASHBOARD_THEME_KEY = 'hamyso_dashboard_theme';
+function setDashboardTheme(theme){
+  const isLight = theme === 'light';
+  document.body.classList.toggle('theme-light', isLight);
+  const toggle = document.getElementById('dashboard-theme-toggle');
+  toggle.textContent = isLight ? '☾' : '☀';
+  toggle.setAttribute('aria-label', isLight ? 'Chuyển giao diện tối' : 'Chuyển giao diện sáng');
+  toggle.title = toggle.getAttribute('aria-label');
+  try{localStorage.setItem(DASHBOARD_THEME_KEY, isLight ? 'light' : 'dark');}catch(e){}
+  const calendar = document.querySelector('.calendar-frame');
+  if(calendar && calendar.contentWindow) calendar.contentWindow.postMessage({type:'hamyso-theme',theme:isLight?'light':'dark'}, '*');
+}
+window.addEventListener('message', event => {
+  const calendar = document.querySelector('.calendar-frame');
+  if(calendar && event.source === calendar.contentWindow && event.data?.type === 'hamyso-theme'){
+    setDashboardTheme(event.data.theme);
+  }
+});
 // Khởi chạy khi load trang
 window.addEventListener('DOMContentLoaded', () => {
+  let savedTheme = 'dark';
+  try{savedTheme = localStorage.getItem(DASHBOARD_THEME_KEY) || 'dark';}catch(e){}
+  setDashboardTheme(savedTheme);
+  document.getElementById('dashboard-theme-toggle').addEventListener('click', () => {
+    setDashboardTheme(document.body.classList.contains('theme-light') ? 'dark' : 'light');
+  });
+  document.querySelector('.calendar-frame').addEventListener('load', () => {
+    const theme = document.body.classList.contains('theme-light') ? 'light' : 'dark';
+    setDashboardTheme(theme);
+  });
   loadHamysoCache();
   renderHamysoTarget();
   setTimeout(() => {
