@@ -1590,7 +1590,2370 @@ tr:hover td{background:rgba(255,255,255,.013)}
 </div><!-- /ov-main -->
 </div><!-- /page6 -->
 <div id="page1" class="page">
-  <iframe class="calendar-frame" src="european_e_commerce_pod_gifting_calendar_2027_2028.html" title="Lịch thương mại điện tử và quà tặng POD châu Âu 2027–2028"></iframe>
+  <iframe class="calendar-frame" title="Lịch thương mại điện tử và quà tặng POD châu Âu 2027–2028" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;vi&quot; class=&quot;light&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+  &lt;title&gt;European E-Commerce &amp; POD Gifting Calendar (2027–2028)&lt;/title&gt;
+  
+  &lt;!-- Google Fonts: Inter &amp; Plus Jakarta Sans --&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot; /&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin /&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot; /&gt;
+  
+  &lt;!-- Tailwind CSS --&gt;
+  &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;
+  
+  &lt;!-- Chart.js --&gt;
+  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/chart.js&quot;&gt;&lt;/script&gt;
+  
+  &lt;!-- FontAwesome Icons --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css&quot; /&gt;
+
+  &lt;script&gt;
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  &lt;/script&gt;
+
+  &lt;style&gt;
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.4);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.7);
+    }
+    .glass-card {
+      backdrop-filter: blur(12px);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 min-h-screen antialiased selection:bg-indigo-500 selection:text-white&quot;&gt;
+
+  &lt;!-- Top Navigation Bar --&gt;
+  &lt;header class=&quot;sticky top-0 z-30 bg-white/90 dark:bg-slate-900/90 glass-card border-b border-slate-200/80 dark:border-slate-800/80&quot;&gt;
+    &lt;div class=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-auto py-3 sm:py-0 sm:h-16 flex flex-wrap items-center justify-between gap-3&quot;&gt;
+      &lt;div class=&quot;flex items-center gap-3&quot;&gt;
+        &lt;div class=&quot;w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 shrink-0&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-earth-europe text-lg&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;div class=&quot;flex items-center gap-2&quot;&gt;
+            &lt;h1 class=&quot;font-display text-base sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white&quot;&gt;EU E-Com &amp; Gifting Intelligence&lt;/h1&gt;
+            &lt;span id=&quot;headerCycleBadge&quot; class=&quot;inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300&quot;&gt;
+              2027 – 2028
+            &lt;/span&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;text-xs text-slate-500 dark:text-slate-400 hidden md:block&quot;&gt;Dự báo Search Volume, Sức mua &amp; Lịch sự kiện POD Châu Âu (Chu kỳ 2027–2028)&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;flex items-center gap-2 sm:gap-3 ml-auto sm:ml-0&quot;&gt;
+        &lt;!-- Year Switcher Segmented Control --&gt;
+        &lt;div class=&quot;inline-flex p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700/70&quot; role=&quot;group&quot; aria-label=&quot;Chọn năm lập kế hoạch&quot;&gt;
+          &lt;button data-year=&quot;2027&quot; class=&quot;year-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white shadow-sm transition-all cursor-pointer&quot;&gt;
+            2027
+          &lt;/button&gt;
+          &lt;button data-year=&quot;2028&quot; class=&quot;year-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer&quot;&gt;
+            2028
+          &lt;/button&gt;
+          &lt;button data-year=&quot;BOTH&quot; class=&quot;year-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer&quot;&gt;
+            2027–2028
+          &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Export CSV Button --&gt;
+        &lt;button id=&quot;btnExportCsv&quot; class=&quot;inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-all cursor-pointer&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-file-csv text-emerald-600 dark:text-emerald-400&quot;&gt;&lt;/i&gt;
+          &lt;span class=&quot;hidden lg:inline&quot;&gt;Xuất CSV&lt;/span&gt;
+        &lt;/button&gt;
+
+        &lt;!-- Theme Toggle Button --&gt;
+        &lt;button id=&quot;themeToggle&quot; aria-label=&quot;Chuyển giao diện Sáng/Tối&quot; class=&quot;w-9 h-9 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all cursor-pointer&quot;&gt;
+          &lt;i id=&quot;themeIcon&quot; class=&quot;fa-solid fa-moon&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;!-- Main Container --&gt;
+  &lt;main class=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6&quot;&gt;
+
+    &lt;!-- Section 1: Country Selector Tabs/Cards --&gt;
+    &lt;section aria-label=&quot;Chọn thị trường quốc gia&quot;&gt;
+      &lt;div class=&quot;flex flex-wrap items-center justify-between gap-2 mb-3&quot;&gt;
+        &lt;h2 class=&quot;text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-flag text-indigo-500&quot;&gt;&lt;/i&gt; Chọn Thị Trường Mục Tiêu (7 Quốc Gia Trọng Điểm Châu Âu)
+        &lt;/h2&gt;
+        &lt;div class=&quot;flex items-center gap-2&quot;&gt;
+          &lt;span id=&quot;activeYearIndicator&quot; class=&quot;text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/60&quot;&gt;
+            Đang xem: Kế hoạch Năm 2027
+          &lt;/span&gt;
+          &lt;span id=&quot;selectedBrandBadge&quot; class=&quot;text-xs font-medium px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/60&quot;&gt;
+            Brand Focus: Hamyso
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;countryTabs&quot; class=&quot;grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5&quot;&gt;
+        &lt;!-- Populated dynamically via JS --&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Section 2: Summary KPI Cards --&gt;
+    &lt;section id=&quot;kpiSection&quot; class=&quot;grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in&quot;&gt;
+      &lt;!-- KPI 1: Market Size --&gt;
+      &lt;div class=&quot;bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow&quot;&gt;
+        &lt;div class=&quot;flex items-start justify-between&quot;&gt;
+          &lt;div&gt;
+            &lt;p id=&quot;kpiMarketLabel&quot; class=&quot;text-xs font-medium text-slate-500 dark:text-slate-400&quot;&gt;Dự báo E-com 2027&lt;/p&gt;
+            &lt;h3 id=&quot;kpiMarketSize&quot; class=&quot;font-display text-2xl font-extrabold text-slate-900 dark:text-white mt-1.5 tracking-tight&quot;&gt;€127.8 Tỷ&lt;/h3&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center&quot;&gt;
+            &lt;i class=&quot;fa-solid fa-chart-line&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;mt-3 flex items-center gap-2 text-xs&quot;&gt;
+          &lt;span id=&quot;kpiGrowthBadge&quot; class=&quot;inline-flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded-md&quot;&gt;
+            &lt;i class=&quot;fa-solid fa-arrow-trend-up text-[10px]&quot;&gt;&lt;/i&gt; +7.9% YoY
+          &lt;/span&gt;
+          &lt;span id=&quot;kpiMarketSub&quot; class=&quot;text-slate-500 dark:text-slate-400 truncate&quot;&gt;Lớn nhất khu vực DACH&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- KPI 2: Purchasing Power &amp; AOV --&gt;
+      &lt;div class=&quot;bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow&quot;&gt;
+        &lt;div class=&quot;flex items-start justify-between&quot;&gt;
+          &lt;div&gt;
+            &lt;p class=&quot;text-xs font-medium text-slate-500 dark:text-slate-400&quot;&gt;Sức mua &amp; AOV Quà tặng&lt;/p&gt;
+            &lt;h3 id=&quot;kpiAov&quot; class=&quot;font-display text-2xl font-extrabold text-slate-900 dark:text-white mt-1.5 tracking-tight&quot;&gt;€71.50 &lt;span class=&quot;text-sm font-normal text-slate-400&quot;&gt;/ đơn&lt;/span&gt;&lt;/h3&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center&quot;&gt;
+            &lt;i class=&quot;fa-solid fa-wallet&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;mt-3 flex items-center gap-2 text-xs&quot;&gt;
+          &lt;span id=&quot;kpiGdpBadge&quot; class=&quot;font-semibold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md&quot;&gt;
+            GDP/người: €52,800
+          &lt;/span&gt;
+          &lt;span id=&quot;kpiPowerIndex&quot; class=&quot;text-emerald-600 dark:text-emerald-400 font-medium truncate&quot;&gt;Sức mua: Rất cao&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- KPI 3: E-commerce Penetration --&gt;
+      &lt;div class=&quot;bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow&quot;&gt;
+        &lt;div class=&quot;flex items-start justify-between&quot;&gt;
+          &lt;div&gt;
+            &lt;p class=&quot;text-xs font-medium text-slate-500 dark:text-slate-400&quot;&gt;Tỷ lệ mua sắm Online&lt;/p&gt;
+            &lt;h3 id=&quot;kpiPenetration&quot; class=&quot;font-display text-2xl font-extrabold text-slate-900 dark:text-white mt-1.5 tracking-tight&quot;&gt;85.4%&lt;/h3&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;w-10 h-10 rounded-xl bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 flex items-center justify-center&quot;&gt;
+            &lt;i class=&quot;fa-solid fa-bag-shopping&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;mt-3&quot;&gt;
+          &lt;div class=&quot;w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden&quot;&gt;
+            &lt;div id=&quot;kpiPenetrationBar&quot; class=&quot;bg-violet-600 h-1.5 rounded-full transition-all duration-500&quot; style=&quot;width: 85.4%&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p id=&quot;kpiShoppersCount&quot; class=&quot;text-xs text-slate-500 dark:text-slate-400 mt-1.5&quot;&gt;~69.8 triệu người mua hàng trực tuyến&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- KPI 4: Top Peak Season --&gt;
+      &lt;div class=&quot;bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow&quot;&gt;
+        &lt;div class=&quot;flex items-start justify-between&quot;&gt;
+          &lt;div&gt;
+            &lt;p class=&quot;text-xs font-medium text-slate-500 dark:text-slate-400&quot;&gt;Quý cao điểm &amp; Thanh toán&lt;/p&gt;
+            &lt;h3 id=&quot;kpiPeakSeason&quot; class=&quot;font-display text-xl font-extrabold text-slate-900 dark:text-white mt-1.5 tracking-tight leading-snug&quot;&gt;Q4 (Weihnachten)&lt;/h3&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0&quot;&gt;
+            &lt;i class=&quot;fa-solid fa-fire-flame-curved&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;mt-3 flex items-center gap-2 text-xs&quot;&gt;
+          &lt;span id=&quot;kpiPeakShare&quot; class=&quot;font-semibold text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 rounded-md&quot;&gt;
+            PayPal • Klarna • SEPA
+          &lt;/span&gt;
+          &lt;span id=&quot;kpiPeakDates&quot; class=&quot;text-slate-500 dark:text-slate-400 truncate&quot;&gt;~38% doanh thu&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Section 3: Interactive Chart &amp; Market Insights --&gt;
+    &lt;section class=&quot;grid grid-cols-1 lg:grid-cols-3 gap-5&quot;&gt;
+      &lt;!-- Chart Card (2/3 width on desktop) --&gt;
+      &lt;div class=&quot;lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl p-5 sm:p-6 border border-slate-200/80 dark:border-slate-800 shadow-sm flex flex-col justify-between&quot;&gt;
+        &lt;div class=&quot;flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4&quot;&gt;
+          &lt;div&gt;
+            &lt;h3 id=&quot;chartMainTitle&quot; class=&quot;font-display text-base font-bold text-slate-900 dark:text-white flex items-center gap-2&quot;&gt;
+              &lt;i class=&quot;fa-solid fa-chart-area text-indigo-500&quot;&gt;&lt;/i&gt;
+              Biểu đồ Search Volume &amp; Chỉ số Sức mua 12 Tháng (2027)
+            &lt;/h3&gt;
+            &lt;p id=&quot;chartSubtitle&quot; class=&quot;text-xs text-slate-500 dark:text-slate-400 mt-0.5&quot;&gt;
+              Phản ánh biến động ngày lễ di động (Easter 28/03/2027) &amp; mùa cao điểm mua sắm
+            &lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;flex items-center gap-4 text-xs font-medium shrink-0&quot;&gt;
+            &lt;span class=&quot;flex items-center gap-1.5 text-slate-700 dark:text-slate-300&quot;&gt;
+              &lt;span class=&quot;w-3 h-3 rounded-sm bg-indigo-500 inline-block&quot;&gt;&lt;/span&gt; Search Volume
+            &lt;/span&gt;
+            &lt;span class=&quot;flex items-center gap-1.5 text-slate-700 dark:text-slate-300&quot;&gt;
+              &lt;span class=&quot;w-3 h-3 rounded-full bg-emerald-500 inline-block&quot;&gt;&lt;/span&gt; Chỉ số Sức mua
+            &lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;relative w-full h-64 sm:h-72&quot;&gt;
+          &lt;canvas id=&quot;monthlyTrendsChart&quot;&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Cultural &amp; POD Strategy Card (1/3 width on desktop) --&gt;
+      &lt;div class=&quot;bg-white dark:bg-slate-900 rounded-2xl p-5 sm:p-6 border border-slate-200/80 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-4&quot;&gt;
+        &lt;div&gt;
+          &lt;div class=&quot;flex items-center justify-between mb-3&quot;&gt;
+            &lt;span class=&quot;text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400&quot;&gt;Đặc thù thị trường &amp; POD&lt;/span&gt;
+            &lt;span id=&quot;insightFlag&quot; class=&quot;text-2xl&quot;&gt;🇩🇪&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;h3 id=&quot;insightTitle&quot; class=&quot;font-display text-lg font-bold text-slate-900 dark:text-white mb-2&quot;&gt;Hành vi mua sắm tại Đức (DACH)&lt;/h3&gt;
+          &lt;p id=&quot;insightDescription&quot; class=&quot;text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed&quot;&gt;
+            Người tiêu dùng Đức đề cao chất lượng vật liệu, tính thực tế và giá trị gia đình.
+          &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800&quot;&gt;
+          &lt;div&gt;
+            &lt;p class=&quot;text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5&quot;&gt;Niche Quà Tặng Hiệu Quả Nhất&lt;/p&gt;
+            &lt;div id=&quot;insightNiches&quot; class=&quot;flex flex-wrap gap-1.5&quot;&gt;
+              &lt;!-- Badges injected via JS --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;p-3 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200/70 dark:border-amber-800/40&quot;&gt;
+            &lt;p class=&quot;text-xs font-semibold text-amber-800 dark:text-amber-300 flex items-center gap-1.5&quot;&gt;
+              &lt;i class=&quot;fa-solid fa-truck-fast&quot;&gt;&lt;/i&gt; Lưu ý Vận chuyển &amp; Thanh toán
+            &lt;/p&gt;
+            &lt;p id=&quot;insightLogistics&quot; class=&quot;text-xs text-amber-700/90 dark:text-amber-400/90 mt-1 leading-relaxed&quot;&gt;
+              Ưa chuộng Klarna, PayPal, SEPA.
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Section 4: Filterable &amp; Sortable Annual Events Timeline / Table --&gt;
+    &lt;section class=&quot;bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden&quot;&gt;
+      &lt;!-- Table Header &amp; Controls --&gt;
+      &lt;div class=&quot;p-5 sm:p-6 border-b border-slate-200/80 dark:border-slate-800 space-y-4&quot;&gt;
+        &lt;div class=&quot;flex flex-col md:flex-row md:items-center justify-between gap-4&quot;&gt;
+          &lt;div&gt;
+            &lt;h2 id=&quot;eventsSectionTitle&quot; class=&quot;font-display text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2&quot;&gt;
+              &lt;i class=&quot;fa-regular fa-calendar-check text-indigo-500&quot;&gt;&lt;/i&gt;
+              Lịch Sự Kiện Quà Tặng &amp; Mùa Vụ Năm 2027
+            &lt;/h2&gt;
+            &lt;p class=&quot;text-xs text-slate-500 dark:text-slate-400 mt-0.5&quot;&gt;
+              Ngày lễ cố định &amp; di động được tính toán chính xác cho 2027 &amp; 2028 kèm khuyến nghị chạy Ads / Cutoff sản xuất
+            &lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Search &amp; Sort Controls --&gt;
+          &lt;div class=&quot;flex flex-wrap items-center gap-2.5&quot;&gt;
+            &lt;div class=&quot;relative flex-1 sm:flex-initial&quot;&gt;
+              &lt;i class=&quot;fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs&quot;&gt;&lt;/i&gt;
+              &lt;input
+                type=&quot;text&quot;
+                id=&quot;searchInput&quot;
+                placeholder=&quot;Tìm sự kiện, người nhận, niche...&quot;
+                class=&quot;w-full sm:w-56 pl-8 pr-3 py-2 text-xs rounded-xl bg-slate-100 dark:bg-slate-800 border border-transparent focus:border-indigo-500 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-white outline-none transition-all&quot;
+              /&gt;
+            &lt;/div&gt;
+
+            &lt;select id=&quot;sortSelect&quot; aria-label=&quot;Sắp xếp sự kiện&quot; class=&quot;px-3 py-2 text-xs font-medium rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-transparent focus:border-indigo-500 outline-none cursor-pointer&quot;&gt;
+              &lt;option value=&quot;chronological&quot;&gt;Sắp xếp: Thời gian trong năm&lt;/option&gt;
+              &lt;option value=&quot;volume_desc&quot;&gt;Search Volume: Cao → Thấp&lt;/option&gt;
+              &lt;option value=&quot;power_desc&quot;&gt;Điểm Sức mua: Cao → Thấp&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Filter Pills: Quarter &amp; Purchasing Power Tier --&gt;
+        &lt;div class=&quot;flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1&quot;&gt;
+          &lt;!-- Quarter Filter --&gt;
+          &lt;div class=&quot;flex items-center gap-1.5 flex-wrap&quot;&gt;
+            &lt;span class=&quot;text-xs font-semibold text-slate-500 dark:text-slate-400 mr-1&quot;&gt;Quý:&lt;/span&gt;
+            &lt;button data-quarter=&quot;ALL&quot; class=&quot;quarter-btn active px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white shadow-sm transition-all cursor-pointer&quot;&gt;Tất cả&lt;/button&gt;
+            &lt;button data-quarter=&quot;Q1&quot; class=&quot;quarter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer&quot;&gt;Q1 (T1–T3)&lt;/button&gt;
+            &lt;button data-quarter=&quot;Q2&quot; class=&quot;quarter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer&quot;&gt;Q2 (T4–T6)&lt;/button&gt;
+            &lt;button data-quarter=&quot;Q3&quot; class=&quot;quarter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer&quot;&gt;Q3 (T7–T9)&lt;/button&gt;
+            &lt;button data-quarter=&quot;Q4&quot; class=&quot;quarter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer&quot;&gt;Q4 (T10–T12)&lt;/button&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Purchasing Power Tier Filter --&gt;
+          &lt;div class=&quot;flex items-center gap-1.5 flex-wrap&quot;&gt;
+            &lt;span class=&quot;text-xs font-semibold text-slate-500 dark:text-slate-400 mr-1&quot;&gt;Sức mua:&lt;/span&gt;
+            &lt;button data-tier=&quot;ALL&quot; class=&quot;tier-btn active px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 transition-all cursor-pointer&quot;&gt;Tất cả&lt;/button&gt;
+            &lt;button data-tier=&quot;PEAK&quot; class=&quot;tier-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer&quot;&gt;🔥 Rất cao / Peak&lt;/button&gt;
+            &lt;button data-tier=&quot;HIGH&quot; class=&quot;tier-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer&quot;&gt;⚡ Cao&lt;/button&gt;
+            &lt;button data-tier=&quot;MEDIUM&quot; class=&quot;tier-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer&quot;&gt;✨ Trung bình&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Responsive Events Table (Desktop) &amp; Card List (Mobile) --&gt;
+      &lt;div class=&quot;overflow-x-auto&quot;&gt;
+        &lt;table class=&quot;w-full text-left border-collapse hidden md:table&quot;&gt;
+          &lt;thead&gt;
+            &lt;tr class=&quot;bg-slate-50/90 dark:bg-slate-800/50 border-b border-slate-200/80 dark:border-slate-800 text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400&quot;&gt;
+              &lt;th class=&quot;py-3.5 px-5 w-40&quot;&gt;Ngày diễn ra&lt;/th&gt;
+              &lt;th class=&quot;py-3.5 px-4 w-64&quot;&gt;Sự kiện &amp; Đối tượng nhận&lt;/th&gt;
+              &lt;th class=&quot;py-3.5 px-4 w-44&quot;&gt;Search Volume&lt;/th&gt;
+              &lt;th class=&quot;py-3.5 px-4 w-44&quot;&gt;Điểm Sức mua &amp; AOV&lt;/th&gt;
+              &lt;th class=&quot;py-3.5 px-5&quot;&gt;Gợi ý POD Gift Angle &amp; Lead Time Cutoff&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody id=&quot;eventsTableBody&quot; class=&quot;divide-y divide-slate-100 dark:divide-slate-800/80 text-sm&quot;&gt;
+            &lt;!-- Rows injected via JS --&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+
+        &lt;!-- Mobile Card Container --&gt;
+        &lt;div id=&quot;eventsMobileList&quot; class=&quot;md:hidden divide-y divide-slate-100 dark:divide-slate-800&quot;&gt;
+          &lt;!-- Cards injected via JS --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Empty State --&gt;
+      &lt;div id=&quot;emptyState&quot; class=&quot;hidden py-12 px-4 text-center&quot;&gt;
+        &lt;div class=&quot;w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto mb-3&quot;&gt;
+          &lt;i class=&quot;fa-regular fa-calendar-xmark text-xl&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;h4 class=&quot;text-sm font-bold text-slate-900 dark:text-white&quot;&gt;Không tìm thấy sự kiện phù hợp&lt;/h4&gt;
+        &lt;p class=&quot;text-xs text-slate-500 dark:text-slate-400 mt-1&quot;&gt;Thử thay đổi bộ lọc Quý, mức Sức mua hoặc từ khóa tìm kiếm.&lt;/p&gt;
+        &lt;button id=&quot;btnResetFilters&quot; class=&quot;mt-4 px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors cursor-pointer&quot;&gt;
+          Đặt lại bộ lọc
+        &lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Footer Summary Bar --&gt;
+      &lt;div class=&quot;px-5 py-3.5 bg-slate-50/70 dark:bg-slate-800/30 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400&quot;&gt;
+        &lt;span id=&quot;tableCountInfo&quot;&gt;Hiển thị sự kiện trong năm&lt;/span&gt;
+        &lt;span&gt;* Lịch ngày lễ di động 2027 &amp; 2028 đã được đồng bộ chuẩn theo lịch thiên văn &amp; từng quốc gia EU.&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;!-- Toast Notification --&gt;
+  &lt;div id=&quot;toast&quot; class=&quot;fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none&quot;&gt;
+    &lt;div class=&quot;bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-3 rounded-xl shadow-lg flex items-center gap-2.5 text-xs font-semibold&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600 text-sm&quot;&gt;&lt;/i&gt;
+      &lt;span id=&quot;toastMessage&quot;&gt;Đã xuất dữ liệu lịch sự kiện!&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Application Logic &amp; Verified 2027-2028 European Market Dataset --&gt;
+  &lt;script&gt;
+    /**
+     * Dữ liệu thị trường E-commerce &amp; Lịch sự kiện quà tặng Châu Âu (Chu kỳ 2027 – 2028)
+     * Kiểm chứng ngày lễ di động 2027 &amp; 2028:
+     * - Easter Sunday: 28/03/2027 &amp; 16/04/2028
+     * - UK Mother's Day (Mothering Sunday): 07/03/2027 &amp; 26/03/2028
+     * - ES Mother's Day: 02/05/2027 &amp; 07/05/2028
+     * - DE/IT/NL Mother's Day: 09/05/2027 &amp; 14/05/2028
+     * - FR/SE Mother's Day: 30/05/2027 &amp; 28/05/2028 (Pentecost 2028 rơi vào 04/06 nên FR không bị dời sang tháng 6)
+     * - DE Father's Day (Ascension Day): 06/05/2027 &amp; 25/05/2028
+     * - UK/FR/NL Father's Day: 20/06/2027 &amp; 18/06/2028
+     * - ES/IT Father's Day: 19/03/2027 &amp; 19/03/2028
+     * - SE Father's Day (Fars Dag): 14/11/2027 &amp; 12/11/2028
+     * - Black Friday: 26/11/2027 &amp; 24/11/2028 | Cyber Monday: 29/11/2027 &amp; 27/11/2028
+     */
+    const MARKET_DATA = {
+      DE: {
+        id: 'DE',
+        flag: '🇩🇪',
+        name: 'Đức / DACH (DE, AT, CH)',
+        shortName: 'Đức (DACH)',
+        brand: 'Hamyso',
+        currency: '€',
+        kpisByYear: {
+          '2027': {
+            marketSize: '€127.8 Tỷ',
+            growth: '+7.9% YoY',
+            marketSub: 'Dự báo E-com DACH 2027',
+            aov: '€71.50',
+            gdpPerCapita: '€52,800',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 85.4,
+            shoppersCount: '~69.8 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Weihnachten)',
+            paymentMethods: 'PayPal • Klarna • SEPA',
+            peakShare: '~38% doanh thu năm'
+          },
+          '2028': {
+            marketSize: '€137.5 Tỷ',
+            growth: '+7.6% YoY',
+            marketSub: 'Dự báo E-com DACH 2028',
+            aov: '€74.20',
+            gdpPerCapita: '€54,300',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 86.5,
+            shoppersCount: '~71.0 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Weihnachten)',
+            paymentMethods: 'PayPal • Klarna • SEPA',
+            peakShare: '~39% doanh thu năm'
+          },
+          'BOTH': {
+            marketSize: '€265.3 Tỷ',
+            growth: '+7.8% CAGR',
+            marketSub: 'Tổng quy mô 2 năm (2027–2028)',
+            aov: '€72.85',
+            gdpPerCapita: '€53,550',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 86.0,
+            shoppersCount: '~70.4 triệu người mua/năm',
+            peakSeason: 'Q4 (Black Week – 24/12)',
+            paymentMethods: 'PayPal • Klarna • SEPA',
+            peakShare: '~38.5% doanh thu'
+          }
+        },
+        insights: {
+          title: 'Hành vi mua sắm tại Đức &amp; DACH (Hamyso)',
+          description: 'Người tiêu dùng Đức &amp; Áo đề cao chất lượng vật liệu, tính chân thành và giá trị gia đình. Lưu ý năm 2027 lễ Phục sinh rơi sớm cuối tháng 3 (28/03), còn năm 2028 rơi vào giữa tháng 4 (16/04) kéo theo Vatertag (25/05/2028) diễn ra muộn hơn gần 3 tuần.',
+          niches: ['Gia đình (Oma/Opa, Mama/Papa)', 'Cặp đôi (Jahrestag)', 'Thú cưng (Hund/Katze)', 'Đồ trang trí Giáng sinh (Weihnachten)'],
+          logistics: 'Ưa chuộng PayPal, Klarna &amp; SEPA. Bắt buộc hiển thị rõ thời gian giao hàng trước ngày lễ tối thiểu 7–10 ngày.'
+        },
+        monthlyChart: {
+          '2027': {
+            searchVolume: [42, 66, 68, 52, 86, 54, 45, 48, 58, 72, 96, 100],
+            purchasingPower: [50, 68, 66, 54, 84, 56, 50, 52, 60, 74, 97, 99]
+          },
+          '2028': {
+            searchVolume: [44, 66, 50, 68, 88, 55, 45, 48, 58, 73, 96, 100],
+            purchasingPower: [52, 68, 52, 66, 86, 57, 50, 52, 60, 75, 97, 99]
+          }
+        },
+        events: [
+          {
+            date2027: '14/02/2027',
+            date2028: '14/02/2028',
+            sort2027: 20270214,
+            sort2028: 20280214,
+            quarter: 'Q1',
+            name: 'Valentinstag (Lễ Tình Nhân)',
+            recipients: 'Vợ/Chồng, Người yêu (Cặp đôi)',
+            volumeEstimate: '450K – 620K / tháng',
+            volumeScore: 82,
+            powerScore: 80,
+            tier: 'HIGH',
+            aovRange: '€58 – €88',
+            angle: 'Tranh canvas kỷ niệm, cốc sứ đôi in tên &amp; bản đồ sao ngày gặp nhau.',
+            cutoff: 'Chạy Ads: 12/01 | Cutoff EU/CN: 01/02 – 04/02'
+          },
+          {
+            date2027: '28/03/2027',
+            date2028: '16/04/2028',
+            quarter2027: 'Q1',
+            quarter2028: 'Q2',
+            quarter: 'Q1',
+            name: 'Ostersonntag (Lễ Phục Sinh)',
+            recipients: 'Trẻ em, Cháu (Enkelkinder), Ông bà',
+            volumeEstimate: '380K – 520K / tháng',
+            volumeScore: 76,
+            powerScore: 72,
+            tier: 'MEDIUM',
+            aovRange: '€42 – €68',
+            angle: 'Quà Phục sinh in tên cháu, áo thun gia đình mùa xuân, thảm chùi chân decor.',
+            cutoff: 'Chạy Ads trước 4 tuần | Cutoff ship trước 10 ngày'
+          },
+          {
+            date2027: '09/05/2027',
+            date2028: '14/05/2028',
+            sort2027: 20270509,
+            sort2028: 20280514,
+            quarter: 'Q2',
+            name: 'Muttertag (Ngày của Mẹ)',
+            recipients: 'Mẹ (Mama), Bà (Oma)',
+            volumeEstimate: '850K – 1.2M / tháng',
+            volumeScore: 93,
+            powerScore: 94,
+            tier: 'PEAK',
+            aovRange: '€68 – €115',
+            angle: 'Trang sức khắc tên các con, chăn/gối gia đình, tranh cây gia phả Oma &amp; Mama.',
+            cutoff: 'Chạy Ads trước 4 tuần | Cutoff ship trước 10 ngày'
+          },
+          {
+            date2027: '06/05/2027',
+            date2028: '25/05/2028',
+            sort2027: 20270506,
+            sort2028: 20280525,
+            quarter: 'Q2',
+            name: 'Vatertag / Christi Himmelfahrt (Ngày của Cha)',
+            recipients: 'Bố (Papa), Ông (Opa)',
+            volumeEstimate: '540K – 760K / tháng',
+            volumeScore: 85,
+            powerScore: 82,
+            tier: 'HIGH',
+            aovRange: '€52 – €88',
+            angle: 'Cốc bia khắc tên, áo thun hài hước về Bố &amp; Con, dụng cụ BBQ cá nhân hóa.',
+            cutoff: 'Lưu ý: 2027 trước Muttertag 3 ngày; 2028 sau Muttertag 11 ngày'
+          },
+          {
+            date2027: '01/08/2027',
+            date2028: '01/08/2028',
+            sort2027: 20270801,
+            sort2028: 20280801,
+            quarter: 'Q3',
+            name: 'Einschulung / Schulanfang (Ngày Tựu Trường)',
+            recipients: 'Học sinh lớp 1, Con cái, Ông bà tặng cháu',
+            volumeEstimate: '360K – 490K / tháng',
+            volumeScore: 76,
+            powerScore: 78,
+            tier: 'HIGH',
+            aovRange: '€48 – €78',
+            angle: 'Balo, bình nước, áo thun &quot;Schulkind 2027/2028&quot; in tên bé, quà túi Schultüte.',
+            cutoff: 'Chạy Ads: đầu T7 | Cutoff ship: 20/07'
+          },
+          {
+            date2027: '31/10/2027',
+            date2028: '31/10/2028',
+            sort2027: 20271031,
+            sort2028: 20281031,
+            quarter: 'Q4',
+            name: 'Halloween',
+            recipients: 'Gia đình có con nhỏ, Giới trẻ',
+            volumeEstimate: '410K – 560K / tháng',
+            volumeScore: 78,
+            powerScore: 70,
+            tier: 'MEDIUM',
+            aovRange: '€42 – €68',
+            angle: 'Thảm chùi chân (Doormat) ma quái in tên gia đình, áo hoodie nhóm.',
+            cutoff: 'Chạy Ads: 28/09 | Cutoff ship: 20/10'
+          },
+          {
+            date2027: '11/11/2027',
+            date2028: '11/11/2028',
+            sort2027: 20271111,
+            sort2028: 20281111,
+            quarter: 'Q4',
+            name: 'Singles\' Day &amp; Karnevalsbeginn',
+            recipients: 'Mua sắm cá nhân, Hội nhóm lễ hội',
+            volumeEstimate: '390K – 510K / tháng',
+            volumeScore: 75,
+            powerScore: 78,
+            tier: 'HIGH',
+            aovRange: '€55 – €92',
+            angle: 'Flash Sale tự thưởng bản thân, mở màn chuỗi ưu đãi Q4.',
+            cutoff: 'Chạy Ads: 20/10 | Đỉnh sale: 08/11 – 11/11'
+          },
+          {
+            date2027: '26/11/2027',
+            date2028: '24/11/2028',
+            sort2027: 20271126,
+            sort2028: 20281124,
+            quarter: 'Q4',
+            name: 'Black Friday &amp; Cyber Monday (29/11 &amp; 27/11)',
+            recipients: 'Toàn bộ gia đình (Mua sớm quà Giáng sinh)',
+            volumeEstimate: '1.8M – 2.5M / tháng',
+            volumeScore: 98,
+            powerScore: 98,
+            tier: 'PEAK',
+            aovRange: '€98 – €165',
+            angle: 'Bundle quà gia đình giảm giá bậc thang, cam kết giao kịp Giáng sinh.',
+            cutoff: 'Lên camp: 25/10 | Đỉnh điểm Ads: tuần lễ Black Week'
+          },
+          {
+            date2027: '06/12/2027',
+            date2028: '06/12/2028',
+            sort2027: 20271206,
+            sort2028: 20281206,
+            quarter: 'Q4',
+            name: 'Krampus (05/12) &amp; Nikolaustag (06/12)',
+            recipients: 'Trẻ em, Gia đình tại Đức &amp; Áo',
+            volumeEstimate: '620K – 840K / tháng',
+            volumeScore: 86,
+            powerScore: 84,
+            tier: 'HIGH',
+            aovRange: '€38 – €65',
+            angle: 'Tất Giáng sinh (Nikolausstiefel) in tên, Ornament cây thông cá nhân hóa.',
+            cutoff: 'Chạy Ads: 02/11 | Cutoff ship: 25/11'
+          },
+          {
+            date2027: '24/12/2027',
+            date2028: '24/12/2028',
+            sort2027: 20271224,
+            sort2028: 20281224,
+            quarter: 'Q4',
+            name: 'Heiligabend &amp; Weihnachten (Giáng Sinh)',
+            recipients: 'Bố mẹ, Ông bà, Vợ chồng, Con cái &amp; Thú cưng',
+            volumeEstimate: '2.4M – 3.2M / tháng',
+            volumeScore: 100,
+            powerScore: 100,
+            tier: 'PEAK',
+            aovRange: '€125 – €225',
+            angle: 'Tranh gia đình, chăn ấm, Ornament kỷ niệm năm, quà cho bố mẹ &amp; thú cưng.',
+            cutoff: 'Lên camp: 01/11 | Cutoff ship: 11/12 (EU) / 06/12 (CN)'
+          }
+        ]
+      },
+
+      FR: {
+        id: 'FR',
+        flag: '🇫🇷',
+        name: 'Pháp (FR)',
+        shortName: 'Pháp',
+        brand: 'Koccie',
+        currency: '€',
+        kpisByYear: {
+          '2027': {
+            marketSize: '€103.2 Tỷ',
+            growth: '+8.8% YoY',
+            marketSub: 'Dự báo E-com Pháp 2027',
+            aov: '€66.50',
+            gdpPerCapita: '€46,100',
+            powerLabel: 'Sức mua: Cao &amp; Ổn định',
+            penetration: 82.8,
+            shoppersCount: '~45.1 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Noël &amp; Black Friday)',
+            paymentMethods: 'Carte Bancaire • PayPal • Apple Pay',
+            peakShare: '~36% doanh thu năm'
+          },
+          '2028': {
+            marketSize: '€111.8 Tỷ',
+            growth: '+8.3% YoY',
+            marketSub: 'Dự báo E-com Pháp 2028',
+            aov: '€69.00',
+            gdpPerCapita: '€47,500',
+            powerLabel: 'Sức mua: Cao &amp; Ổn định',
+            penetration: 84.0,
+            shoppersCount: '~46.0 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Noël &amp; Black Friday)',
+            paymentMethods: 'Carte Bancaire • PayPal • Apple Pay',
+            peakShare: '~37% doanh thu năm'
+          },
+          'BOTH': {
+            marketSize: '€215.0 Tỷ',
+            growth: '+8.6% CAGR',
+            marketSub: 'Tổng quy mô 2 năm (2027–2028)',
+            aov: '€67.75',
+            gdpPerCapita: '€46,800',
+            powerLabel: 'Sức mua: Cao &amp; Ổn định',
+            penetration: 83.4,
+            shoppersCount: '~45.5 triệu người mua/năm',
+            peakSeason: 'Q4 (Black Friday – Noël)',
+            paymentMethods: 'Carte Bancaire • PayPal • Apple Pay',
+            peakShare: '~36.5% doanh thu'
+          }
+        },
+        insights: {
+          title: 'Hành vi mua sắm tại Pháp (Koccie)',
+          description: 'Khách hàng Pháp yêu thích sự tinh tế, nghệ thuật và thông điệp tiếng Pháp giàu cảm xúc (Maman, Papa, Mamie, Papi). Lưu ý: Cả năm 2027 (30/05) và 2028 (28/05), Fête des Mères đều rơi vào Chủ nhật cuối tháng 5 (không bị trùng lễ Hiện Xuống Pentecost) – muộn hơn Đức/Ý/Mỹ 2–3 tuần.',
+          niches: ['Maman / Mamie (Mẹ &amp; Bà)', 'Cặp đôi lãng mạn', 'Trang trí nội thất tinh tế', 'Thú cưng (Chien/Chat)'],
+          logistics: 'Carte Bancaire, PayPal và Apple Pay chiếm ưu thế. Giao tận nhà (Colissimo) hoặc điểm nhận hàng (Mondial Relay).'
+        },
+        monthlyChart: {
+          '2027': {
+            searchVolume: [56, 68, 62, 52, 88, 75, 48, 42, 58, 66, 95, 100],
+            purchasingPower: [60, 70, 62, 54, 86, 74, 50, 45, 60, 68, 96, 98]
+          },
+          '2028': {
+            searchVolume: [56, 68, 58, 56, 89, 76, 48, 42, 58, 67, 95, 100],
+            purchasingPower: [60, 70, 60, 58, 87, 75, 50, 45, 60, 69, 96, 98]
+          }
+        },
+        events: [
+          {
+            date2027: '06/01/2027',
+            date2028: '12/01/2028',
+            sort2027: 20270106,
+            sort2028: 20280112,
+            quarter: 'Q1',
+            name: 'Soldes d\'Hiver (Mùa giảm giá Mùa Đông)',
+            recipients: 'Người săn sale đầu năm, Gia đình',
+            volumeEstimate: '520K – 710K / tháng',
+            volumeScore: 78,
+            powerScore: 76,
+            tier: 'HIGH',
+            aovRange: '€55 – €92',
+            angle: 'Ưu đãi mở màn năm mới, combo áo hoodie &amp; quà trang trí nhà cửa.',
+            cutoff: 'Chạy Ads: 26/12 năm trước | Đỉnh sale tuần đầu'
+          },
+          {
+            date2027: '14/02/2027',
+            date2028: '14/02/2028',
+            sort2027: 20270214,
+            sort2028: 20280214,
+            quarter: 'Q1',
+            name: 'La Saint-Valentin (Lễ Tình Nhân)',
+            recipients: 'Người yêu, Vợ/Chồng',
+            volumeEstimate: '580K – 790K / tháng',
+            volumeScore: 86,
+            powerScore: 84,
+            tier: 'HIGH',
+            aovRange: '€62 – €98',
+            angle: 'Tranh minh họa cặp đôi kiểu Pháp, vòng tay khắc tên, gối ôm tình yêu.',
+            cutoff: 'Chạy Ads: 14/01 | Cutoff ship: 04/02'
+          },
+          {
+            date2027: '07/03/2027',
+            date2028: '05/03/2028',
+            sort2027: 20270307,
+            sort2028: 20280305,
+            quarter: 'Q1',
+            name: 'Fête des Grands-Mères (Ngày của Bà)',
+            recipients: 'Bà nội / Bà ngoại (Mamie / Mémé)',
+            volumeEstimate: '340K – 470K / tháng',
+            volumeScore: 76,
+            powerScore: 78,
+            tier: 'HIGH',
+            aovRange: '€48 – €78',
+            angle: 'Túi tote &quot;Super Mamie&quot;, cốc sứ in tên các cháu, tranh hoa cá nhân hóa.',
+            cutoff: 'Chạy Ads: 05/02 | Cutoff ship: 23/02'
+          },
+          {
+            date2027: '30/05/2027',
+            date2028: '28/05/2028',
+            sort2027: 20270530,
+            sort2028: 20280528,
+            quarter: 'Q2',
+            name: 'Fête des Mères (Ngày của Mẹ)',
+            recipients: 'Mẹ (Maman), Bà (Mamie)',
+            volumeEstimate: '920K – 1.3M / tháng',
+            volumeScore: 95,
+            powerScore: 95,
+            tier: 'PEAK',
+            aovRange: '€68 – €118',
+            angle: 'Trang sức khắc tên con, tranh chân dung Mẹ &amp; Con phong cách tối giản.',
+            cutoff: 'Chạy Ads từ 01/05 (sau khi Mỹ/Đức hạ nhiệt) | Cutoff: 18/05'
+          },
+          {
+            date2027: '20/06/2027',
+            date2028: '18/06/2028',
+            sort2027: 20270620,
+            sort2028: 20280618,
+            quarter: 'Q2',
+            name: 'Fête des Pères (Ngày của Cha)',
+            recipients: 'Bố (Papa), Ông (Papi)',
+            volumeEstimate: '510K – 710K / tháng',
+            volumeScore: 83,
+            powerScore: 80,
+            tier: 'HIGH',
+            aovRange: '€52 – €88',
+            angle: 'Áo thun &quot;Papa Poule&quot;, phụ kiện rượu vang/BBQ khắc tên, quà từ con.',
+            cutoff: 'Chạy Ads: 22/05 | Cutoff ship: 09/06'
+          },
+          {
+            date2027: '01/09/2027',
+            date2028: '01/09/2028',
+            sort2027: 20270901,
+            sort2028: 20280901,
+            quarter: 'Q3',
+            name: 'La Rentrée (Mùa Tựu Trường)',
+            recipients: 'Học sinh, Giáo viên (Maîtresse)',
+            volumeEstimate: '390K – 520K / tháng',
+            volumeScore: 73,
+            powerScore: 70,
+            tier: 'MEDIUM',
+            aovRange: '€46 – €75',
+            angle: 'Túi vải, bình giữ nhiệt in tên, quà cảm ơn giáo viên đầu năm học.',
+            cutoff: 'Chạy Ads: 01/08 | Cutoff ship: 21/08'
+          },
+          {
+            date2027: '26/11/2027',
+            date2028: '24/11/2028',
+            sort2027: 20271126,
+            sort2028: 20281124,
+            quarter: 'Q4',
+            name: 'Black Friday &amp; Cyber Monday (29/11 &amp; 27/11)',
+            recipients: 'Người mua quà Giáng sinh sớm',
+            volumeEstimate: '1.5M – 2.1M / tháng',
+            volumeScore: 96,
+            powerScore: 95,
+            tier: 'PEAK',
+            aovRange: '€92 – €155',
+            angle: 'Ưu đãi theo bộ quà tặng gia đình, freeship &amp; hộp quà sang trọng.',
+            cutoff: 'Lên camp: 25/10 | Đỉnh điểm Ads: tuần lễ Black Week'
+          },
+          {
+            date2027: '25/12/2027',
+            date2028: '25/12/2028',
+            sort2027: 20271225,
+            sort2028: 20281225,
+            quarter: 'Q4',
+            name: 'Noël (Lễ Giáng Sinh)',
+            recipients: 'Cả gia đình (Maman, Papa, Mamie, Papi, Enfants)',
+            volumeEstimate: '2.1M – 2.8M / tháng',
+            volumeScore: 100,
+            powerScore: 99,
+            tier: 'PEAK',
+            aovRange: '€118 – €205',
+            angle: 'Boule de Noël (quả châu Giáng sinh) in tên thành viên, chăn gia đình, tranh kỷ niệm.',
+            cutoff: 'Lên camp: 01/11 | Cutoff ship: 12/12'
+          }
+        ]
+      },
+
+      ES: {
+        id: 'ES',
+        flag: '🇪🇸',
+        name: 'Tây Ban Nha (ES)',
+        shortName: 'Tây Ban Nha',
+        brand: 'Amor1970s',
+        currency: '€',
+        kpisByYear: {
+          '2027': {
+            marketSize: '€60.4 Tỷ',
+            growth: '+11.4% YoY',
+            marketSub: 'Tăng trưởng nhanh nhất Tây Âu',
+            aov: '€56.50',
+            gdpPerCapita: '€34,800',
+            powerLabel: 'Sức mua: Khá &amp; Tăng nhanh',
+            penetration: 80.2,
+            shoppersCount: '~32.4 triệu người mua trực tuyến',
+            peakSeason: 'Q4 – 06/01 (Reyes Magos)',
+            paymentMethods: 'Bizum • Thẻ nội địa • PayPal',
+            peakShare: 'Kéo dài tới 06/01'
+          },
+          '2028': {
+            marketSize: '€66.9 Tỷ',
+            growth: '+10.8% YoY',
+            marketSub: 'Dự báo E-com Tây Ban Nha 2028',
+            aov: '€59.00',
+            gdpPerCapita: '€36,100',
+            powerLabel: 'Sức mua: Khá &amp; Tăng nhanh',
+            penetration: 81.6,
+            shoppersCount: '~33.2 triệu người mua trực tuyến',
+            peakSeason: 'Q4 – 06/01 (Reyes Magos)',
+            paymentMethods: 'Bizum • Thẻ nội địa • PayPal',
+            peakShare: 'Kéo dài tới 06/01'
+          },
+          'BOTH': {
+            marketSize: '€127.3 Tỷ',
+            growth: '+11.1% CAGR',
+            marketSub: 'Tổng quy mô 2 năm (2027–2028)',
+            aov: '€57.75',
+            gdpPerCapita: '€35,450',
+            powerLabel: 'Sức mua: Khá &amp; Tăng nhanh',
+            penetration: 80.9,
+            shoppersCount: '~32.8 triệu người mua/năm',
+            peakSeason: 'Black Friday – Reyes Magos',
+            paymentMethods: 'Bizum • Thẻ nội địa • PayPal',
+            peakShare: 'Siêu mùa vụ 6 tuần'
+          }
+        },
+        insights: {
+          title: 'Hành vi mua sắm tại Tây Ban Nha (Amor1970s)',
+          description: 'Văn hóa Tây Ban Nha đề cao tình cảm gia đình nồng nhiệt. Có 3 điểm vàng khác biệt lớn: Día del Padre diễn ra vào 19/03 (San José), Día de la Madre rơi vào Chủ nhật đầu tháng 5 (02/05/2027 &amp; 07/05/2028), và mùa quà cuối năm bùng nổ tới tận Lễ Ba Vua (Reyes Magos 06/01).',
+          niches: ['Gia đình (Mamá, Papá, Abuelos)', 'Quà tặng Reyes Magos (06/01)', 'Cặp đôi (San Valentín)', 'Thú cưng'],
+          logistics: 'Bizum, thẻ nội địa &amp; PayPal rất phổ biến. Khách hàng nhạy cảm với phí ship nên ưu tiên miễn phí vận chuyển.'
+        },
+        monthlyChart: {
+          '2027': {
+            searchVolume: [78, 66, 76, 54, 87, 48, 44, 40, 54, 62, 94, 100],
+            purchasingPower: [80, 68, 74, 56, 85, 50, 46, 42, 55, 64, 95, 98]
+          },
+          '2028': {
+            searchVolume: [79, 66, 75, 56, 88, 48, 44, 40, 54, 63, 94, 100],
+            purchasingPower: [81, 68, 73, 58, 86, 50, 46, 42, 55, 65, 95, 98]
+          }
+        },
+        events: [
+          {
+            date2027: '06/01/2027',
+            date2028: '06/01/2028',
+            sort2027: 20270106,
+            sort2028: 20280106,
+            quarter: 'Q1',
+            name: 'Día de los Reyes Magos (Lễ Ba Vua)',
+            recipients: 'Trẻ em, Bố mẹ, Ông bà, Cả gia đình',
+            volumeEstimate: '950K – 1.35M / tháng',
+            volumeScore: 95,
+            powerScore: 94,
+            tier: 'PEAK',
+            aovRange: '€88 – €155',
+            angle: 'ĐẶC SẢN TÂY BAN NHA: Ngày trao quà chính lớn nhất năm! Chạy Ads xuyên Tết Dương lịch.',
+            cutoff: 'Chạy Ads: 10/12 – 01/01 | Cutoff ship: 27/12'
+          },
+          {
+            date2027: '14/02/2027',
+            date2028: '14/02/2028',
+            sort2027: 20270214,
+            sort2028: 20280214,
+            quarter: 'Q1',
+            name: 'Día de San Valentín (Lễ Tình Nhân)',
+            recipients: 'Người yêu, Vợ/Chồng',
+            volumeEstimate: '460K – 630K / tháng',
+            volumeScore: 81,
+            powerScore: 78,
+            tier: 'HIGH',
+            aovRange: '€48 – €78',
+            angle: 'Tranh kỷ niệm tình yêu, cốc đôi, móc khóa &amp; vòng tay khắc tên tiếng Tây Ban Nha.',
+            cutoff: 'Chạy Ads: 15/01 | Cutoff ship: 04/02'
+          },
+          {
+            date2027: '19/03/2027',
+            date2028: '19/03/2028',
+            sort2027: 20270319,
+            sort2028: 20280319,
+            quarter: 'Q1',
+            name: 'Día del Padre (Ngày của Cha - San José)',
+            recipients: 'Bố (Papá), Ông (Abuelo)',
+            volumeEstimate: '640K – 880K / tháng',
+            volumeScore: 86,
+            powerScore: 84,
+            tier: 'HIGH',
+            aovRange: '€48 – €82',
+            angle: 'Áo thun &quot;El Mejor Papá&quot;, cốc sứ in hình con cái, khung ảnh gia đình.',
+            cutoff: 'Chạy Ads: 18/02 | Cutoff ship: 09/03'
+          },
+          {
+            date2027: '02/05/2027',
+            date2028: '07/05/2028',
+            sort2027: 20270502,
+            sort2028: 20280507,
+            quarter: 'Q2',
+            name: 'Día de la Madre (Ngày của Mẹ - CN đầu tháng 5)',
+            recipients: 'Mẹ (Mamá), Bà (Abuela)',
+            volumeEstimate: '820K – 1.15M / tháng',
+            volumeScore: 93,
+            powerScore: 92,
+            tier: 'PEAK',
+            aovRange: '€58 – €98',
+            angle: 'Trang sức khắc tên con, túi tote, tranh chân dung Mamá &amp; Abuela (sớm hơn EU/Mỹ 1 tuần).',
+            cutoff: 'Chạy Ads: đầu T4 | Cutoff ship: 21/04 (2027) / 26/04 (2028)'
+          },
+          {
+            date2027: '26/11/2027',
+            date2028: '24/11/2028',
+            sort2027: 20271126,
+            sort2028: 20281124,
+            quarter: 'Q4',
+            name: 'Black Friday &amp; Cyber Monday (29/11 &amp; 27/11)',
+            recipients: 'Người mua quà Navidad &amp; Reyes sớm',
+            volumeEstimate: '1.4M – 1.9M / tháng',
+            volumeScore: 96,
+            powerScore: 95,
+            tier: 'PEAK',
+            aovRange: '€82 – €145',
+            angle: 'Combo quà tặng gia đình giảm giá sâu, mở đầu chu kỳ mua sắm 6 tuần.',
+            cutoff: 'Lên camp: 25/10 | Đỉnh điểm Ads: tuần lễ Black Week'
+          },
+          {
+            date2027: '25/12/2027',
+            date2028: '25/12/2028',
+            sort2027: 20271225,
+            sort2028: 20281225,
+            quarter: 'Q4',
+            name: 'Nochebuena &amp; Navidad (Lễ Giáng Sinh)',
+            recipients: 'Gia đình đoàn tụ đêm 24/12 &amp; ngày 25/12',
+            volumeEstimate: '1.7M – 2.3M / tháng',
+            volumeScore: 98,
+            powerScore: 97,
+            tier: 'PEAK',
+            aovRange: '€98 – €170',
+            angle: 'Đồ trang trí Giáng sinh cá nhân hóa, áo hoodie gia đình, quà tặng ông bà.',
+            cutoff: 'Lên camp: 01/11 | Cutoff ship: 12/12'
+          }
+        ]
+      },
+
+      IT: {
+        id: 'IT',
+        flag: '🇮🇹',
+        name: 'Ý (IT)',
+        shortName: 'Ý (Italy)',
+        brand: 'Amor1970s',
+        currency: '€',
+        kpisByYear: {
+          '2027': {
+            marketSize: '€64.5 Tỷ',
+            growth: '+10.1% YoY',
+            marketSub: 'Tỷ trọng mua Mobile &gt; 64%',
+            aov: '€60.50',
+            gdpPerCapita: '€38,400',
+            powerLabel: 'Sức mua: Khá Cao (Miền Bắc rất cao)',
+            penetration: 78.0,
+            shoppersCount: '~36.8 triệu người mua trực tuyến',
+            peakSeason: 'Q4 – 06/01 (La Befana)',
+            paymentMethods: 'PayPal • PostePay • Carta di Credito',
+            peakShare: 'Kéo dài tới 06/01'
+          },
+          '2028': {
+            marketSize: '€70.8 Tỷ',
+            growth: '+9.8% YoY',
+            marketSub: 'Dự báo E-com Ý 2028',
+            aov: '€63.00',
+            gdpPerCapita: '€39,700',
+            powerLabel: 'Sức mua: Khá Cao',
+            penetration: 79.4,
+            shoppersCount: '~37.6 triệu người mua trực tuyến',
+            peakSeason: 'Q4 – 06/01 (La Befana)',
+            paymentMethods: 'PayPal • PostePay • Carta di Credito',
+            peakShare: 'Kéo dài tới 06/01'
+          },
+          'BOTH': {
+            marketSize: '€135.3 Tỷ',
+            growth: '+9.9% CAGR',
+            marketSub: 'Tổng quy mô 2 năm (2027–2028)',
+            aov: '€61.75',
+            gdpPerCapita: '€39,050',
+            powerLabel: 'Sức mua: Khá Cao',
+            penetration: 78.7,
+            shoppersCount: '~37.2 triệu người mua/năm',
+            peakSeason: 'Black Friday – La Befana',
+            paymentMethods: 'PayPal • PostePay • Carta di Credito',
+            peakShare: 'Siêu mùa vụ cuối năm'
+          }
+        },
+        insights: {
+          title: 'Hành vi mua sắm tại Ý (Amor1970s)',
+          description: 'Người Ý cực kỳ coi trọng gia đình (La Famiglia) và sự gắn kết thế hệ (Mamma, Papà, Nonna, Nonno). Các cột mốc vàng: La Befana (06/01), Festa del Papà (19/03), Festa della Mamma (09/05/2027 &amp; 14/05/2028), Festa dei Nonni (02/10) và Natale.',
+          niches: ['Gia đình (Mamma, Nonna, Nonno)', 'Cặp đôi (San Valentino)', 'Quà tặng La Befana (06/01)', 'Trang trí nhà bếp &amp; bàn ăn'],
+          logistics: 'PayPal, PostePay và thẻ tín dụng phổ biến. Người mua Ý thích giao hàng nhanh (BRT, SDA).'
+        },
+        monthlyChart: {
+          '2027': {
+            searchVolume: [74, 68, 78, 52, 88, 48, 42, 38, 52, 64, 94, 100],
+            purchasingPower: [76, 70, 76, 54, 86, 50, 44, 40, 54, 66, 95, 98]
+          },
+          '2028': {
+            searchVolume: [75, 68, 74, 60, 89, 48, 42, 38, 52, 65, 94, 100],
+            purchasingPower: [77, 70, 73, 62, 87, 50, 44, 40, 54, 67, 95, 98]
+          }
+        },
+        events: [
+          {
+            date2027: '06/01/2027',
+            date2028: '06/01/2028',
+            sort2027: 20270106,
+            sort2028: 20280106,
+            quarter: 'Q1',
+            name: 'Epifania / La Befana',
+            recipients: 'Trẻ em, Gia đình',
+            volumeEstimate: '540K – 740K / tháng',
+            volumeScore: 79,
+            powerScore: 78,
+            tier: 'HIGH',
+            aovRange: '€52 – €88',
+            angle: 'Tất Befana cá nhân hóa (Calza della Befana), quà nhỏ cho trẻ em và gia đình đầu năm.',
+            cutoff: 'Chạy Ads: 10/12 – 30/12 | Cutoff ship: 27/12'
+          },
+          {
+            date2027: '14/02/2027',
+            date2028: '14/02/2028',
+            sort2027: 20270214,
+            sort2028: 20280214,
+            quarter: 'Q1',
+            name: 'San Valentino (Lễ Tình Nhân)',
+            recipients: 'Vợ/Chồng, Người yêu',
+            volumeEstimate: '520K – 710K / tháng',
+            volumeScore: 84,
+            powerScore: 82,
+            tier: 'HIGH',
+            aovRange: '€52 – €88',
+            angle: 'Tranh kỷ niệm tình yêu, trang sức khắc tên, cốc &amp; gối cặp đôi tiếng Ý.',
+            cutoff: 'Chạy Ads: 15/01 | Cutoff ship: 04/02'
+          },
+          {
+            date2027: '19/03/2027',
+            date2028: '19/03/2028',
+            sort2027: 20270319,
+            sort2028: 20280319,
+            quarter: 'Q1',
+            name: 'Festa del Papà (Ngày của Cha - San Giuseppe)',
+            recipients: 'Bố (Papà), Ông (Nonno)',
+            volumeEstimate: '590K – 810K / tháng',
+            volumeScore: 84,
+            powerScore: 81,
+            tier: 'HIGH',
+            aovRange: '€48 – €82',
+            angle: 'Áo thun &quot;Il Miglior Papà&quot;, tạp dề nấu ăn/BBQ in tên, cốc sứ cá nhân hóa.',
+            cutoff: 'Chạy Ads: 18/02 | Cutoff ship: 09/03'
+          },
+          {
+            date2027: '09/05/2027',
+            date2028: '14/05/2028',
+            sort2027: 20270509,
+            sort2028: 20280514,
+            quarter: 'Q2',
+            name: 'Festa della Mamma (Ngày của Mẹ)',
+            recipients: 'Mẹ (Mamma), Bà (Nonna)',
+            volumeEstimate: '860K – 1.2M / tháng',
+            volumeScore: 94,
+            powerScore: 93,
+            tier: 'PEAK',
+            aovRange: '€62 – €108',
+            angle: 'Trang sức khắc tên con, tranh cây gia phả, gối &amp; chăn in lời chúc gửi Mamma &amp; Nonna.',
+            cutoff: 'Chạy Ads trước 4 tuần | Cutoff ship trước 10 ngày'
+          },
+          {
+            date2027: '02/10/2027',
+            date2028: '02/10/2028',
+            sort2027: 20271002,
+            sort2028: 20281002,
+            quarter: 'Q4',
+            name: 'Festa dei Nonni (Ngày của Ông Bà)',
+            recipients: 'Ông nội/ngoại (Nonno), Bà nội/ngoại (Nonna)',
+            volumeEstimate: '380K – 520K / tháng',
+            volumeScore: 77,
+            powerScore: 78,
+            tier: 'HIGH',
+            aovRange: '€48 – €78',
+            angle: 'Tranh canvas in tên các cháu, áo thun &amp; cốc &quot;Super Nonna / Super Nonno&quot;.',
+            cutoff: 'Chạy Ads: 02/09 | Cutoff ship: 22/09'
+          },
+          {
+            date2027: '26/11/2027',
+            date2028: '24/11/2028',
+            sort2027: 20271126,
+            sort2028: 20281124,
+            quarter: 'Q4',
+            name: 'Black Friday &amp; Cyber Monday (29/11 &amp; 27/11)',
+            recipients: 'Người mua sắm trên Mobile &amp; quà Natale sớm',
+            volumeEstimate: '1.45M – 2.0M / tháng',
+            volumeScore: 95,
+            powerScore: 94,
+            tier: 'PEAK',
+            aovRange: '€88 – €150',
+            angle: 'Bundle quà tặng Giáng sinh sớm, ưu đãi giảm giá theo số lượng.',
+            cutoff: 'Lên camp: 25/10 | Đỉnh điểm Ads: tuần lễ Black Week'
+          },
+          {
+            date2027: '25/12/2027',
+            date2028: '25/12/2028',
+            sort2027: 20271225,
+            sort2028: 20281225,
+            quarter: 'Q4',
+            name: 'Natale (Lễ Giáng Sinh)',
+            recipients: 'Cả gia đình (La Famiglia)',
+            volumeEstimate: '1.9M – 2.5M / tháng',
+            volumeScore: 100,
+            powerScore: 98,
+            tier: 'PEAK',
+            aovRange: '€108 – €190',
+            angle: 'Palline di Natale (quả châu Giáng sinh) in tên, chăn gia đình, tranh kỷ niệm.',
+            cutoff: 'Lên camp: 01/11 | Cutoff ship: 12/12'
+          }
+        ]
+      },
+
+      NL: {
+        id: 'NL',
+        flag: '🇳🇱',
+        name: 'Hà Lan (NL)',
+        shortName: 'Hà Lan',
+        brand: 'Gemilio',
+        currency: '€',
+        kpisByYear: {
+          '2027': {
+            marketSize: '€39.9 Tỷ',
+            growth: '+8.5% YoY',
+            marketSub: 'Tỷ lệ mua online Top 1 EU',
+            aov: '€74.50',
+            gdpPerCapita: '€60,100',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 92.2,
+            shoppersCount: '~14.5 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Sinterklaas &amp; Kerst)',
+            paymentMethods: 'iDEAL (&gt;70%) • Klarna • PayPal',
+            peakShare: 'Bùng nổ 15/11 – 26/12'
+          },
+          '2028': {
+            marketSize: '€43.1 Tỷ',
+            growth: '+8.0% YoY',
+            marketSub: 'Dự báo E-com Hà Lan 2028',
+            aov: '€77.00',
+            gdpPerCapita: '€61,800',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 92.8,
+            shoppersCount: '~14.7 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Sinterklaas &amp; Kerst)',
+            paymentMethods: 'iDEAL (&gt;70%) • Klarna • PayPal',
+            peakShare: 'Bùng nổ 15/11 – 26/12'
+          },
+          'BOTH': {
+            marketSize: '€83.0 Tỷ',
+            growth: '+8.3% CAGR',
+            marketSub: 'Tổng quy mô 2 năm (2027–2028)',
+            aov: '€75.75',
+            gdpPerCapita: '€60,950',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 92.5,
+            shoppersCount: '~14.6 triệu người mua/năm',
+            peakSeason: 'Sinterklaas (05/12) &amp; Kerstmis',
+            paymentMethods: 'iDEAL (&gt;70%) • Klarna • PayPal',
+            peakShare: 'Hai đỉnh sóng T12'
+          }
+        },
+        insights: {
+          title: 'Hành vi mua sắm tại Hà Lan (Gemilio)',
+          description: 'Hà Lan có tỷ lệ dân số mua hàng online cao bậc nhất châu Âu (&gt;92%). Đặc thù văn hóa lớn nhất là đêm Sinterklaas (05/12) – dịp trao quà lớn ngang ngửa Giáng sinh (Kerstmis 25–26/12), tạo ra hai đỉnh sóng mua sắm liên tiếp trong tháng 12.',
+          niches: ['Gia đình (Mama, Papa, Oma, Opa)', 'Quà tặng Sinterklaas (05/12)', 'Cặp đôi &amp; Kỷ niệm', 'Trang trí nhà cửa tối giản'],
+          logistics: 'Cổng thanh toán iDEAL chiếm &gt;70% giao dịch tại Hà Lan (bắt buộc kích hoạt). Giao hàng PostNL 1–2 ngày.'
+        },
+        monthlyChart: {
+          '2027': {
+            searchVolume: [45, 65, 52, 62, 85, 68, 48, 46, 55, 68, 97, 100],
+            purchasingPower: [52, 67, 54, 64, 83, 70, 52, 50, 58, 70, 98, 99]
+          },
+          '2028': {
+            searchVolume: [46, 65, 50, 64, 86, 69, 48, 46, 55, 69, 97, 100],
+            purchasingPower: [53, 67, 52, 66, 84, 71, 52, 50, 58, 71, 98, 99]
+          }
+        },
+        events: [
+          {
+            date2027: '14/02/2027',
+            date2028: '14/02/2028',
+            sort2027: 20270214,
+            sort2028: 20280214,
+            quarter: 'Q1',
+            name: 'Valentijnsdag (Lễ Tình Nhân)',
+            recipients: 'Người yêu, Vợ/Chồng',
+            volumeEstimate: '280K – 390K / tháng',
+            volumeScore: 79,
+            powerScore: 80,
+            tier: 'HIGH',
+            aovRange: '€52 – €85',
+            angle: 'Tranh bản đồ sao, cốc sứ đôi, móc khóa &amp; trang sức khắc tên tiếng Hà Lan.',
+            cutoff: 'Chạy Ads: 15/01 | Cutoff ship: 05/02'
+          },
+          {
+            date2027: '27/04/2027',
+            date2028: '27/04/2028',
+            sort2027: 20270427,
+            sort2028: 20280427,
+            quarter: 'Q2',
+            name: 'Koningsdag (Ngày Quốc Vương)',
+            recipients: 'Hội nhóm bạn bè, Gia đình tham gia lễ hội',
+            volumeEstimate: '260K – 350K / tháng',
+            volumeScore: 75,
+            powerScore: 72,
+            tier: 'MEDIUM',
+            aovRange: '€42 – €68',
+            angle: 'Áo thun, mũ, phụ kiện sắc cam (Oranje) cá nhân hóa cho nhóm &amp; gia đình.',
+            cutoff: 'Chạy Ads: 28/03 | Cutoff ship: 17/04'
+          },
+          {
+            date2027: '09/05/2027',
+            date2028: '14/05/2028',
+            sort2027: 20270509,
+            sort2028: 20280514,
+            quarter: 'Q2',
+            name: 'Moederdag (Ngày của Mẹ)',
+            recipients: 'Mẹ (Mama), Bà (Oma)',
+            volumeEstimate: '480K – 660K / tháng',
+            volumeScore: 92,
+            powerScore: 92,
+            tier: 'PEAK',
+            aovRange: '€62 – €105',
+            angle: 'Quà cá nhân hóa cho Mama &amp; Oma, tranh gia đình, vòng cổ khắc tên con.',
+            cutoff: 'Chạy Ads trước 4 tuần | Cutoff ship trước 9 ngày'
+          },
+          {
+            date2027: '20/06/2027',
+            date2028: '18/06/2028',
+            sort2027: 20270620,
+            sort2028: 20280618,
+            quarter: 'Q2',
+            name: 'Vaderdag (Ngày của Cha)',
+            recipients: 'Bố (Papa), Ông (Opa)',
+            volumeEstimate: '340K – 470K / tháng',
+            volumeScore: 82,
+            powerScore: 81,
+            tier: 'HIGH',
+            aovRange: '€52 – €88',
+            angle: 'Dụng cụ BBQ khắc tên, cốc bia, áo thun Papa &amp; Opa.',
+            cutoff: 'Chạy Ads: 22/05 | Cutoff ship: 10/06'
+          },
+          {
+            date2027: '26/11/2027',
+            date2028: '24/11/2028',
+            sort2027: 20271126,
+            sort2028: 20281124,
+            quarter: 'Q4',
+            name: 'Black Friday &amp; Cyber Monday (29/11 &amp; 27/11)',
+            recipients: 'Người mua quà Sinterklaas &amp; Kerst',
+            volumeEstimate: '820K – 1.1M / tháng',
+            volumeScore: 97,
+            powerScore: 96,
+            tier: 'PEAK',
+            aovRange: '€98 – €160',
+            angle: 'Combo quà Sinterklaas &amp; Kerst, nhấn mạnh giao trước 05/12.',
+            cutoff: 'Lên camp: 25/10 | Đỉnh điểm Ads: tuần lễ Black Week'
+          },
+          {
+            date2027: '05/12/2027',
+            date2028: '05/12/2028',
+            sort2027: 20271205,
+            sort2028: 20281205,
+            quarter: 'Q4',
+            name: 'Sinterklaasavond (Đêm Lễ Sinterklaas)',
+            recipients: 'Trẻ em, Cả gia đình &amp; Đồng nghiệp (Lootjes trekken)',
+            volumeEstimate: '910K – 1.25M / tháng',
+            volumeScore: 99,
+            powerScore: 98,
+            tier: 'PEAK',
+            aovRange: '€92 – €165',
+            angle: 'ĐẶC TRƯNG HÀ LAN: Túi đựng quà vải bố in tên, quà cá nhân hóa cho gia đình.',
+            cutoff: 'Lên camp: 01/11 | Cutoff ship: 25/11'
+          },
+          {
+            date2027: '25/12/2027',
+            date2028: '25/12/2028',
+            sort2027: 20271225,
+            sort2028: 20281225,
+            quarter: 'Q4',
+            name: 'Kerstmis (Lễ Giáng Sinh 25–26/12)',
+            recipients: 'Gia đình, Ông bà, Vợ chồng',
+            volumeEstimate: '880K – 1.2M / tháng',
+            volumeScore: 96,
+            powerScore: 96,
+            tier: 'PEAK',
+            aovRange: '€105 – €180',
+            angle: 'Kerstbal (quả châu Giáng sinh) in tên, tranh gia đình, chăn ấm cá nhân hóa.',
+            cutoff: 'Lên camp: 15/11 | Cutoff ship: 14/12'
+          }
+        ]
+      },
+
+      SE: {
+        id: 'SE',
+        flag: '🇸🇪',
+        name: 'Thụy Điển / Bắc Âu (SE)',
+        shortName: 'Thụy Điển (Bắc Âu)',
+        brand: 'Gavafam',
+        currency: 'SEK',
+        kpisByYear: {
+          '2027': {
+            marketSize: '181 Tỷ SEK (~€16.0B)',
+            growth: '+7.7% YoY',
+            marketSub: 'Dẫn đầu khu vực Bắc Âu (Nordics)',
+            aov: '850 SEK (~€75)',
+            gdpPerCapita: '632,000 SEK',
+            powerLabel: 'Sức mua: Rất cao (Top Bắc Âu)',
+            penetration: 90.2,
+            shoppersCount: '~7.9 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Fars Dag – Jul)',
+            paymentMethods: 'Klarna • Swish (&gt;80%) • Kort',
+            peakShare: '~37% doanh thu năm'
+          },
+          '2028': {
+            marketSize: '194 Tỷ SEK (~€17.1B)',
+            growth: '+7.2% YoY',
+            marketSub: 'Dự báo E-com Thụy Điển 2028',
+            aov: '880 SEK (~€78)',
+            gdpPerCapita: '648,000 SEK',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 91.0,
+            shoppersCount: '~8.1 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Fars Dag – Jul)',
+            paymentMethods: 'Klarna • Swish (&gt;80%) • Kort',
+            peakShare: '~38% doanh thu năm'
+          },
+          'BOTH': {
+            marketSize: '375 Tỷ SEK (~€33.1B)',
+            growth: '+7.5% CAGR',
+            marketSub: 'Tổng quy mô 2 năm (2027–2028)',
+            aov: '865 SEK (~€76.5)',
+            gdpPerCapita: '640,000 SEK',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 90.6,
+            shoppersCount: '~8.0 triệu người mua/năm',
+            peakSeason: 'Fars Dag (T11) &amp; Julafton (24/12)',
+            paymentMethods: 'Klarna • Swish (&gt;80%) • Kort',
+            peakShare: '~37.5% doanh thu'
+          }
+        },
+        insights: {
+          title: 'Hành vi mua sắm tại Thụy Điển &amp; Bắc Âu (Gavafam)',
+          description: 'Người Bắc Âu yêu thích phong cách tối giản (Scandinavian Minimalism) và tình cảm gia đình. Điểm đặc biệt cần nhớ: Fars Dag (Ngày của Cha) diễn ra vào Chủ nhật thứ 2 tháng 11 (14/11/2027 &amp; 12/11/2028) – tạo cú hích mở màn Q4 trước cả Black Week!',
+          niches: ['Gia đình Bắc Âu (Mamma, Pappa, Mormor, Farmor)', 'Trang trí tối giản (Scandi Home)', 'Thú cưng &amp; Thiên nhiên', 'Quà Giáng sinh (Julklappar)'],
+          logistics: 'Klarna &amp; Swish thống trị thanh toán (&gt;80%). Giao hàng qua PostNord với điểm nhận bưu kiện tự động.'
+        },
+        monthlyChart: {
+          '2027': {
+            searchVolume: [40, 62, 48, 54, 83, 79, 46, 45, 52, 66, 96, 100],
+            purchasingPower: [48, 65, 52, 58, 81, 77, 50, 48, 56, 68, 97, 99]
+          },
+          '2028': {
+            searchVolume: [41, 62, 48, 56, 84, 80, 46, 45, 52, 67, 96, 100],
+            purchasingPower: [49, 65, 52, 60, 82, 78, 50, 48, 56, 69, 97, 99]
+          }
+        },
+        events: [
+          {
+            date2027: '14/02/2027',
+            date2028: '14/02/2028',
+            sort2027: 20270214,
+            sort2028: 20280214,
+            quarter: 'Q1',
+            name: 'Alla Hjärtans Dag (Ngày của Những Trái Tim)',
+            recipients: 'Người yêu, Gia đình, Bạn thân',
+            volumeEstimate: '240K – 330K / tháng',
+            volumeScore: 76,
+            powerScore: 78,
+            tier: 'HIGH',
+            aovRange: '620 – 980 SEK',
+            angle: 'Tranh nghệ thuật tối giản cho cặp đôi, vòng tay khắc tên, cốc sứ Bắc Âu.',
+            cutoff: 'Chạy Ads: 15/01 | Cutoff ship: 04/02'
+          },
+          {
+            date2027: '30/05/2027',
+            date2028: '28/05/2028',
+            sort2027: 20270530,
+            sort2028: 20280528,
+            quarter: 'Q2',
+            name: 'Mors Dag (Ngày của Mẹ - CN cuối tháng 5)',
+            recipients: 'Mẹ (Mamma), Bà ngoại/nội (Mormor / Farmor)',
+            volumeEstimate: '410K – 560K / tháng',
+            volumeScore: 91,
+            powerScore: 91,
+            tier: 'PEAK',
+            aovRange: '780 – 1,300 SEK',
+            angle: 'Trang sức khắc tên các con, tranh minh họa gia đình phong cách Scandi.',
+            cutoff: 'Chạy Ads: 28/04 | Cutoff ship: 19/05'
+          },
+          {
+            date2027: '26/06/2027',
+            date2028: '24/06/2028',
+            sort2027: 20270626,
+            sort2028: 20280624,
+            quarter: 'Q2',
+            name: 'Midsommardagen (Lễ Hạ Chí - Midsommar)',
+            recipients: 'Chủ nhà tiệc, Gia đình tụ họp mùa hè',
+            volumeEstimate: '350K – 480K / tháng',
+            volumeScore: 84,
+            powerScore: 82,
+            tier: 'HIGH',
+            aovRange: '680 – 1,100 SEK',
+            angle: 'Quà tặng chủ nhà (Gå-bort-present), thớt gỗ khắc tên, phụ kiện tiệc ngoài trời.',
+            cutoff: 'Chạy Ads: 25/05 | Cutoff ship: 15/06'
+          },
+          {
+            date2027: '14/11/2027',
+            date2028: '12/11/2028',
+            sort2027: 20271114,
+            sort2028: 20281112,
+            quarter: 'Q4',
+            name: 'Fars Dag (Ngày của Cha - CN thứ 2 tháng 11)',
+            recipients: 'Bố (Pappa), Ông ngoại/nội (Morfar / Farfar)',
+            volumeEstimate: '460K – 620K / tháng',
+            volumeScore: 88,
+            powerScore: 89,
+            tier: 'HIGH',
+            aovRange: '720 – 1,200 SEK',
+            angle: 'ĐẶC TRƯNG BẮC ÂU: Mở màn Q4! Cốc Fika khắc tên, áo hoodie Pappa/Morfar/Farfar.',
+            cutoff: 'Chạy Ads: 12/10 | Cutoff ship: 02/11'
+          },
+          {
+            date2027: '26/11/2027',
+            date2028: '24/11/2028',
+            sort2027: 20271126,
+            sort2028: 20281124,
+            quarter: 'Q4',
+            name: 'Black Week &amp; Black Friday',
+            recipients: 'Người săn deal quà Giáng sinh (Julklappar)',
+            volumeEstimate: '790K – 1.1M / tháng',
+            volumeScore: 96,
+            powerScore: 96,
+            tier: 'PEAK',
+            aovRange: '1,150 – 1,850 SEK',
+            angle: 'Ưu đãi theo bộ quà tặng Giáng sinh, nhấn mạnh chất lượng bền vững.',
+            cutoff: 'Lên camp: 25/10 | Đỉnh điểm Ads: tuần lễ Black Week'
+          },
+          {
+            date2027: '13/12/2027',
+            date2028: '13/12/2028',
+            sort2027: 20271213,
+            sort2028: 20281213,
+            quarter: 'Q4',
+            name: 'Luciadagen (Lễ hội Ánh Sáng Thánh Lucia)',
+            recipients: 'Gia đình, Đồng nghiệp, Trường học',
+            volumeEstimate: '380K – 510K / tháng',
+            volumeScore: 85,
+            powerScore: 82,
+            tier: 'HIGH',
+            aovRange: '620 – 980 SEK',
+            angle: 'Đồ trang trí nhà cửa ấm cúng (Adventsmys), cốc Fika Giáng sinh.',
+            cutoff: 'Chạy Ads: 12/11 | Cutoff ship: 02/12'
+          },
+          {
+            date2027: '24/12/2027',
+            date2028: '24/12/2028',
+            sort2027: 20271224,
+            sort2028: 20281224,
+            quarter: 'Q4',
+            name: 'Julafton (Đêm Giáng Sinh)',
+            recipients: 'Cả gia đình &amp; Thú cưng',
+            volumeEstimate: '920K – 1.25M / tháng',
+            volumeScore: 100,
+            powerScore: 99,
+            tier: 'PEAK',
+            aovRange: '1,350 – 2,250 SEK',
+            angle: 'Ornament khắc tên năm, chăn ấm gia đình, tranh kỷ niệm &amp; quà thú cưng.',
+            cutoff: 'Lên camp: 01/11 | Cutoff ship: 12/12'
+          }
+        ]
+      },
+
+      UK: {
+        id: 'UK',
+        flag: '🇬🇧',
+        name: 'Vương quốc Anh (UK)',
+        shortName: 'Anh (UK)',
+        brand: 'UK Market (English)',
+        currency: '£',
+        kpisByYear: {
+          '2027': {
+            marketSize: '£138.2 Tỷ (~€161B)',
+            growth: '+7.6% YoY',
+            marketSub: 'Thị trường trưởng thành nhất Châu Âu',
+            aov: '£64.50 (~€75)',
+            gdpPerCapita: '£42,800',
+            powerLabel: 'Sức mua: Rất cao &amp; Sôi động',
+            penetration: 89.4,
+            shoppersCount: '~60.6 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Christmas &amp; Boxing Day)',
+            paymentMethods: 'Apple Pay • PayPal • Klarna • Debit',
+            peakShare: '~40% doanh thu năm'
+          },
+          '2028': {
+            marketSize: '£148.5 Tỷ (~€173B)',
+            growth: '+7.4% YoY',
+            marketSub: 'Dự báo E-com UK 2028',
+            aov: '£67.00 (~€78)',
+            gdpPerCapita: '£44,100',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 90.1,
+            shoppersCount: '~61.4 triệu người mua trực tuyến',
+            peakSeason: 'Q4 (Christmas &amp; Boxing Day)',
+            paymentMethods: 'Apple Pay • PayPal • Klarna • Debit',
+            peakShare: '~40% doanh thu năm'
+          },
+          'BOTH': {
+            marketSize: '£286.7 Tỷ (~€334B)',
+            growth: '+7.5% CAGR',
+            marketSub: 'Tổng quy mô 2 năm (2027–2028)',
+            aov: '£65.75 (~€76.5)',
+            gdpPerCapita: '£43,450',
+            powerLabel: 'Sức mua: Rất cao',
+            penetration: 89.8,
+            shoppersCount: '~61.0 triệu người mua/năm',
+            peakSeason: 'Black Friday – Boxing Day',
+            paymentMethods: 'Apple Pay • PayPal • Klarna • Debit',
+            peakShare: '~40% doanh thu'
+          }
+        },
+        insights: {
+          title: 'Hành vi mua sắm tại Vương quốc Anh (UK)',
+          description: 'UK có văn hóa tặng quà cá nhân hóa (Personalised Gifts) ăn sâu vào đời sống. Lưu ý quan trọng: Mothering Sunday rơi vào 07/03/2027 và 26/03/2028 (sớm hơn EU/Mỹ 2 tháng) và bắt buộc dùng chính tả Anh-Anh (&quot;Mum&quot;, &quot;Nan&quot;, &quot;Personalised&quot;, &quot;Colour&quot;).',
+          niches: ['Gia đình (Mum, Dad, Nan, Grandad)', 'Thú cưng (Dog Mum / Cat Dad)', 'Cặp đôi &amp; Kỷ niệm', 'Quà Giáng sinh &amp; Boxing Day'],
+          logistics: 'Apple Pay, PayPal, Klarna &amp; thẻ ghi nợ rất phổ biến. Royal Mail Tracked 48/24 là tiêu chuẩn giao hàng được tin cậy.'
+        },
+        monthlyChart: {
+          '2027': {
+            searchVolume: [52, 68, 88, 52, 58, 78, 48, 46, 55, 76, 98, 100],
+            purchasingPower: [58, 70, 86, 54, 60, 76, 50, 48, 58, 78, 98, 99]
+          },
+          '2028': {
+            searchVolume: [53, 68, 86, 56, 58, 78, 48, 46, 55, 77, 98, 100],
+            purchasingPower: [59, 70, 84, 58, 60, 76, 50, 48, 58, 79, 98, 99]
+          }
+        },
+        events: [
+          {
+            date2027: '14/02/2027',
+            date2028: '14/02/2028',
+            sort2027: 20270214,
+            sort2028: 20280214,
+            quarter: 'Q1',
+            name: 'Valentine\'s Day (Lễ Tình Nhân)',
+            recipients: 'Vợ/Chồng, Người yêu',
+            volumeEstimate: '1.1M – 1.5M / tháng',
+            volumeScore: 86,
+            powerScore: 85,
+            tier: 'HIGH',
+            aovRange: '£52 – £88',
+            angle: 'Personalised star maps, matching couple hoodies, custom portrait prints.',
+            cutoff: 'Chạy Ads: 15/01 | Cutoff ship: 05/02'
+          },
+          {
+            date2027: '07/03/2027',
+            date2028: '26/03/2028',
+            sort2027: 20270307,
+            sort2028: 20280326,
+            quarter: 'Q1',
+            name: 'Mother\'s Day (Mothering Sunday - CN thứ 4 Mùa Chay)',
+            recipients: 'Mẹ (Mum), Bà (Nan / Nanny / Grandma)',
+            volumeEstimate: '1.6M – 2.2M / tháng',
+            volumeScore: 96,
+            powerScore: 95,
+            tier: 'PEAK',
+            aovRange: '£58 – £98',
+            angle: 'ĐẶC TRƯNG UK: Sớm hơn US/EU 2 tháng! Bắt buộc dùng từ &quot;Mum&quot; &amp; &quot;Nan&quot;.',
+            cutoff: 'Chạy Ads: đầu T2 (2027) / cuối T2 (2028) | Cutoff ship trước 9 ngày'
+          },
+          {
+            date2027: '20/06/2027',
+            date2028: '18/06/2028',
+            sort2027: 20270620,
+            sort2028: 20280618,
+            quarter: 'Q2',
+            name: 'Father\'s Day (CN thứ 3 tháng 6)',
+            recipients: 'Bố (Dad), Ông (Grandad)',
+            volumeEstimate: '1.1M – 1.5M / tháng',
+            volumeScore: 87,
+            powerScore: 84,
+            tier: 'HIGH',
+            aovRange: '£48 – £84',
+            angle: 'Personalised beer glasses, BBQ aprons, custom &quot;Dad &amp; Kids&quot; t-shirts &amp; golf gifts.',
+            cutoff: 'Chạy Ads: 20/05 | Cutoff ship: 10/06'
+          },
+          {
+            date2027: '31/10/2027',
+            date2028: '31/10/2028',
+            sort2027: 20271031,
+            sort2028: 20281031,
+            quarter: 'Q4',
+            name: 'Halloween',
+            recipients: 'Gia đình có con nhỏ, Chủ nuôi thú cưng',
+            volumeEstimate: '950K – 1.3M / tháng',
+            volumeScore: 83,
+            powerScore: 78,
+            tier: 'HIGH',
+            aovRange: '£42 – £72',
+            angle: 'Personalised Halloween doormats, trick-or-treat bags, spooky family sweatshirts.',
+            cutoff: 'Chạy Ads: 28/09 | Cutoff ship: 21/10'
+          },
+          {
+            date2027: '26/11/2027',
+            date2028: '24/11/2028',
+            sort2027: 20271126,
+            sort2028: 20281124,
+            quarter: 'Q4',
+            name: 'Black Friday &amp; Cyber Monday (29/11 &amp; 27/11)',
+            recipients: 'Người mua quà Giáng sinh sớm',
+            volumeEstimate: '2.8M – 3.6M / tháng',
+            volumeScore: 98,
+            powerScore: 98,
+            tier: 'PEAK',
+            aovRange: '£98 – £170',
+            angle: 'Multi-buy gift bundles, early Christmas stocking fillers, free tracked delivery.',
+            cutoff: 'Lên camp: 25/10 | Đỉnh điểm Ads: tuần lễ Black Week'
+          },
+          {
+            date2027: '25/12/2027',
+            date2028: '25/12/2028',
+            sort2027: 20271225,
+            sort2028: 20281225,
+            quarter: 'Q4',
+            name: 'Christmas Day (Lễ Giáng Sinh)',
+            recipients: 'Cả gia đình (Mum, Dad, Nan, Grandad, Kids &amp; Pets)',
+            volumeEstimate: '3.5M – 4.5M / tháng',
+            volumeScore: 100,
+            powerScore: 100,
+            tier: 'PEAK',
+            aovRange: '£125 – £215',
+            angle: 'Personalised Christmas tree ornaments, family pyjamas, pet memorial &amp; blankets.',
+            cutoff: 'Lên camp: 01/11 | Cutoff ship: 14/12 (Royal Mail Tracked)'
+          },
+          {
+            date2027: '26/12/2027',
+            date2028: '26/12/2028',
+            sort2027: 20271226,
+            sort2028: 20281226,
+            quarter: 'Q4',
+            name: 'Boxing Day Sales',
+            recipients: 'Người dùng thẻ quà tặng &amp; mua sắm đầu năm mới',
+            volumeEstimate: '1.6M – 2.1M / tháng',
+            volumeScore: 88,
+            powerScore: 86,
+            tier: 'HIGH',
+            aovRange: '£68 – £120',
+            angle: 'New Year home refresh, winter clearance &amp; self-reward personalised items.',
+            cutoff: 'Lên camp: 18/12 | Chạy mạnh: 26/12 – 31/12'
+          }
+        ]
+      }
+    };
+
+    const MONTHS_LABELS = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'T12'];
+
+    // Application State (Default: 2027 as primary planning view)
+    let state = {
+      selectedYear: '2027',
+      selectedCountry: 'DE',
+      quarterFilter: 'ALL',
+      tierFilter: 'ALL',
+      searchQuery: '',
+      sortBy: 'chronological'
+    };
+
+    let trendsChart = null;
+
+    // DOM Elements
+    const countryTabsEl = document.getElementById('countryTabs');
+    const selectedBrandBadgeEl = document.getElementById('selectedBrandBadge');
+    const activeYearIndicatorEl = document.getElementById('activeYearIndicator');
+    const eventsTableBodyEl = document.getElementById('eventsTableBody');
+    const eventsMobileListEl = document.getElementById('eventsMobileList');
+    const emptyStateEl = document.getElementById('emptyState');
+    const tableCountInfoEl = document.getElementById('tableCountInfo');
+    const searchInputEl = document.getElementById('searchInput');
+    const sortSelectEl = document.getElementById('sortSelect');
+
+    // Initialize Application
+    function init() {
+      initTheme();
+      renderCountryTabs();
+      initChart();
+      updateDashboard();
+      bindEvents();
+    }
+
+    // Theme Handling
+    function initTheme() {
+      const savedTheme = localStorage.getItem('eu_dashboard_theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme &amp;&amp; prefersDark)) {
+        document.documentElement.classList.add('dark');
+        document.getElementById('themeIcon').className = 'fa-solid fa-sun text-amber-400';
+      }
+    }
+
+    function toggleTheme() {
+      const htmlEl = document.documentElement;
+      const isDark = htmlEl.classList.toggle('dark');
+      localStorage.setItem('eu_dashboard_theme', isDark ? 'dark' : 'light');
+      document.getElementById('themeIcon').className = isDark
+        ? 'fa-solid fa-sun text-amber-400'
+        : 'fa-solid fa-moon';
+      updateChartTheme();
+    }
+
+    // Render Top Country Selector Cards
+    function renderCountryTabs() {
+      countryTabsEl.innerHTML = Object.values(MARKET_DATA).map(country =&gt; {
+        const isActive = country.id === state.selectedCountry;
+        return `
+          &lt;button
+            data-country=&quot;${country.id}&quot;
+            class=&quot;country-tab group relative flex flex-col items-start p-3 rounded-2xl border text-left transition-all duration-200 cursor-pointer ${
+              isActive
+                ? 'bg-indigo-600 border-indigo-600 text-white shadow-md shadow-indigo-500/25 scale-[1.01]'
+                : 'bg-white dark:bg-slate-900 border-slate-200/80 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:border-indigo-400 dark:hover:border-indigo-500/60 hover:shadow-sm'
+            }&quot;
+          &gt;
+            &lt;div class=&quot;flex items-center justify-between w-full mb-1&quot;&gt;
+              &lt;span class=&quot;text-xl leading-none&quot;&gt;${country.flag}&lt;/span&gt;
+              &lt;span class=&quot;text-[10px] font-bold px-1.5 py-0.5 rounded-md ${
+                isActive
+                  ? 'bg-white/20 text-white'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
+              }&quot;&gt;
+                ${country.id}
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;span class=&quot;text-xs sm:text-sm font-bold truncate w-full&quot;&gt;${country.shortName}&lt;/span&gt;
+            &lt;span class=&quot;text-[11px] truncate w-full mt-0.5 ${
+              isActive ? 'text-indigo-100' : 'text-slate-400 dark:text-slate-500'
+            }&quot;&gt;
+              ${country.brand}
+            &lt;/span&gt;
+          &lt;/button&gt;
+        `;
+      }).join('');
+    }
+
+    // Initialize Chart.js Instance
+    function initChart() {
+      const ctx = document.getElementById('monthlyTrendsChart').getContext('2d');
+      const isDark = document.documentElement.classList.contains('dark');
+      const gridColor = isDark ? 'rgba(148, 163, 184, 0.1)' : 'rgba(148, 163, 184, 0.18)';
+      const tickColor = isDark ? '#94a3b8' : '#64748b';
+
+      trendsChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: MONTHS_LABELS,
+          datasets: [
+            {
+              type: 'line',
+              label: 'Chỉ số Sức mua (1–100)',
+              data: [],
+              borderColor: '#10b981',
+              backgroundColor: 'rgba(16, 185, 129, 0.15)',
+              borderWidth: 2.5,
+              pointBackgroundColor: '#10b981',
+              pointBorderColor: '#ffffff',
+              pointBorderWidth: 1.5,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+              tension: 0.35,
+              yAxisID: 'y',
+              order: 1
+            },
+            {
+              type: 'bar',
+              label: 'Search Volume Index (1–100)',
+              data: [],
+              backgroundColor: 'rgba(99, 102, 241, 0.85)',
+              hoverBackgroundColor: '#4f46e5',
+              borderRadius: 6,
+              barPercentage: 0.55,
+              yAxisID: 'y',
+              order: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: isDark ? '#0f172a' : '#1e293b',
+              titleColor: '#f8fafc',
+              bodyColor: '#e2e8f0',
+              padding: 12,
+              cornerRadius: 10,
+              displayColors: true,
+              callbacks: {
+                title: (items) =&gt; {
+                  const yearLabel = state.selectedYear === 'BOTH' ? '2027–2028' : state.selectedYear;
+                  return `Tháng ${items[0].label.replace('T', '')} (${MARKET_DATA[state.selectedCountry].shortName} - ${yearLabel})`;
+                },
+                label: (ctx) =&gt; ` ${ctx.dataset.label}: ${ctx.parsed.y} / 100`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: tickColor, font: { family: 'Inter', size: 11, weight: '600' } }
+            },
+            y: {
+              min: 0,
+              max: 110,
+              grid: { color: gridColor },
+              ticks: {
+                stepSize: 25,
+                color: tickColor,
+                font: { family: 'Inter', size: 11 },
+                callback: (val) =&gt; val &lt;= 100 ? val : ''
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function updateChartTheme() {
+      if (!trendsChart) return;
+      const isDark = document.documentElement.classList.contains('dark');
+      const gridColor = isDark ? 'rgba(148, 163, 184, 0.1)' : 'rgba(148, 163, 184, 0.18)';
+      const tickColor = isDark ? '#94a3b8' : '#64748b';
+
+      trendsChart.options.scales.x.ticks.color = tickColor;
+      trendsChart.options.scales.y.ticks.color = tickColor;
+      trendsChart.options.scales.y.grid.color = gridColor;
+      trendsChart.options.plugins.tooltip.backgroundColor = isDark ? '#0f172a' : '#1e293b';
+      trendsChart.update();
+    }
+
+    // Update KPIs, Chart, Insights, and Events Table
+    function updateDashboard() {
+      const data = MARKET_DATA[state.selectedCountry];
+      if (!data) return;
+
+      const yearKey = state.selectedYear;
+      const kpis = data.kpisByYear[yearKey];
+
+      // Update Year Badges &amp; Titles
+      selectedBrandBadgeEl.textContent = `Brand Focus: ${data.brand}`;
+      if (yearKey === '2027') {
+        activeYearIndicatorEl.textContent = 'Đang xem: Kế hoạch Năm 2027';
+        document.getElementById('kpiMarketLabel').textContent = 'Dự báo E-com 2027';
+        document.getElementById('chartMainTitle').innerHTML = `&lt;i class=&quot;fa-solid fa-chart-area text-indigo-500&quot;&gt;&lt;/i&gt; Biểu đồ Search Volume &amp; Chỉ số Sức mua 12 Tháng (2027)`;
+        document.getElementById('eventsSectionTitle').innerHTML = `&lt;i class=&quot;fa-regular fa-calendar-check text-indigo-500&quot;&gt;&lt;/i&gt; Lịch Sự Kiện Quà Tặng &amp; Mùa Vụ Năm 2027`;
+      } else if (yearKey === '2028') {
+        activeYearIndicatorEl.textContent = 'Đang xem: Kế hoạch Năm 2028';
+        document.getElementById('kpiMarketLabel').textContent = 'Dự báo E-com 2028';
+        document.getElementById('chartMainTitle').innerHTML = `&lt;i class=&quot;fa-solid fa-chart-area text-indigo-500&quot;&gt;&lt;/i&gt; Biểu đồ Search Volume &amp; Chỉ số Sức mua 12 Tháng (2028)`;
+        document.getElementById('eventsSectionTitle').innerHTML = `&lt;i class=&quot;fa-regular fa-calendar-check text-indigo-500&quot;&gt;&lt;/i&gt; Lịch Sự Kiện Quà Tặng &amp; Mùa Vụ Năm 2028`;
+      } else {
+        activeYearIndicatorEl.textContent = 'Đang xem: Chu kỳ 2027 – 2028';
+        document.getElementById('kpiMarketLabel').textContent = 'Tổng E-com (2027–2028)';
+        document.getElementById('chartMainTitle').innerHTML = `&lt;i class=&quot;fa-solid fa-chart-area text-indigo-500&quot;&gt;&lt;/i&gt; Biểu đồ Search Volume &amp; Chỉ số Sức mua Trung bình (2027–2028)`;
+        document.getElementById('eventsSectionTitle').innerHTML = `&lt;i class=&quot;fa-regular fa-calendar-check text-indigo-500&quot;&gt;&lt;/i&gt; So Sánh Lịch Sự Kiện Quà Tặng (2027 &amp; 2028)`;
+      }
+
+      // Update KPI Cards
+      document.getElementById('kpiMarketSize').textContent = kpis.marketSize;
+      document.getElementById('kpiGrowthBadge').innerHTML = `&lt;i class=&quot;fa-solid fa-arrow-trend-up text-[10px]&quot;&gt;&lt;/i&gt; ${kpis.growth}`;
+      document.getElementById('kpiMarketSub').textContent = kpis.marketSub;
+
+      document.getElementById('kpiAov').innerHTML = `${kpis.aov} &lt;span class=&quot;text-sm font-normal text-slate-400&quot;&gt;/ đơn&lt;/span&gt;`;
+      document.getElementById('kpiGdpBadge').textContent = `GDP/người: ${kpis.gdpPerCapita}`;
+      document.getElementById('kpiPowerIndex').textContent = kpis.powerLabel;
+
+      document.getElementById('kpiPenetration').textContent = `${kpis.penetration}%`;
+      document.getElementById('kpiPenetrationBar').style.width = `${kpis.penetration}%`;
+      document.getElementById('kpiShoppersCount').textContent = kpis.shoppersCount;
+
+      document.getElementById('kpiPeakSeason').textContent = kpis.peakSeason;
+      document.getElementById('kpiPeakShare').textContent = kpis.paymentMethods;
+      document.getElementById('kpiPeakDates').textContent = kpis.peakShare;
+
+      // Update Insights Panel
+      document.getElementById('insightFlag').textContent = data.flag;
+      document.getElementById('insightTitle').textContent = data.insights.title;
+      document.getElementById('insightDescription').textContent = data.insights.description;
+      document.getElementById('insightLogistics').textContent = data.insights.logistics;
+
+      document.getElementById('insightNiches').innerHTML = data.insights.niches.map(niche =&gt; `
+        &lt;span class=&quot;px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-500/20&quot;&gt;
+          ${niche}
+        &lt;/span&gt;
+      `).join('');
+
+      // Update Chart Data
+      if (trendsChart) {
+        if (yearKey === '2027' || yearKey === '2028') {
+          trendsChart.data.datasets[0].data = data.monthlyChart[yearKey].purchasingPower;
+          trendsChart.data.datasets[1].data = data.monthlyChart[yearKey].searchVolume;
+        } else {
+          // Average 2027 &amp; 2028 for BOTH view
+          const avgPower = data.monthlyChart['2027'].purchasingPower.map((v, i) =&gt;
+            Math.round((v + data.monthlyChart['2028'].purchasingPower[i]) / 2)
+          );
+          const avgVol = data.monthlyChart['2027'].searchVolume.map((v, i) =&gt;
+            Math.round((v + data.monthlyChart['2028'].searchVolume[i]) / 2)
+          );
+          trendsChart.data.datasets[0].data = avgPower;
+          trendsChart.data.datasets[1].data = avgVol;
+        }
+        trendsChart.update();
+      }
+
+      // Render Filtered &amp; Sorted Events
+      renderEvents();
+    }
+
+    // Helper: Get Event Quarter based on selected year
+    function getEventQuarter(ev) {
+      if (state.selectedYear === '2028' &amp;&amp; ev.quarter2028) return ev.quarter2028;
+      if (state.selectedYear === '2027' &amp;&amp; ev.quarter2027) return ev.quarter2027;
+      return ev.quarter;
+    }
+
+    // Helper: Get Filtered &amp; Sorted Events
+    function getProcessedEvents() {
+      const data = MARKET_DATA[state.selectedCountry];
+      let list = [...data.events];
+
+      // Quarter filter
+      if (state.quarterFilter !== 'ALL') {
+        list = list.filter(ev =&gt; {
+          if (state.selectedYear === 'BOTH' &amp;&amp; ev.quarter2027 &amp;&amp; ev.quarter2028) {
+            return ev.quarter2027 === state.quarterFilter || ev.quarter2028 === state.quarterFilter;
+          }
+          return getEventQuarter(ev) === state.quarterFilter;
+        });
+      }
+
+      // Purchasing power tier filter
+      if (state.tierFilter !== 'ALL') {
+        list = list.filter(ev =&gt; ev.tier === state.tierFilter);
+      }
+
+      // Search keyword filter
+      if (state.searchQuery.trim() !== '') {
+        const q = state.searchQuery.toLowerCase().trim();
+        list = list.filter(ev =&gt;
+          ev.name.toLowerCase().includes(q) ||
+          ev.recipients.toLowerCase().includes(q) ||
+          ev.angle.toLowerCase().includes(q) ||
+          ev.date2027.includes(q) ||
+          ev.date2028.includes(q)
+        );
+      }
+
+      // Sort
+      if (state.sortBy === 'volume_desc') {
+        list.sort((a, b) =&gt; b.volumeScore - a.volumeScore);
+      } else if (state.sortBy === 'power_desc') {
+        list.sort((a, b) =&gt; b.powerScore - a.powerScore);
+      } else {
+        list.sort((a, b) =&gt; {
+          const orderA = state.selectedYear === '2028' ? (a.sort2028 || a.sort2027) : a.sort2027;
+          const orderB = state.selectedYear === '2028' ? (b.sort2028 || b.sort2027) : b.sort2027;
+          return (orderA || 0) - (orderB || 0);
+        });
+      }
+
+      return list;
+    }
+
+    // Badge Helpers
+    function getVolumeBadge(score, estimate) {
+      let badgeHtml = '';
+      if (score &gt;= 90) {
+        badgeHtml = `&lt;span class=&quot;inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-rose-100 text-rose-700 dark:bg-rose-500/20 dark:text-rose-300&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-fire text-[10px]&quot;&gt;&lt;/i&gt; Bùng nổ (${score}/100)
+        &lt;/span&gt;`;
+      } else if (score &gt;= 82) {
+        badgeHtml = `&lt;span class=&quot;inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-bolt text-[10px]&quot;&gt;&lt;/i&gt; Rất cao (${score}/100)
+        &lt;/span&gt;`;
+      } else if (score &gt;= 75) {
+        badgeHtml = `&lt;span class=&quot;inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-indigo-100 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-arrow-up text-[10px]&quot;&gt;&lt;/i&gt; Cao (${score}/100)
+        &lt;/span&gt;`;
+      } else {
+        badgeHtml = `&lt;span class=&quot;inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300&quot;&gt;
+          Trung bình (${score}/100)
+        &lt;/span&gt;`;
+      }
+      return `${badgeHtml}&lt;div class=&quot;text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-medium&quot;&gt;${estimate}&lt;/div&gt;`;
+    }
+
+    function getTierBadge(tier, powerScore) {
+      if (tier === 'PEAK') {
+        return `&lt;span class=&quot;inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 dark:text-emerald-400&quot;&gt;
+          &lt;span class=&quot;w-2 h-2 rounded-full bg-emerald-500&quot;&gt;&lt;/span&gt; Peak (${powerScore}/100)
+        &lt;/span&gt;`;
+      }
+      if (tier === 'HIGH') {
+        return `&lt;span class=&quot;inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 dark:text-blue-400&quot;&gt;
+          &lt;span class=&quot;w-2 h-2 rounded-full bg-blue-500&quot;&gt;&lt;/span&gt; Cao (${powerScore}/100)
+        &lt;/span&gt;`;
+      }
+      return `&lt;span class=&quot;inline-flex items-center gap-1 text-[11px] font-semibold text-slate-600 dark:text-slate-400&quot;&gt;
+        &lt;span class=&quot;w-2 h-2 rounded-full bg-slate-400&quot;&gt;&lt;/span&gt; Trung bình (${powerScore}/100)
+      &lt;/span&gt;`;
+    }
+
+    function formatEventDateHtml(ev) {
+      const qLabel = getEventQuarter(ev);
+      if (state.selectedYear === '2027') {
+        return `
+          &lt;div class=&quot;font-bold text-slate-900 dark:text-white text-xs sm:text-sm&quot;&gt;${ev.date2027}&lt;/div&gt;
+          &lt;div class=&quot;flex items-center gap-1.5 mt-1&quot;&gt;
+            &lt;span class=&quot;px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300&quot;&gt;${qLabel}&lt;/span&gt;
+            &lt;span class=&quot;text-[10px] text-slate-400&quot;&gt;2028: ${ev.date2028.slice(0, 5)}&lt;/span&gt;
+          &lt;/div&gt;
+        `;
+      }
+      if (state.selectedYear === '2028') {
+        return `
+          &lt;div class=&quot;font-bold text-slate-900 dark:text-white text-xs sm:text-sm&quot;&gt;${ev.date2028}&lt;/div&gt;
+          &lt;div class=&quot;flex items-center gap-1.5 mt-1&quot;&gt;
+            &lt;span class=&quot;px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300&quot;&gt;${qLabel}&lt;/span&gt;
+            &lt;span class=&quot;text-[10px] text-slate-400&quot;&gt;2027: ${ev.date2027.slice(0, 5)}&lt;/span&gt;
+          &lt;/div&gt;
+        `;
+      }
+      // BOTH
+      return `
+        &lt;div class=&quot;space-y-1&quot;&gt;
+          &lt;div class=&quot;text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5&quot;&gt;
+            &lt;span class=&quot;px-1.5 py-0.2 rounded bg-indigo-100 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-[10px]&quot;&gt;2027&lt;/span&gt;
+            &lt;span&gt;${ev.date2027}&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5&quot;&gt;
+            &lt;span class=&quot;px-1.5 py-0.2 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-[10px]&quot;&gt;2028&lt;/span&gt;
+            &lt;span&gt;${ev.date2028}&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      `;
+    }
+
+    // Render Table &amp; Mobile Cards
+    function renderEvents() {
+      const events = getProcessedEvents();
+      const totalEvents = MARKET_DATA[state.selectedCountry].events.length;
+      const yearText = state.selectedYear === 'BOTH' ? 'chu kỳ 2027–2028' : `năm ${state.selectedYear}`;
+
+      tableCountInfoEl.textContent = `Hiển thị ${events.length} / ${totalEvents} sự kiện trọng điểm của ${MARKET_DATA[state.selectedCountry].shortName} (${yearText})`;
+
+      if (events.length === 0) {
+        eventsTableBodyEl.innerHTML = '';
+        eventsMobileListEl.innerHTML = '';
+        emptyStateEl.classList.remove('hidden');
+        return;
+      }
+
+      emptyStateEl.classList.add('hidden');
+
+      // Desktop Table Rows
+      eventsTableBodyEl.innerHTML = events.map(ev =&gt; `
+        &lt;tr class=&quot;hover:bg-slate-50/90 dark:hover:bg-slate-800/40 transition-colors&quot;&gt;
+          &lt;td class=&quot;py-4 px-5 align-top&quot;&gt;
+            ${formatEventDateHtml(ev)}
+          &lt;/td&gt;
+          &lt;td class=&quot;py-4 px-4 align-top&quot;&gt;
+            &lt;div class=&quot;font-bold text-slate-900 dark:text-white leading-snug&quot;&gt;${ev.name}&lt;/div&gt;
+            &lt;div class=&quot;mt-1.5 inline-flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400&quot;&gt;
+              &lt;i class=&quot;fa-solid fa-user-tag text-[10px] text-indigo-400&quot;&gt;&lt;/i&gt;
+              &lt;span&gt;${ev.recipients}&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+          &lt;td class=&quot;py-4 px-4 align-top&quot;&gt;
+            ${getVolumeBadge(ev.volumeScore, ev.volumeEstimate)}
+            &lt;div class=&quot;w-full max-w-[130px] bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 mt-1.5 overflow-hidden&quot;&gt;
+              &lt;div class=&quot;h-1.5 rounded-full ${ev.volumeScore &gt;= 90 ? 'bg-rose-500' : ev.volumeScore &gt;= 82 ? 'bg-amber-500' : 'bg-indigo-500'}&quot; style=&quot;width: ${ev.volumeScore}%&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+          &lt;td class=&quot;py-4 px-4 align-top&quot;&gt;
+            &lt;div class=&quot;font-extrabold text-slate-900 dark:text-white text-sm&quot;&gt;${ev.aovRange}&lt;/div&gt;
+            &lt;div class=&quot;mt-1&quot;&gt;${getTierBadge(ev.tier, ev.powerScore)}&lt;/div&gt;
+          &lt;/td&gt;
+          &lt;td class=&quot;py-4 px-5 align-top space-y-2&quot;&gt;
+            &lt;div class=&quot;text-xs text-slate-700 dark:text-slate-200 leading-relaxed&quot;&gt;
+              &lt;span class=&quot;font-semibold text-indigo-600 dark:text-indigo-400&quot;&gt;Gifting Angle:&lt;/span&gt; ${ev.angle}
+            &lt;/div&gt;
+            &lt;div class=&quot;inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/90 text-[11px] font-medium text-slate-700 dark:text-slate-300&quot;&gt;
+              &lt;i class=&quot;fa-regular fa-clock text-amber-600 dark:text-amber-400&quot;&gt;&lt;/i&gt;
+              &lt;span&gt;${ev.cutoff}&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      `).join('');
+
+      // Mobile Cards
+      eventsMobileListEl.innerHTML = events.map(ev =&gt; `
+        &lt;div class=&quot;p-4 space-y-3&quot;&gt;
+          &lt;div class=&quot;flex items-start justify-between gap-2&quot;&gt;
+            &lt;div&gt;
+              ${formatEventDateHtml(ev)}
+              &lt;h4 class=&quot;font-bold text-slate-900 dark:text-white text-sm mt-1.5&quot;&gt;${ev.name}&lt;/h4&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;text-right shrink-0&quot;&gt;
+              &lt;div class=&quot;text-xs font-extrabold text-slate-900 dark:text-white&quot;&gt;${ev.aovRange}&lt;/div&gt;
+              &lt;div class=&quot;mt-0.5&quot;&gt;${getTierBadge(ev.tier, ev.powerScore)}&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;text-xs text-slate-500 dark:text-slate-400&quot;&gt;
+            &lt;span class=&quot;font-semibold&quot;&gt;Người nhận:&lt;/span&gt; ${ev.recipients}
+          &lt;/div&gt;
+
+          &lt;div class=&quot;flex items-center justify-between pt-0.5&quot;&gt;
+            &lt;div&gt;${getVolumeBadge(ev.volumeScore, ev.volumeEstimate)}&lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 space-y-1.5 text-xs&quot;&gt;
+            &lt;p class=&quot;text-slate-700 dark:text-slate-200 leading-relaxed&quot;&gt;
+              &lt;span class=&quot;font-semibold text-indigo-600 dark:text-indigo-400&quot;&gt;Gợi ý POD:&lt;/span&gt; ${ev.angle}
+            &lt;/p&gt;
+            &lt;p class=&quot;text-[11px] font-medium text-amber-700 dark:text-amber-400 flex items-center gap-1.5 pt-1 border-t border-slate-200/60 dark:border-slate-700/60&quot;&gt;
+              &lt;i class=&quot;fa-regular fa-clock&quot;&gt;&lt;/i&gt; ${ev.cutoff}
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      `).join('');
+    }
+
+    // Export Current Country &amp; Year Events to CSV
+    function exportToCsv() {
+      const country = MARKET_DATA[state.selectedCountry];
+      const events = getProcessedEvents();
+      if (!events.length) {
+        showToast('Không có dữ liệu để xuất CSV!');
+        return;
+      }
+
+      const headers = [
+        'Quốc gia',
+        'Brand',
+        'Ngày 2027',
+        'Ngày 2028',
+        'Quý',
+        'Tên sự kiện',
+        'Đối tượng nhận',
+        'Search Volume Ước tính',
+        'Search Volume Index (1-100)',
+        'Purchasing Power Score (1-100)',
+        'AOV Mục tiêu',
+        'POD Gift Angle',
+        'Lead Time &amp; Cutoff'
+      ];
+
+      const rows = events.map(ev =&gt; [
+        country.shortName,
+        country.brand,
+        ev.date2027,
+        ev.date2028,
+        getEventQuarter(ev),
+        `&quot;${ev.name.replace(/&quot;/g, '&quot;&quot;')}&quot;`,
+        `&quot;${ev.recipients.replace(/&quot;/g, '&quot;&quot;')}&quot;`,
+        `&quot;${ev.volumeEstimate}&quot;`,
+        ev.volumeScore,
+        ev.powerScore,
+        `&quot;${ev.aovRange}&quot;`,
+        `&quot;${ev.angle.replace(/&quot;/g, '&quot;&quot;')}&quot;`,
+        `&quot;${ev.cutoff.replace(/&quot;/g, '&quot;&quot;')}&quot;`
+      ]);
+
+      const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(r =&gt; r.join(','))].join('\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `EU_POD_Calendar_${country.id}_${state.selectedYear}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      showToast(`Đã xuất lịch ${country.shortName} (${state.selectedYear}) ra file .CSV!`);
+    }
+
+    function showToast(message) {
+      const toastEl = document.getElementById('toast');
+      document.getElementById('toastMessage').textContent = message;
+      toastEl.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() =&gt; {
+        toastEl.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // Event Listeners
+    function bindEvents() {
+      // Theme toggle
+      document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+      // Export CSV
+      document.getElementById('btnExportCsv').addEventListener('click', exportToCsv);
+
+      // Year Switcher Buttons
+      document.querySelectorAll('.year-btn').forEach(btn =&gt; {
+        btn.addEventListener('click', () =&gt; {
+          state.selectedYear = btn.dataset.year;
+          document.querySelectorAll('.year-btn').forEach(b =&gt; {
+            b.className = 'year-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer';
+          });
+          btn.className = 'year-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white shadow-sm transition-all cursor-pointer';
+          updateDashboard();
+        });
+      });
+
+      // Country selection
+      countryTabsEl.addEventListener('click', (e) =&gt; {
+        const btn = e.target.closest('.country-tab');
+        if (!btn) return;
+        const countryId = btn.dataset.country;
+        if (countryId &amp;&amp; countryId !== state.selectedCountry) {
+          state.selectedCountry = countryId;
+          renderCountryTabs();
+          updateDashboard();
+        }
+      });
+
+      // Quarter filter buttons
+      document.querySelectorAll('.quarter-btn').forEach(btn =&gt; {
+        btn.addEventListener('click', () =&gt; {
+          state.quarterFilter = btn.dataset.quarter;
+          document.querySelectorAll('.quarter-btn').forEach(b =&gt; {
+            b.className = 'quarter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer';
+          });
+          btn.className = 'quarter-btn active px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white shadow-sm transition-all cursor-pointer';
+          renderEvents();
+        });
+      });
+
+      // Tier filter buttons
+      document.querySelectorAll('.tier-btn').forEach(btn =&gt; {
+        btn.addEventListener('click', () =&gt; {
+          state.tierFilter = btn.dataset.tier;
+          document.querySelectorAll('.tier-btn').forEach(b =&gt; {
+            b.className = 'tier-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer';
+          });
+          btn.className = 'tier-btn active px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 transition-all cursor-pointer';
+          renderEvents();
+        });
+      });
+
+      // Search input
+      searchInputEl.addEventListener('input', (e) =&gt; {
+        state.searchQuery = e.target.value;
+        renderEvents();
+      });
+
+      // Sort dropdown
+      sortSelectEl.addEventListener('change', (e) =&gt; {
+        state.sortBy = e.target.value;
+        renderEvents();
+      });
+
+      // Reset filters button
+      document.getElementById('btnResetFilters').addEventListener('click', () =&gt; {
+        state.quarterFilter = 'ALL';
+        state.tierFilter = 'ALL';
+        state.searchQuery = '';
+        state.sortBy = 'chronological';
+        searchInputEl.value = '';
+        sortSelectEl.value = 'chronological';
+
+        document.querySelectorAll('.quarter-btn').forEach((b, idx) =&gt; {
+          b.className = idx === 0
+            ? 'quarter-btn active px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white shadow-sm transition-all cursor-pointer'
+            : 'quarter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer';
+        });
+
+        document.querySelectorAll('.tier-btn').forEach((b, idx) =&gt; {
+          b.className = idx === 0
+            ? 'tier-btn active px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 transition-all cursor-pointer'
+            : 'tier-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all cursor-pointer';
+        });
+
+        renderEvents();
+      });
+    }
+
+    // Boot on DOMContentLoaded
+    window.addEventListener('DOMContentLoaded', init);
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
 </div><!-- /page1 -->
 
 
